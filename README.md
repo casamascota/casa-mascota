@@ -14,7 +14,7 @@ NPM (versión 6 o superior)
 ###  Pasos
 
 
-1.- git clone https://github.com/tu-usuario/tu-proyecto.git
+1.- git clone https://github.com/casamascota/casa-mascota
 
 2.- cd casa-mascota
 
