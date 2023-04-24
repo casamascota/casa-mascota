@@ -1,5 +1,5 @@
-# Instrucciones para correr el proyecto
-Este proyecto está construido con Angular, Node.js, Express.js y SQLite como base de datos. Sigue las siguientes instrucciones para correrlo en tu máquina:
+### 
+Instrucciones para instalar y correr el proyecto
 
 ## Prerrequisitos
 Asegúrate de tener instalados los siguientes programas:
@@ -15,6 +15,8 @@ Para comenzar, clona este repositorio en tu máquina utilizando Git:
 ## Instalar dependencias
 Una vez que hayas clonado el repositorio, accede a la carpeta raíz del proyecto y ejecuta el siguiente comando para instalar las dependencias de Node.js:
 
+### 
+Pasos
 
 `cd casa-mascota`
 `npm install`
@@ -30,13 +32,6 @@ Antes de correr el servidor, necesitas crear la base de datos SQLite. Ejecuta el
 Para correr el servidor de Express.js, ejecuta el siguiente comando en la carpeta raíz del proyecto:
 
 
-`node src/server.js`
-**El servidor estará corriendo en http://localhost:3000.**
-
-Correr la aplicación Angular
-Para correr la aplicación Angular, abre otra terminal y accede a la carpeta client del proyecto. Una vez allí, ejecuta el siguiente comando:
 
 
-`ng serve`
-La aplicación estará corriendo en http://localhost:4200.
 
