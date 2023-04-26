@@ -1,0 +1,14 @@
+POST http://localhost:3000/api/doctores/
+Content-Type: application/json
+
+{
+  "id_doctor": 1,
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "numero_tel": 5551234,
+  "direccion": "Calle Falsa 123"
+}
+
+###
+
+GET http://localhost:3000/api/doctores

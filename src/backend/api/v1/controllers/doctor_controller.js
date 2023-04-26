@@ -25,6 +25,7 @@ exports.getDoctorById = (req, res) => {
 
 exports.createDoctor = (req, res) => {
   const doctor = req.body
+  console.log(doctor)
   Doctor.createDoctor(doctor, (err) => {
     if (err) {
       res.status(500).json({ error: 'Error creando el doctor' })

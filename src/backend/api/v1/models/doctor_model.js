@@ -1,4 +1,5 @@
 const sqlite3 = require('sqlite3').verbose()
+const UUID = require('uuid');
 
 // Abre la base de datos en modo lectura/escritura
 const db = new sqlite3.Database('casa_mascota_db.sqlite')
@@ -38,8 +39,10 @@ exports.getDoctorById = (id, callback) => {
 
 // Función para crear un nuevo doctor
 exports.createDoctor = (doctor, callback) => {
-  const { nombre, apellido, telefono, direccion } = doctor
-  db.run('INSERT INTO doctores (nombre, apellido, numero_tel, direccion) VALUES (?, ?, ?, ?)', [nombre, apellido, telefono, direccion], (err) => {
+  /*const id_doctor = UUID.v4()
+  console.log(id_doctor)*/
+  const { id, nombre, apellido, numero_tel, direccion } = doctor
+  db.run('INSERT INTO Doctor (id_doctor, nombre, apellido, numero_tel, direccion) VALUES (?, ?, ?, ?, ? )', [ id, nombre, apellido, numero_tel, direccion], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)
