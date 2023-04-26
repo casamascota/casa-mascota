@@ -53,7 +53,7 @@ app.get('/Doctor', (req, res) => {
   });
   
   // Crear un nuevo usuario
-  app.post('/users', (req, res) => {
+  app.post('/Doctor', (req, res) => {
     const { id_doctor, nombre, apellido } = req.body;
     db.run(
       'INSERT INTO users(id_doctor, nombre, apellido,numero_tel ,direccion) VALUES(?, ?, ?)',
