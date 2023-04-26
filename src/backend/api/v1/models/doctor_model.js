@@ -14,67 +14,167 @@ const db = new sqlite3.Database('casa_mascota_db.sqlite')
 )`)*/
 
 // Función para obtener todos los doctores
-exports.getDoctores = (callback) => {
-  db.all('SELECT * FROM Doctor', [], (err, rows) => {
-    if (err) {
-      console.error(err.message)
-      callback(err)
-    } else {
-      callback(null, rows)
-    }
+// exports.getDoctores = (callback) => {
+//   db.all('SELECT * FROM Doctor', [], (err, rows) => {
+//     if (err) {
+//       console.error(err.message)
+//       callback(err)
+//     } else {
+//       callback(null, rows)
+//     }
+//   })
+// }
+
+//con async
+exports.getDoctorById = async (id) => {
+  return new Promise((resolve, reject) => {
+    db.get('SELECT * FROM doctores WHERE id_doctor = ?', [id], (err, row) => {
+      if (err) {
+        console.error(err.message)
+        reject(err)
+      } else {
+        resolve(row)
+      }
+    })
   })
 }
 
 // Función para obtener un solo doctor por ID
-exports.getDoctorById = (id, callback) => {
-  db.get('SELECT * FROM doctores WHERE id_doctor = ?', [id], (err, row) => {
-    if (err) {
-      console.error(err.message)
-      callback(err)
-    } else {
-      callback(null, row)
-    }
-  })
+// exports.getDoctorById = (id, callback) => {
+//   db.get('SELECT * FROM doctores WHERE id_doctor = ?', [id], (err, row) => {
+//     if (err) {
+//       console.error(err.message)
+//       callback(err)
+//     } else {
+//       callback(null, row)
+//     }
+//   })
+// }
+
+//con async
+exports.getDoctorById = async (id) => {
+  try {
+    const row = await new Promise((resolve, reject) => {
+      db.get('SELECT * FROM doctores WHERE id_doctor = ?', [id], (err, row) => {
+        if (err) {
+          console.error(err.message)
+          reject(err)
+        } else {
+          resolve(row)
+        }
+      })
+    })
+    return row
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
 }
 
 // Función para crear un nuevo doctor
-exports.createDoctor = (doctor, callback) => {
+//exports.createDoctor = (doctor, callback) => {
   /*const id_doctor = UUID.v4()
   console.log(id_doctor)*/
+//   const { id, nombre, apellido, numero_tel, direccion } = doctor
+//   db.run('INSERT INTO Doctor (id_doctor, nombre, apellido, numero_tel, direccion) VALUES (?, ?, ?, ?, ? )', [ id, nombre, apellido, numero_tel, direccion], (err) => {
+//     if (err) {
+//       console.error(err.message)
+//       callback(err)
+//     } else {
+//       callback(null)
+//     }
+//   })
+// }
+
+//con async
+exports.createDoctor = async (doctor) => {
   const { id, nombre, apellido, numero_tel, direccion } = doctor
-  db.run('INSERT INTO Doctor (id_doctor, nombre, apellido, numero_tel, direccion) VALUES (?, ?, ?, ?, ? )', [ id, nombre, apellido, numero_tel, direccion], (err) => {
-    if (err) {
-      console.error(err.message)
-      callback(err)
-    } else {
-      callback(null)
-    }
-  })
+
+  try {
+    await new Promise((resolve, reject) => {
+      db.run('INSERT INTO Doctor (id_doctor, nombre, apellido, numero_tel, direccion) VALUES (?, ?, ?, ?, ? )', [ id, nombre, apellido, numero_tel, direccion], (err) => {
+        if (err) {
+          console.error(err.message)
+          reject(err)
+        } else {
+          resolve()
+        }
+      })
+    })
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
 }
+
 
 // Función para actualizar un doctor existente
-exports.updateDoctor = (id, doctor, callback) => {
+// exports.updateDoctor = (id, doctor, callback) => {
+//   const { nombre, apellido, telefono, direccion } = doctor
+//   db.run('UPDATE doctores SET nombre = ?, apellido = ?, telefono = ?, direccion = ? WHERE id = ?', [nombre, apellido, telefono, direccion, id], (err) => {
+//     if (err) {
+//       console.error(err.message)
+//       callback(err)
+//     } else {
+//       callback(null)
+//     }
+//   })
+// }
+
+//con async
+exports.updateDoctor = async (id, doctor) => {
   const { nombre, apellido, telefono, direccion } = doctor
-  db.run('UPDATE doctores SET nombre = ?, apellido = ?, telefono = ?, direccion = ? WHERE id = ?', [nombre, apellido, telefono, direccion, id], (err) => {
-    if (err) {
-      console.error(err.message)
-      callback(err)
-    } else {
-      callback(null)
-    }
-  })
+
+  try {
+    await new Promise((resolve, reject) => {
+      db.run('UPDATE doctores SET nombre = ?, apellido = ?, telefono = ?, direccion = ? WHERE id = ?', [nombre, apellido, telefono, direccion, id], (err) => {
+        if (err) {
+          console.error(err.message)
+          reject(err)
+        } else {
+          resolve()
+        }
+      })
+    })
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
 }
 
+
 // Función para eliminar un doctor por ID
-exports.deleteDoctorById = (id, callback) => {
-  db.run('DELETE FROM doctores WHERE id = ?', [id], (err) => {
-    if (err) {
-      console.error(err.message)
-      callback(err)
-    } else {
-      callback(null)
-    }
-  })
+// exports.deleteDoctorById = (id, callback) => {
+//   db.run('DELETE FROM doctores WHERE id = ?', [id], (err) => {
+//     if (err) {
+//       console.error(err.message)
+//       callback(err)
+//     } else {
+//       callback(null)
+//     }
+//   })
+// }
+
+//con async
+
+exports.updateDoctor = async (id, doctor) => {
+  const { nombre, apellido, telefono, direccion } = doctor
+
+  try {
+    await new Promise((resolve, reject) => {
+      db.run('UPDATE doctores SET nombre = ?, apellido = ?, telefono = ?, direccion = ? WHERE id = ?', [nombre, apellido, telefono, direccion, id], (err) => {
+        if (err) {
+          console.error(err.message)
+          reject(err)
+        } else {
+          resolve()
+        }
+      })
+    })
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
 }
 
 // Cierra la conexión a la base de datos cuando se detiene la aplicación
