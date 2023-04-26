@@ -6,6 +6,13 @@ const app = express();
 
 app.use(cors());
 
+//Añadir middlewares si son necesarios
+
+
+
+
+//conexion bdd, quiza modularizar con un exports e imports 
+//o la antigua manera con .exports
 const db = new sqlite3.Database('./database.db', (err) => {
   if (err) {
     console.error(err.message);
@@ -32,6 +39,7 @@ app.get('/users', (req, res) => {
   
   // Obtener un usuario por ID
   app.get('/users/:id', (req, res) => {
+    //params para el id
     const id = req.params.id;
     db.get('SELECT * FROM users WHERE id = ?', [id], (err, row) => {
       if (err) {
@@ -46,15 +54,15 @@ app.get('/users', (req, res) => {
   
   // Crear un nuevo usuario
   app.post('/users', (req, res) => {
-    const { name, email, password } = req.body;
+    const { id_doctor, nombre, apellido } = req.body;
     db.run(
-      'INSERT INTO users(name, email, password) VALUES(?, ?, ?)',
-      [name, email, password],
+      'INSERT INTO users(id_doctor, nombre, apellido,numero_tel ,direccion) VALUES(?, ?, ?)',
+      [id_doctor, nombre, apellido,numero_tel,direccion],
       (err) => {
         if (err) {
           res.status(500).send(err.message);
         } else {
-          res.send('User created successfully');
+          res.send('Doctor creado succesfully, siuu!');
         }
       }
     );
@@ -63,15 +71,15 @@ app.get('/users', (req, res) => {
   // Actualizar un usuario por ID
   app.put('/users/:id', (req, res) => {
     const id = req.params.id;
-    const { name, email, password } = req.body;
+    const { id_doctor, nombre, apellido } = req.body;
     db.run(
-      'UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?',
-      [name, email, password, id],
+      'UPDATE users SET id_doctor = ?, nombre = ?, apellido = ?, numero_tel = ?,direccion = ? WHERE id = ?',
+      [id_doctor, nombre, apellido, id,numero_tel,direccion],
       (err) => {
         if (err) {
           res.status(500).send(err.message);
         } else {
-          res.send('User updated successfully');
+          res.send('Doctor actualizao');
         }
       }
     );
@@ -84,7 +92,7 @@ app.get('/users', (req, res) => {
       if (err) {
         res.status(500).send(err.message);
       } else {
-        res.send('User deleted successfully');
+        res.send('DOctor Funad0');
       }
     });
   });
