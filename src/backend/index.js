@@ -27,8 +27,8 @@ app.listen(3000, () => {
 });
 
 // Obtener todos los usuarios
-app.get('/users', (req, res) => {
-    db.all('SELECT * FROM users', (err, rows) => {
+app.get('/Doctor', (req, res) => {
+    db.all('SELECT * FROM Doctor', (err, rows) => {
       if (err) {
         res.status(500).send(err.message);
       } else {
@@ -38,10 +38,10 @@ app.get('/users', (req, res) => {
   });
   
   // Obtener un usuario por ID
-  app.get('/users/:id', (req, res) => {
+  app.get('/Doctor/:id', (req, res) => {
     //params para el id
     const id = req.params.id;
-    db.get('SELECT * FROM users WHERE id = ?', [id], (err, row) => {
+    db.get('SELECT * FROM Doctor WHERE id = ?', [id], (err, row) => {
       if (err) {
         res.status(500).send(err.message);
       } else if (!row) {
@@ -69,11 +69,11 @@ app.get('/users', (req, res) => {
   });
   
   // Actualizar un usuario por ID
-  app.put('/users/:id', (req, res) => {
+  app.put('/Doctor/:id', (req, res) => {
     const id = req.params.id;
     const { id_doctor, nombre, apellido } = req.body;
     db.run(
-      'UPDATE users SET id_doctor = ?, nombre = ?, apellido = ?, numero_tel = ?,direccion = ? WHERE id = ?',
+      'UPDATE Doctor SET id_doctor = ?, nombre = ?, apellido = ?, numero_tel = ?,direccion = ? WHERE id = ?',
       [id_doctor, nombre, apellido, id,numero_tel,direccion],
       (err) => {
         if (err) {
@@ -86,9 +86,9 @@ app.get('/users', (req, res) => {
   });
   
   // Eliminar un usuario por ID
-  app.delete('/users/:id', (req, res) => {
+  app.delete('/Doctor/:id', (req, res) => {
     const id = req.params.id;
-    db.run('DELETE FROM users WHERE id = ?', [id], (err) => {
+    db.run('DELETE FROM Doctor WHERE id = ?', [id], (err) => {
       if (err) {
         res.status(500).send(err.message);
       } else {
