@@ -3,11 +3,13 @@ const app = express();
 const port = 3000;
 
 const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+app.use(bodyParser.json());d
 
 const doctorRoute = require('./api/v1/routes/doctor_route');
-app.use('/api/doctores', doctorRoute);
+const estilistaRoute = require('./api/v1/routes/estilista_route');
 
+app.use('/api/doctores', doctorRoute);
+app.use('/api/estilistas', estilistaRoute);
 app.get('/', (req, res) => {
   res.send('Hola desde Express.js!');
 });
