@@ -4,8 +4,9 @@
 <h2>Formulario de Mascota</h2>
 <form (ngSubmit)="onSubmit()">
   <div>
+    <mat-label>ID de Mascota</mat-label>
     <label for="id_mascota">ID de Mascota:</label>
-    <input type="text" id="id_mascota" name="id_mascota" required>
+    <input  matInput placeholder="Ex. Pizza" type="text" id="id_mascota" name="id_mascota" required>
   </div>
 
   <div>
