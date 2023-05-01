@@ -5,14 +5,14 @@ const UUID = require('uuid');
 
 const db = new sqlite3.Database('casa_mascota_db.sqlite')
 
-// Crea la tabla "Estilista" si no existe
+/* Crea la tabla "Estilista" si no existe
 db.run(`CREATE TABLE Estilista IF NOT EXISTS(
     id_estilista integer NOT NULL CONSTRAINT Estilista_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
     apellido varchar(50) NOT NULL,
     numero_tel integer NOT NULL
 );`)
-
+*/
 // Función para obtener todos los doctores
 exports.getEstilistas = (callback) => {
   db.all('SELECT * FROM Estilista', [], (err, rows) => {
