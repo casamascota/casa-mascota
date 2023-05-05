@@ -15,7 +15,7 @@ db.run(`CREATE TABLE IF NOT EXISTS Enfermero (
 `)
 
 // Función para obtener todos los doctores
-exports.getEstilistas = (callback) => {
+exports.getEnfermeros = (callback) => {
   db.all('SELECT * FROM Enfermero', [], (err, rows) => {
     if (err) {
       console.error(err.message)
