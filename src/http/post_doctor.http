@@ -2,11 +2,11 @@ POST http://localhost:3000/api/doctores/
 Content-Type: application/json
 
 {
-  "id_doctor": 1,
-  "nombre": "Juan",
+  "id_doctor": 2,
+  "nombre": "Pedro",
   "apellido": "Pérez",
-  "numero_tel": 5551234,
-  "direccion": "Calle Falsa 123"
+  "numero_tel": 55351234,
+  "direccion": "Calle Falsa 1223"
 }
 
 ###
