@@ -1,6 +1,7 @@
 --En este archivo debe estar los queries para la creación de la base de datos
 -- tables
 -- Table: Servicio
+--listo
 CREATE TABLE Servicio (
     id_servicio integer NOT NULL CONSTRAINT Servicio_pk PRIMARY KEY,
     tipo varchar(50) NOT NULL,
@@ -8,6 +9,8 @@ CREATE TABLE Servicio (
 );
 
 -- Table: Doctor
+--listo
+
 CREATE TABLE Doctor (
     id_doctor integer NOT NULL CONSTRAINT Doctor_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
@@ -17,6 +20,8 @@ CREATE TABLE Doctor (
 );
 
 -- Table: Enfermero
+--listo
+
 CREATE TABLE Enfermero (
     id_enfermero integer NOT NULL CONSTRAINT Enfermero_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
@@ -26,6 +31,8 @@ CREATE TABLE Enfermero (
 );
 
 -- Table: Estilista
+--listo
+
 CREATE TABLE Estilista (
     id_estilista integer NOT NULL CONSTRAINT Estilista_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
@@ -34,6 +41,7 @@ CREATE TABLE Estilista (
 );
 
 -- Table: Owner
+-- Carlos
 CREATE TABLE Owner (
     id_owner integer NOT NULL CONSTRAINT Owner_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
@@ -43,6 +51,8 @@ CREATE TABLE Owner (
 );
 
 -- Table: Medicamentos
+-- Carlos
+
 CREATE TABLE Medicamentos (
     id_med integer NOT NULL CONSTRAINT Medicamentos_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
@@ -50,6 +60,7 @@ CREATE TABLE Medicamentos (
 );
 
 -- Table: Cirugia
+--Carlos
 CREATE TABLE Cirugia (
     id_cirugia integer NOT NULL CONSTRAINT Cirugia_pk PRIMARY KEY,
     fecha datetime NOT NULL,
@@ -65,6 +76,7 @@ CREATE TABLE Cirugia (
 );
 
 -- Table: Cita_Agendada
+-- Carlos
 CREATE TABLE Cita_Agendada (
     id_cita integer NOT NULL CONSTRAINT Cita_Agendada_pk PRIMARY KEY,
     fecha datetime NOT NULL,
@@ -78,6 +90,7 @@ CREATE TABLE Cita_Agendada (
 );
 
 -- Table: Diagnostico
+-- Sergio
 CREATE TABLE Diagnostico (
     id_diagnostico integer NOT NULL CONSTRAINT Diagnostico_pk PRIMARY KEY,
     diagnostico varchar(100) NOT NULL,
@@ -88,6 +101,7 @@ CREATE TABLE Diagnostico (
 );
 
 -- Table: Mascota
+-- Sergio
 CREATE TABLE Mascota (
     id_mascota integer NOT NULL CONSTRAINT Mascota_pk PRIMARY KEY,
     nombre varchar(60) NOT NULL,
@@ -102,6 +116,7 @@ CREATE TABLE Mascota (
 );
 
 -- Table: Peluqueria
+-- Sergio
 CREATE TABLE Peluqueria (
     id_pel integer NOT NULL CONSTRAINT Peluqueria_pk PRIMARY KEY,
     fecha datetime NOT NULL,
@@ -115,6 +130,7 @@ CREATE TABLE Peluqueria (
 );
 
 -- Table: Revision
+-- Diego
 CREATE TABLE Revision (
     id_revision integer NOT NULL CONSTRAINT Revision_pk PRIMARY KEY,
     fecha_revision datetime NOT NULL,
@@ -130,6 +146,7 @@ CREATE TABLE Revision (
 );
 
 -- Table: Tratamiento
+-- Diego
 CREATE TABLE Tratamiento (
     id_trat integer NOT NULL CONSTRAINT Tratamiento_pk PRIMARY KEY,
     fecha_inicio datetime NOT NULL,
