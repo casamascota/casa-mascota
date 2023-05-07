@@ -91,7 +91,7 @@ CREATE TABLE Cita_Agendada (
 );
 
 -- Table: Diagnostico
--- Sergio
+-- Sergio -- listo
 CREATE TABLE Diagnostico (
     id_diagnostico integer NOT NULL CONSTRAINT Diagnostico_pk PRIMARY KEY,
     diagnostico varchar(100) NOT NULL,
