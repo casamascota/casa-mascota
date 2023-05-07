@@ -96,8 +96,8 @@ CREATE TABLE Diagnostico (
     id_diagnostico integer NOT NULL CONSTRAINT Diagnostico_pk PRIMARY KEY,
     diagnostico varchar(100) NOT NULL,
     trat_requerido integer NOT NULL,
-    Revision_id_revision integer NOT NULL,
-    CONSTRAINT Diagnostico_Revision FOREIGN KEY (Revision_id_revision)
+    id_revision integer NOT NULL,
+    CONSTRAINT Diagnostico_Revision FOREIGN KEY (id_revision)
     REFERENCES Revision (id_revision)
 );
 
