@@ -102,7 +102,7 @@ CREATE TABLE Diagnostico (
 );
 
 -- Table: Mascota
--- Sergio
+-- Sergio --listo 
 CREATE TABLE Mascota (
     id_mascota integer NOT NULL CONSTRAINT Mascota_pk PRIMARY KEY,
     nombre varchar(60) NOT NULL,
@@ -117,7 +117,7 @@ CREATE TABLE Mascota (
 );
 
 -- Table: Peluqueria
--- Sergio
+-- Sergio -- listo
 CREATE TABLE Peluqueria (
     id_pel integer NOT NULL CONSTRAINT Peluqueria_pk PRIMARY KEY,
     fecha datetime NOT NULL,
