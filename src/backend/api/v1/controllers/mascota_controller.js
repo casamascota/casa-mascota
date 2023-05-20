@@ -38,6 +38,7 @@ exports.getMascotaByOwnerId = (req, res) => {
 
 
 exports.createMascota = (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
   const mascota = req.body
   console.log(mascota)
   Mascota.createMascota(mascota, (err) => {
