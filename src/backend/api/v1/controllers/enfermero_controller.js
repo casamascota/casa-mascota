@@ -42,7 +42,7 @@ exports.updateEnfermero = (req, res) => {
     if (err) {
       res.status(500).json({ error: 'Error actualizando el enfermero' })
     } else {
-      res.json({ message: `Estilista con id ${id} actualizado exitosamente` })
+      res.json({ message: `Enfermero con id ${id} actualizado exitosamente` })
     }
   })
 }
