@@ -7,7 +7,7 @@ db.run(`CREATE TABLE IF NOT EXISTS Owner (
     id_owner integer NOT NULL CONSTRAINT Owner_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
     apellido varchar(50) NOT NULL,
-    numero_tel integer NOT NULL,
+    numero_tel varchar(50) NOT NULL,
     direccion varchar(100) NOT NULL
 )`);
 
