@@ -38,6 +38,7 @@ exports.createDoctor = (req, res) => {
 exports.updateDoctor = (req, res) => {
   const id = req.params.id
   const doctor = req.body
+  console.log(doctor)
   Doctor.updateDoctor(id, doctor, (err) => {
     if (err) {
       res.status(500).json({ error: 'Error actualizando el doctor' })
