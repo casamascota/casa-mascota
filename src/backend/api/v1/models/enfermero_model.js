@@ -68,7 +68,7 @@ exports.updateEnfermero = (id, enfermero, callback) => {
 
 // Función para eliminar un enfermero por ID
 exports.deleteEnfemeroById = (id, callback) => {
-  db.run('DELETE FROM Enfemero WHERE id = ?', [id], (err) => {
+  db.run('DELETE FROM Enfermero WHERE id_enfermero = ?', [id], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)

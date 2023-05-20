@@ -49,7 +49,7 @@ exports.updateEnfermero = (req, res) => {
 
 exports.deleteEnfermeroById = (req, res) => {
   const id = req.params.id
-  Enfermero.deleteEnfermeroById(id, (err) => {
+  Enfermero.deleteEnfemeroById(id, (err) => {
     if (err) {
       res.status(500).json({ error: 'Error eliminando el enfermero' })
     } else {
