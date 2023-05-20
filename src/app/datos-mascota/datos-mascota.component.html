@@ -1,21 +1,21 @@
-<h1>Datos de las mascotas</h1>
+<h1 class="display-4">Datos de las mascotas</h1>
 
-<table>
+<table class="table table-success table-striped-columns">
   <thead>
     <tr>
-      <th>Número</th>
-      <th>Nombre</th>
-      <th>Raza</th>
-      <th>Edad</th>
-      <th>Género</th>
-      <th>Fecha de nacimiento</th>
-      <th>Peso</th>
-      <th>Propietario</th>
+      <th scope="col">Número</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Raza</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Género</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Propietario</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let mascota of mascotas; let i = index" (click)="abrirDetalleMascota(mascota)">
-        <td>{{ i + 1 }}</td>
+        <td scope="col">{{ i + 1 }}</td>
         <td>{{ mascota.nombre }}</td>
         <td>{{ mascota.raza }}</td>
         <td>{{ mascota.edad }}</td> 
