@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<!-- Resto del contenido del componente -->
+
+<h2>Añadir Tratamiento</h2>
+
+<div>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="nuevoTratamiento.nombre" />
+</div>
+
+<div>
+  <label for="tipo">Tipo:</label>
+  <input type="text" id="tipo" [(ngModel)]="nuevoTratamiento.tipo" />
+</div>
+
+<div>
+  <label for="descripcion">Descripción:</label>
+  <textarea id="descripcion" [(ngModel)]="nuevoTratamiento.descripcion"></textarea>
+</div>
+
+<button (click)="guardarTratamiento()">Guardar</button>

@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<p>cirugia works!</p>
+<h2>Añadir Cirugía</h2>
+
+<form (ngSubmit)="guardarCirugia()">
+  <div>
+    <label for="id_cirugia">ID Cirugía:</label>
+    <input type="number" id="id_cirugia" name="id_cirugia" [(ngModel)]="cirugia.id_cirugia" required />
+  </div>
+
+  <div>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" [(ngModel)]="cirugia.fecha" required />
+  </div>
+
+  <div>
+    <label for="cirugiahecha">Cirugía Realizada:</label>
+    <input type="checkbox" id="cirugiahecha" name="cirugiahecha" [(ngModel)]="cirugia.cirugiahecha" />
+  </div>
+
+  <div>
+    <label for="doctor_id">ID Doctor:</label>
+    <input type="number" id="doctor_id" name="doctor_id" [(ngModel)]="cirugia.doctor_id" required />
+  </div>
+
+  <div>
+    <label for="enfermero_id">ID Enfermero:</label>
+    <input type="number" id="enfermero_id" name="enfermero_id" [(ngModel)]="cirugia.enfermero_id" required />
+  </div>
+
+  <button type="submit">Guardar</button>
+</form>
+
+<hr>
+
+<h2>Cirugías Registradas</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID Cirugía</th>
+      <th>Fecha</th>
+      <th>Cirugía Realizada</th>
+      <th>ID Doctor</th>
+      <th>ID Enfermero</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cirugia of cirugias">
+      <td>{{ cirugia.id_cirugia }}</td>
+      <td>{{ cirugia.fecha }}</td>
+      <td>{{ cirugia.cirugiahecha ? 'Sí' : 'No' }}</td>
+      <td>{{ cirugia.doctor_id }}</td>
+      <td>{{ cirugia.enfermero_id }}</td>
+      <td>
+        <button (click)="editarCirugia(cirugia)">Editar</button>
+        <button (click)="eliminarCirugia(cirugia)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
