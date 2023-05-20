@@ -10,13 +10,15 @@ import { DetalleMascotaComponent } from '../detalle-mascota/detalle-mascota.comp
 })
 export class DatosMascotaComponent implements OnInit {
   mascotas: any[] = [];
-
+  URL_BASE = 'http://localhost:3000/api';
   constructor(private http: HttpClient, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.http.get<any[]>('backend/api/v1/mascotas').subscribe(
+    this.http.get<any[]>(this.URL_BASE + '/mascotas').subscribe(
       (mascotas) => {
+        console.log('get');
         this.mascotas = mascotas;
+        console.log(this.mascotas);
       },
       (error) => {
         console.error(error);

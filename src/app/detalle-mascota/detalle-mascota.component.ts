@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -9,6 +10,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DetalleMascotaComponent {
   constructor(
     public dialogRef: MatDialogRef<DetalleMascotaComponent>,
-    @Inject(MAT_DIALOG_DATA) public mascota: any
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public mascota: any,
+    private httpClient: HttpClient
+  ) {
+    
+   }
 }
