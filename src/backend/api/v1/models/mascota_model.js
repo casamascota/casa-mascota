@@ -57,7 +57,7 @@ exports.getMascotasByOwnerId = (ownerId, callback) => {
 exports.createMascota = (mascota, callback) => {
   const { id, nombre, raza, edad, genero, fechaNac, peso, idOwner } = mascota;
   db.run(
-    'INSERT INTO Mascota (id_mascota, nombre, raza, edad, genero, fechaNac, peso, idOwner) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    'INSERT INTO Mascota (id_mascota, nombre, raza, edad, genero, fecha_nacimiento, peso, Owner_id_owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
     [id, nombre, raza, edad, genero, fechaNac, peso, idOwner],
     (err) => {
       if (err) {
@@ -74,7 +74,7 @@ exports.createMascota = (mascota, callback) => {
 exports.updateMascota = (id, mascota, callback) => {
   const { nombre, raza, edad, genero, fechaNac, peso, idOwner  } = mascota;
   db.run(
-    'UPDATE Mascota SET nombre = ?, raza = ?, edad = ?, genero = ?, fecha_nacimiento = ?, peso = ?, Owner_id_owner = ? WHERE id_revision = ?',
+    'UPDATE Mascota SET nombre = ?, raza = ?, edad = ?, genero = ?, fecha_nacimiento = ?, peso = ?, Owner_id_owner = ? WHERE id_mascota = ?',
     [nombre, raza, edad, genero, fechaNac, peso, idOwner, id],
     (err) => {
       if (err) {

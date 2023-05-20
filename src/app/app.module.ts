@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,27 +8,27 @@ import { MascotaFormularioComponent } from './mascota-formulario/mascota-formula
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatInputModule} from '@angular/material/input';
-import { MatDialogModule } from '@angular/material/dialog';
-import { DatosMascotaComponent } from './datos-mascota/datos-mascota.component';
-import { DetalleMascotaComponent } from './detalle-mascota/detalle-mascota.component';
-import { HttpClientModule } from '@angular/common/http';
+import { TestComponentComponent } from './test-component/test-component.component';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MascotaFormularioComponent,
-    DatosMascotaComponent,
-    DetalleMascotaComponent
+    TestComponentComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatDialogModule,
+    ReactiveFormsModule,
     HttpClientModule
+    
   ],
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

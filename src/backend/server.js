@@ -1,20 +1,29 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
 const port = 3000;
 
-
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(cors({
-  origin: '*',
-}));
+
 const doctorRoute = require('./api/v1/routes/doctor_route');
 const estilistaRoute = require('./api/v1/routes/estilista_route');
+const enfermeroRoute = require('./api/v1/routes/enfermero_route');
+const revisionRoute = require('./api/v1/routes/revision_route');
+const ownerRoute = require('./api/v1/routes/owner_route');
 const mascotaRoute = require('./api/v1/routes/mascota_route');
+const cors = require('cors');
+
+app.use(cors({origin: '*'})
+);
+
+
 app.use('/api/doctores', doctorRoute);
 app.use('/api/estilistas', estilistaRoute);
+app.use('/api/enfermeros', enfermeroRoute);
+app.use('/api/revisiones', revisionRoute);
+app.use('/api/owners', ownerRoute);
 app.use('/api/mascotas', mascotaRoute);
+
 app.get('/', (req, res) => {
   res.send('Hola desde Express.js!');
 });
