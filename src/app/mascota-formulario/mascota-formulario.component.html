@@ -1,15 +1,14 @@
+<app-navbar></app-navbar>
+
+<!-- Resto del contenido del componente -->
 
 
+<p>mascota-formulario works!</p>
 <h2>Formulario de Mascota</h2>
-<form (ngSubmit)="onSubmit">
+<form (ngSubmit)="onSubmit()">
   <div>
-    <mat-label>ID de Mascota</mat-label>
     <label for="id_mascota">ID de Mascota:</label>
-<<<<<<< HEAD
-    <input type="text" id="id_mascota" name="id_mascota" (ngModel)="id_mascota" required>
-=======
-    <input  matInput placeholder="Ex. Pizza" type="text" id="id_mascota" name="id_mascota" required>
->>>>>>> 861a46977cad461648e88cc01ff4687d7c1a74a4
+    <input type="text" id="id_mascota" name="id_mascota" required>
   </div>
 
   <div>
