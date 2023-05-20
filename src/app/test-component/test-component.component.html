@@ -1,1 +1,40 @@
-<p>test-component works!</p>
+<h2>Registro de Mascota</h2>
+<form [formGroup]="mascotaForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>ID Mascota:</label>
+    <input type="number" formControlName="id_mascota" required>
+  </div>
+  <div>
+    <label>Nombre:</label>
+    <input type="text" formControlName="nombre" required>
+  </div>
+  <div>
+   <label>Tipo:</label>
+   <input type="text" formControlName="tipo" required>
+ </div>
+  <div>
+    <label>Raza:</label>
+    <input type="text" formControlName="raza" required>
+  </div>
+  <div>
+    <label>Edad:</label>
+    <input type="number" formControlName="edad" required>
+  </div>
+  <div>
+    <label>Género:</label>
+    <input type="text" formControlName="sexo" required>
+  </div>
+  <div>
+    <label>Fecha de Nacimiento:</label>
+    <input type="date" formControlName="fecha_nacimiento" required>
+  </div>
+  <div>
+    <label>Peso:</label>
+    <input type="number" formControlName="peso" required>
+  </div>
+  <div>
+    <label>Owner ID:</label>
+    <input type="number" formControlName="id_owner" required>
+  </div>
+  <button type="submit">Registrar Mascota</button>
+</form>
