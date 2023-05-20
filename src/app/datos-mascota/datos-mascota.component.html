@@ -1,0 +1,29 @@
+<h1>Datos de las mascotas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Nombre</th>
+      <th>Raza</th>
+      <th>Edad</th>
+      <th>Género</th>
+      <th>Fecha de nacimiento</th>
+      <th>Peso</th>
+      <th>Propietario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mascota of mascotas; let i = index" (click)="abrirDetalleMascota(mascota)">
+        <td>{{ i + 1 }}</td>
+        <td>{{ mascota.nombre }}</td>
+        <td>{{ mascota.raza }}</td>
+        <td>{{ mascota.edad }}</td> 
+        <td>{{ mascota.genero }}</td>
+        <td>{{ mascota.fechaNacimiento }}</td>
+        <td>{{ mascota.peso }}</td>
+        <td>{{ mascota.propietario }}</td>
+    </tr>
+      
+  </tbody>
+</table>

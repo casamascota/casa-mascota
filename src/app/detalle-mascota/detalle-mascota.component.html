@@ -1,0 +1,33 @@
+<h2>Detalle de la mascota</h2>
+
+<!-- Tabla de cirugías -->
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cirugia of mascota.cirugias">
+      <td>{{ cirugia.fecha }}</td>
+      <td>{{ cirugia.descripcion }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Tabla de tratamientos -->
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tratamiento of mascota.tratamientos">
+      <td>{{ tratamiento.fecha }}</td>
+      <td>{{ tratamiento.descripcion }}</td>
+    </tr>
+  </tbody>
+</table>

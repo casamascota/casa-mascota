@@ -7,17 +7,23 @@ import { MascotaFormularioComponent } from './mascota-formulario/mascota-formula
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatInputModule} from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DatosMascotaComponent } from './datos-mascota/datos-mascota.component';
+import { DetalleMascotaComponent } from './detalle-mascota/detalle-mascota.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MascotaFormularioComponent
+    MascotaFormularioComponent,
+    DatosMascotaComponent,
+    DetalleMascotaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
