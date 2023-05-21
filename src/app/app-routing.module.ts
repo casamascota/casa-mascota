@@ -5,6 +5,8 @@ import { ListasRegistrosComponent } from './Componentes/Administrador/listas-reg
 import { AdopcionesComponent } from './Componentes/Usuario/mascotasAdopcion/adopciones.component';
 import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
 
+import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
+
 import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
 import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: "adopciones", component: AdopcionesComponent},
   { path: "registro", component: ListasRegistrosComponent },
   { path: "agregar_registro", component: AgregarRegistroComponent },
+  { path: 'actualizar_registro_doc', component: ActualizarRegistroComponent },
   { path: "citas", component: ReservaCitaComponent },
   { path: "citas-agendadas", component: ListaCitasComponent },
   { path: "lista-mascotas", component: ListaMascotasComponent },

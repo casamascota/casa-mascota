@@ -1,3 +1,53 @@
-<p>
-  recursosEducativos works!
-</p>
+<div class="body">
+  <h1>RECURSOS EDUCATIVOS</h1>
+  <div class="recursos" style="max-width: 80%; margin-left: 10%;">
+    <mat-grid-list cols="2" rowHeight="400px">
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Esterilizacion</mat-card-title>
+            <mat-card-subtitle>Recursos: ASPCA</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>¿Porque es importante estirilizar a tu mascota?</p>
+            <p>{{longTextEsterilizacion}}</p>
+          </mat-card-content>
+          <mat-card-actions style="color: blue;">
+            <button mat-button onclick="window.location.href='https://www.aspca.org/nyc/recursos-para-personas-que-hablan-espanol/10-razones-principales-para-esterilizar-o-castrar-su#:~:text=La%20esterilizaci%C3%B3n%20ayuda%20a%20prevenir,mejor%20protecci%C3%B3n%20de%20estas%20enfermedades.'">Articulo</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <img mat-card-image src="https://veterinariasborges.com/wp-content/uploads/2016/09/1-1.png" alt="Photo of a Shiba Inu">  
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <hr>
+    <mat-grid-list cols="2" rowHeight="400px">
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <img mat-card-image src="https://mx.virbac.com/files/live/sites/virbac-mx/files/mexico%20correctas/imagenes%20de%20acoma%C3%B1amiento/Cuidados_para_mi_mascota_veterinario.png" alt="Photo of a Shiba Inu">  
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Cuidados para tu mascota</mat-card-title>
+            <mat-card-subtitle>Recursos: Proteccion animal mundial</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Interactuar con tu mascota es saludable para ambos</p>
+            <p>{{longTextCuidados}}</p>
+          </mat-card-content>
+          <mat-card-actions style="color: blue;">
+            <button mat-button onclick="window.location.href='https://www.worldanimalprotection.cr/noticias/conoce-los-cuidados-que-necesita-tu-mascota-y-como-te-puedes-beneficiar-de-ellos#:~:text=Agua%20fresca%20disponible%20siempre%20y,y%20juego%20con%20la%20bola'">Articulo</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+
+

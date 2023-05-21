@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-lista-citas',
@@ -9,40 +10,82 @@ import { Component } from '@angular/core';
 export class ListaCitasComponent {
   URL_BASE = 'http://localhost:3000/api/';
   citasList: any[] = [];
-  listaAux: any[] = [];
+  //listaAux: any[] = [];
     constructor(private httpClient: HttpClient) { }
   
     ngOnInit(): void {
       this.getCitasAgendadas();
       
     }
+    getCitasAgendadas_():Observable<any> {
+      return this.httpClient.get<any[]>(this.URL_BASE + 'citas');
+    }
 
     getCitasAgendadas() {
-      this.httpClient.get<any[]>(this.URL_BASE + 'citas').subscribe(
+      this.getCitasAgendadas_().subscribe(
         (res) => {
-          this.listaAux = res;
-          this.listaAux.forEach(element => {
-            let mascota = this.getMascota(element.Mascota_id_mascota);
-            element.mascota = mascota;
-          });
-        
+          const auxLista = res;
+
+          this.citasList = res;
+          //console.log(auxLista);
+          for(let i = 0; i < auxLista.length; i++){
+            const nombre = this.getMascota(auxLista[i].Mascota_id_mascota).subscribe
+            ((res) => {
+              console.log(res);
+              auxLista[i].Mascota_id_mascota = res.nombre;
+            },
+            (error) => {
+              console.log(error);
+            });
+           
+          }
+
+
         },
         (error) => {
           console.log(error);
         }
       );
+      
     }
 
-    getMascota(idMascota: number) {
-      let mascota = this.httpClient.get<any[]>(this.URL_BASE + 'mascotas/' + idMascota).subscribe(
+
+    /*getCitasAgendadas() {
+      this.httpClient.get<any[]>(this.URL_BASE + 'citas').subscribe(
         (res) => {
-          return res;
+          this.listaAux = res;  
+          this.citasList = res;
+          console.log(this.listaAux);
         },
         (error) => {
           console.log(error);
         }
       );
-      return mascota;
+      this.getMascotas_();
+
+     
+    }*/
+
+    getMascota(idMascota: number): Observable<any> {
+      return this.httpClient.get(`${this.URL_BASE}mascotas/${idMascota}`);
     }
+    
+
+    // getMascota(idMascota: number) {
+    //   let mascota;
+    //   this.httpClient.get(`${this.URL_BASE}mascotas/${idMascota}`).subscribe(
+    //     (res) => {
+    //       mascota = res;
+    //       console.log(mascota);
+    //       return res;
+    //     },
+    //     (error) => {
+    //       console.log(error);
+    //     }
+    //   );
+      
+    // }
+
+    
   
 }

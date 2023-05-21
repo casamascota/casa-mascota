@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
+import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
+import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
 
 //----Modulos
 import { FormsModule } from '@angular/forms';
@@ -27,6 +29,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
 import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
 import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
@@ -37,6 +41,8 @@ import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lis
     MascotaFormularioComponent,
     AgregarRegistroComponent,
     ListasRegistrosComponent,
+    RecursosEducativosComponent,
+    ActualizarRegistroComponent,
     ReservaCitaComponent,
     ListaCitasComponent,
     ListaMascotasComponent,
@@ -60,6 +66,8 @@ import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lis
     MatTooltipModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCardModule,
+    MatGridListModule,
   ],
   providers: [],
 
