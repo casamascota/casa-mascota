@@ -12,7 +12,7 @@
      </tr>
    </thead>
    <tbody>
-     <tr *ngFor="let mascota of mascotas">
+     <tr *ngFor="let mascota of mascotas" (click)="abrirDetalleMascota(mascota)">
        <td>{{ mascota.id_mascota }}</td>
        <td>{{ mascota.nombre }}</td>
        <td>{{ mascota.raza }}</td>

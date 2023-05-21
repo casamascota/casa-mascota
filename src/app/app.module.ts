@@ -34,6 +34,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
 import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
 import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
+import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lis
     ReservaCitaComponent,
     ListaCitasComponent,
     ListaMascotasComponent,
+    DetallesMascotaComponent,
+    FormRevisionComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +73,7 @@ import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lis
     MatNativeDateModule,
     MatCardModule,
     MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
 

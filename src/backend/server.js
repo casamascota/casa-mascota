@@ -14,6 +14,7 @@ const ownerRoute = require('./api/v1/routes/owner_route');
 const mascotaRoute = require('./api/v1/routes/mascota_route');
 const servicioRoute = require('./api/v1/routes/servicio_route');
 const citaRoute = require('./api/v1/routes/citaagendada_route');
+const cirugiaRoute = require('./api/v1/routes/cirugia_route');
 const cors = require('cors');
 
 app.use(cors({origin: '*'})
@@ -28,6 +29,8 @@ app.use('/api/owners', ownerRoute);
 app.use('/api/mascotas', mascotaRoute);
 app.use('/api/servicios', servicioRoute);
 app.use('/api/citas', citaRoute);
+app.use('/api/cirugias', cirugiaRoute);
+app.use('/api/revision', revisionRoute);
 app.get('/', (req, res) => {
   res.send('Hola desde Express.js!');
 });
