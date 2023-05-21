@@ -22,7 +22,7 @@ export class DoctoresService {
         const url = this.URL_BASE + 'doctores';
      this.httpClient.get(url).subscribe(
       (res: any) => {
-        console.log(res);
+        console.log("Servicio" + res);
         this.listDoctor = res; // Asignar las mascotas recuperadas a la variable mascotas
       },
       err => {

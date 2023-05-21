@@ -6,6 +6,7 @@ import { AdopcionesComponent } from './Componentes/Usuario/mascotasAdopcion/adop
 import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
 
 import { MascotaFormularioComponent } from './mascota-formulario/mascota-formulario.component';
+import { ReservaCitaComponent } from './Componentes/reserva-cita/reserva-cita.component';
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "adopciones", component: AdopcionesComponent},
   { path: "registro", component: ListasRegistrosComponent },
   { path: "agregar_registro", component: AgregarRegistroComponent },
+  { path: "citas", component: ReservaCitaComponent },
 ];
 
 

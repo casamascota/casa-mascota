@@ -24,13 +24,27 @@ exports.getServicioById = (req, res) => {
 }
 
 exports.createServicio = (req, res) => {
+  
   const servicio = req.body
   console.log(servicio)
-  Servicio.createEstilista(servicio, (err) => {
+  Servicio.createServicio(servicio, (err) => {
     if (err) {
       res.status(500).json({ error: 'Error creando el servicio' })
     } else {
       res.json({ message: 'Servicio creado exitosamente' })
+    }
+  })
+}
+
+exports.getIdByServicio = (req, res) => {
+  const tipo = req.params.tipo
+  Servicio.getIdServicio(tipo, (err, servicio) => {
+    if (err) {
+      res.status(500).json({ error: 'Error obteniendo el servicio' })
+    } else if (!servicio) {
+      res.status(404).json({ error: `Servicio con tipo ${tipo} no encontrado` })
+    } else {
+      res.json(servicio)
     }
   })
 }

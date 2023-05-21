@@ -11,9 +11,11 @@ db.run(`CREATE TABLE IF NOT EXISTS Mascota (
    genero varchar(50) NOT NULL,
    fecha_nacimiento datetime NOT NULL,
    peso double NOT NULL,
+   isAdopted boolean NOT NULL,
    Owner_id_owner integer NOT NULL,
    CONSTRAINT Mascota_Owner FOREIGN KEY (Owner_id_owner)
    REFERENCES Owner (id_owner)
+   
 );`);
 
 // Función para obtener todas las mascotas
