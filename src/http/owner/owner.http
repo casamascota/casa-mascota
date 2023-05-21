@@ -4,9 +4,9 @@ Content-Type: application/json
   {
    "id_owner": 3,
    "nombre": "Pedro",
-   "apellido": "López",
-   "numero_tel": "5555555555",
-   "direccion": "Calle Secundaria, Ciudad"
+   "apellido": "Picapiedra",
+   "numero_tel": "12345",
+   "direccion": "Calle Secundaria, Ciudad 33"
   }
 
 ###

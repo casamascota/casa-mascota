@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {  
    "id_servicio":2,
-   "tipo": "Revisión Médica",
+   "tipo": "Peluqeuria",
    "costo": 50
 }
 

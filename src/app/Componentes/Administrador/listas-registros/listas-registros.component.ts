@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListasRegistrosComponent implements OnInit {
   URL_BASE = 'http://localhost:3000/api/';
-  listDoctores: Doctor_Admin [] = [];
+  listDoctores: Doctor_Admin[] = [];
 
   displayedColumns: string[] = ['id_doctor', 'nombre', 'apellido', 'telefono', 'direccion', 'acciones'];
   dataSource!: MatTableDataSource<Doctor_Admin>;
@@ -21,7 +21,6 @@ export class ListasRegistrosComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.cargarDoctores();
   }
 
   cargarDoctores() {
@@ -50,5 +49,7 @@ export class ListasRegistrosComponent implements OnInit {
     console.log(id);
     this.cargarDoctores();
   }
+
+  
 
 }

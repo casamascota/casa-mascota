@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { DoctoresService } from '../../services/doctor.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./agregar-registro.component.css']
 })
 
-export class AgregarRegistroComponent {
+export class AgregarRegistroComponent{
   selectedForm: string;
   formularioAdmDoc: FormGroup;
   formularioEnfermero: FormGroup;
@@ -59,6 +60,7 @@ export class AgregarRegistroComponent {
     });
 
     this.selectedForm = 'doctor/admin';
+  
   }
   
   enviarFormularioAdmDoc() {
@@ -108,4 +110,6 @@ export class AgregarRegistroComponent {
       console.log(this.formularioEstilista.value);
     }
   }
+
+  
 }
