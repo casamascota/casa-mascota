@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MascotaFormularioComponent } from './mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
-import { AgendarCitaComponent } from './Componentes/Usuario/agendarCita/agendarCita.component';
 
 //----Modulos
 import { FormsModule } from '@angular/forms';
@@ -36,7 +35,6 @@ import { ListaCitasComponent } from './Componentes/lista-citas/lista-citas.compo
     AppComponent,
     MascotaFormularioComponent,
     AgregarRegistroComponent,
-    AgendarCitaComponent,
     ListasRegistrosComponent,
     ReservaCitaComponent,
     ListaCitasComponent,

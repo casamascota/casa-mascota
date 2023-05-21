@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
 db.run(`CREATE TABLE Diagnostico (
    id_diagnostico integer NOT NULL CONSTRAINT Diagnostico_pk PRIMARY KEY,
