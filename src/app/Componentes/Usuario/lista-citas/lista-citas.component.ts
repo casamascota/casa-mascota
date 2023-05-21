@@ -27,11 +27,9 @@ export class ListaCitasComponent {
           const auxLista = res;
 
           this.citasList = res;
-          //console.log(auxLista);
           for(let i = 0; i < auxLista.length; i++){
             const nombre = this.getMascota(auxLista[i].Mascota_id_mascota).subscribe
             ((res) => {
-              console.log(res);
               auxLista[i].Mascota_id_mascota = res.nombre;
             },
             (error) => {
@@ -39,7 +37,16 @@ export class ListaCitasComponent {
             });
            
           }
+          for(let i = 0; i < auxLista.length; i++){
+            const nombre = this.getServicio(auxLista[i].Servicio_id_servicio).subscribe
+            ((res) => {
+              auxLista[i].Servicio_id_servicio = res.tipo;
+            },
+            (error) => {
+              console.log(error);
+            });
 
+          }
 
         },
         (error) => {
@@ -49,42 +56,21 @@ export class ListaCitasComponent {
       
     }
 
+   
 
-    /*getCitasAgendadas() {
-      this.httpClient.get<any[]>(this.URL_BASE + 'citas').subscribe(
-        (res) => {
-          this.listaAux = res;  
-          this.citasList = res;
-          console.log(this.listaAux);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-      this.getMascotas_();
 
-     
-    }*/
+    
 
     getMascota(idMascota: number): Observable<any> {
       return this.httpClient.get(`${this.URL_BASE}mascotas/${idMascota}`);
     }
+
+    getServicio(idServicio: number): Observable<any> {
+      return this.httpClient.get(`${this.URL_BASE}servicios/${idServicio}`);
+    }
     
 
-    // getMascota(idMascota: number) {
-    //   let mascota;
-    //   this.httpClient.get(`${this.URL_BASE}mascotas/${idMascota}`).subscribe(
-    //     (res) => {
-    //       mascota = res;
-    //       console.log(mascota);
-    //       return res;
-    //     },
-    //     (error) => {
-    //       console.log(error);
-    //     }
-    //   );
-      
-    // }
+   
 
     
   
