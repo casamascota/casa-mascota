@@ -54,8 +54,8 @@ exports.createDoctor = (doctor, callback) => {
 
 // Función para actualizar un doctor existente
 exports.updateDoctor = (id, doctor, callback) => {
-  const { nombre, apellido, telefono, direccion } = doctor
-  db.run('UPDATE Doctor SET nombre = ?, apellido = ?, numero_tel = ?, direccion = ? WHERE id_doctor = ?', [nombre, apellido, telefono, direccion, id], (err) => {
+  const { nombre, apellido, numero_tel, direccion } = doctor
+  db.run('UPDATE Doctor SET nombre = ?, apellido = ?, numero_tel = ?, direccion = ? WHERE id_doctor = ?', [nombre, apellido, numero_tel, direccion, id], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)

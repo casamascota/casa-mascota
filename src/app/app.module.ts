@@ -12,6 +12,8 @@ import { MascotaFormularioComponent } from './mascota-formulario/mascota-formula
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
 import { AgendarCitaComponent } from './Componentes/Usuario/agendarCita/agendarCita.component';
+import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
+import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
 
 //----Modulos
 import { FormsModule } from '@angular/forms';
@@ -28,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     AgregarRegistroComponent,
     AgendarCitaComponent,
     ListasRegistrosComponent,
+    RecursosEducativosComponent,
+    ActualizarRegistroComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +62,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatTooltipModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCardModule,
+    MatGridListModule,
   ],
   providers: [],
 
