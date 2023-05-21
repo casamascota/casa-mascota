@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-
 const doctorRoute = require('./api/v1/routes/doctor_route');
 const estilistaRoute = require('./api/v1/routes/estilista_route');
 const enfermeroRoute = require('./api/v1/routes/enfermero_route');

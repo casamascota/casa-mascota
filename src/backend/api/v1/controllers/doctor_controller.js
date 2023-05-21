@@ -25,6 +25,8 @@ exports.getDoctorById = (req, res) => {
 
 exports.createDoctor = (req, res) => {
   const doctor = req.body
+  res.setHeader('Content-Type', 'application/json');
+
   console.log(doctor)
   Doctor.createDoctor(doctor, (err) => {
     if (err) {
