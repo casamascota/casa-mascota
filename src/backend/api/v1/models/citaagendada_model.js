@@ -1,12 +1,12 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
 db.run(`CREATE TABLE IF NOT EXISTS Cita_Agendada (
     id_cita integer NOT NULL CONSTRAINT Cita_Agendada_pk PRIMARY KEY,
     fecha datetime NOT NULL,
-    tipo varchar(50) NOT NULL,
+    hora time NOT NULL,
     Mascota_id_mascota integer NOT NULL,
     Servicio_id_servicio integer NOT NULL,
     CONSTRAINT Cita_Agendada_Mascota FOREIGN KEY (Mascota_id_mascota)
@@ -69,10 +69,10 @@ exports.getCitaAgendadaByTipoServiciosql = (tipoServicio, callback) => {
 // Función para crear una nueva cita agendada o
 // *****Reserva de citas por internet.******
 exports.createCitaAgendadasql = (citaagendada, callback) => {
-  const { id, fecha, tipo, Mascota_id_mascota, Servicio_id_servicio } = citaagendada;
+  const { id, fecha, hora, Mascota_id_mascota, Servicio_id_servicio } = citaagendada;
   db.run(
-    'INSERT INTO Cita_Agendada (id_cita, fecha, tipo, Mascota_id_mascota, Servicio_id_servicio) VALUES (?, ?, ?, ?, ?)',
-    [id, fecha, tipo, Mascota_id_mascota, Servicio_id_servicio],
+    'INSERT INTO Cita_Agendada (id_cita, fecha, hora, Mascota_id_mascota, Servicio_id_servicio) VALUES (?, ?, ?, ?, ?)',
+    [id, fecha, hora, Mascota_id_mascota, Servicio_id_servicio],
     (err) => {
       if (err) {
         console.error(err.message);

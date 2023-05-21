@@ -8,10 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 //----Componentes
-import { MascotaFormularioComponent } from './mascota-formulario/mascota-formulario.component';
+import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
-import { AgendarCitaComponent } from './Componentes/Usuario/agendarCita/agendarCita.component';
 import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
 import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
 
@@ -32,16 +31,21 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
+import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
+import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MascotaFormularioComponent,
     AgregarRegistroComponent,
-    AgendarCitaComponent,
     ListasRegistrosComponent,
     RecursosEducativosComponent,
     ActualizarRegistroComponent,
+    ReservaCitaComponent,
+    ListaCitasComponent,
+    ListaMascotasComponent,
   ],
   imports: [
     BrowserModule,

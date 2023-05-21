@@ -1,16 +1,15 @@
 <div>
-  <mat-form-field>
-    <mat-label>Añadir</mat-label>
-    <select [(ngModel)] = "selectedForm" matNativeControl required>
+  <form>
+    <label>Añadir<label>
+    <select>
       <option value="doctor/admin">Doctor</option>
       <option value="enfermero">Enfermero</option>
       <option value="mascota">Mascota</option>
       <option value="owner">Tutor</option>
       <option value="estilista">Estilista</option>
     </select>
-  </mat-form-field>
-</div>
-
+  <form>
+ 
 <div class="body">
   <div class="center">
     <ng-container [ngSwitch]="selectedForm">

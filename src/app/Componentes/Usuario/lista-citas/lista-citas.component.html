@@ -1,0 +1,20 @@
+<table class="citas-table">
+  <thead>
+    <tr>
+      <th>ID Cita</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Mascota</th>
+      <th>Servicio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cita of citasList">
+      <td>{{ cita.id_cita }}</td>
+      <td>{{ cita.fecha }}</td>
+      <td>{{ cita.hora }}</td>
+      <td>{{ cita.Mascota_id_mascota }}</td>
+      <td>{{ cita.Servicio_id_servicio }}</td>
+    </tr>
+  </tbody>
+</table>

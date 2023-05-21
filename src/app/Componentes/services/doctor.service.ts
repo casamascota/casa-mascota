@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Doctor_Admin } from "../interfaces/doctor-adm";
 import { HttpClient } from "@angular/common/http";
-import { Subscription } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -23,7 +22,7 @@ export class DoctoresService {
      this.httpClient.get(url).subscribe(
       (res: any) => {
         console.log(res);
-        this.listDoctor = res; // Asignar las mascotas recuperadas a la variable mascotas
+        this.listDoctor = res; 
       },
       err => {
         console.log(err);
