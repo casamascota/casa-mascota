@@ -8,6 +8,7 @@ import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEduca
 import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
 import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
+import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
@@ -17,6 +18,9 @@ const routes: Routes = [
   { path: "agregar_registro", component: AgregarRegistroComponent },
   { path: "citas", component: ReservaCitaComponent },
   { path: "citas-agendadas", component: ListaCitasComponent },
+  { path: "lista-mascotas", component: ListaMascotasComponent },
+
+
   
 ];
 

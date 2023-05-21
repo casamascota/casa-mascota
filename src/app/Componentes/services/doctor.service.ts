@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Doctor_Admin } from "../interfaces/doctor-adm";
 import { HttpClient } from "@angular/common/http";
-import { Subscription } from "rxjs";
 
 @Injectable({
     providedIn: 'root'

@@ -29,7 +29,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
 import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
-import { ListaMascotasComponent } from './Usuario/lista-mascotas/lista-mascotas.component';
+import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
 
 @NgModule({
   declarations: [
