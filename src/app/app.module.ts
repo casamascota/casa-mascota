@@ -29,6 +29,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReservaCitaComponent } from './Componentes/reserva-cita/reserva-cita.component';
+import { ListaCitasComponent } from './Componentes/lista-citas/lista-citas.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ReservaCitaComponent } from './Componentes/reserva-cita/reserva-cita.co
     AgendarCitaComponent,
     ListasRegistrosComponent,
     ReservaCitaComponent,
+    ListaCitasComponent,
   ],
   imports: [
     BrowserModule,

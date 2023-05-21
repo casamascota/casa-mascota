@@ -30,8 +30,8 @@ export class ReservaCitaComponent {
         id_cita: this.reservaForm.value.id_cita,
         fecha: this.reservaForm.value.fecha,
         hora: this.reservaForm.value.hora,
-        Servicio_id_servicio: this.idServicio,
-        Mascota_id_mascota: this.reservaForm.value.id_mascota
+        Mascota_id_mascota: this.reservaForm.value.id_mascota,
+        Servicio_id_servicio: this.reservaForm.value.id_servicio
 
       }).subscribe(
         (res) => {
