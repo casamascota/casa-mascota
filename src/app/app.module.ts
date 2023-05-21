@@ -6,11 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-<<<<<<< HEAD
-import {MatInputModule} from '@angular/material/input';
-import { TestComponentComponent } from './test-component/test-component.component';
-import {  HttpClientModule } from '@angular/common/http';
-=======
 
 //----Componentes
 import { MascotaFormularioComponent } from './mascota-formulario/mascota-formulario.component';
@@ -33,31 +28,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
->>>>>>> Front-Cristopher
 
 @NgModule({
   declarations: [
     AppComponent,
     MascotaFormularioComponent,
-<<<<<<< HEAD
-    TestComponentComponent,
-    
-=======
     AgregarRegistroComponent,
     AgendarCitaComponent,
     ListasRegistrosComponent,
->>>>>>> Front-Cristopher
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-    MatInputModule,
-    ReactiveFormsModule,
-    HttpClientModule
-    
-=======
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
@@ -73,7 +56,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatTooltipModule,
     MatDatepickerModule,
     MatNativeDateModule,
->>>>>>> Front-Cristopher
   ],
   providers: [],
 
