@@ -5,9 +5,9 @@ import { ListasRegistrosComponent } from './Componentes/Administrador/listas-reg
 import { AdopcionesComponent } from './Componentes/Usuario/mascotasAdopcion/adopciones.component';
 import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
 
-import { MascotaFormularioComponent } from './mascota-formulario/mascota-formulario.component';
-import { ReservaCitaComponent } from './Componentes/reserva-cita/reserva-cita.component';
-import { ListaCitasComponent } from './Componentes/lista-citas/lista-citas.component';
+import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
+import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
+import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },

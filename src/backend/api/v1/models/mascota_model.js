@@ -12,7 +12,7 @@ db.run(`CREATE TABLE IF NOT EXISTS Mascota (
    fecha_nacimiento datetime NOT NULL,
    peso double NOT NULL,
    isAdopted boolean NOT NULL,
-   Owner_id_owner integer NOT NULL,
+   Owner_id_owner integer,
    CONSTRAINT Mascota_Owner FOREIGN KEY (Owner_id_owner)
    REFERENCES Owner (id_owner)
    
@@ -57,10 +57,10 @@ exports.getMascotasByOwnerId = (ownerId, callback) => {
 
 // Función para crear una nueva mascota
 exports.createMascota = (mascota, callback) => {
-  const { id, nombre, raza, edad, genero, fechaNac, peso, idOwner } = mascota;
+  const { id, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner } = mascota;
   db.run(
-    'INSERT INTO Mascota (id_mascota, nombre, raza, edad, genero, fecha_nacimiento, peso, Owner_id_owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-    [id, nombre, raza, edad, genero, fechaNac, peso, idOwner],
+    'INSERT INTO Mascota (id_mascota, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    [id, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner],
     (err) => {
       if (err) {
         console.error(err.message);

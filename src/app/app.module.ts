@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 //----Componentes
-import { MascotaFormularioComponent } from './mascota-formulario/mascota-formulario.component';
+import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
 
@@ -27,8 +27,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { ReservaCitaComponent } from './Componentes/reserva-cita/reserva-cita.component';
-import { ListaCitasComponent } from './Componentes/lista-citas/lista-citas.component';
+import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
+import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
+import { ListaMascotasComponent } from './Usuario/lista-mascotas/lista-mascotas.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ListaCitasComponent } from './Componentes/lista-citas/lista-citas.compo
     ListasRegistrosComponent,
     ReservaCitaComponent,
     ListaCitasComponent,
+    ListaMascotasComponent,
   ],
   imports: [
     BrowserModule,
