@@ -1,20 +1,34 @@
 import { Injectable } from "@angular/core";
 import { Doctor_Admin } from "../interfaces/doctor-adm";
+import { HttpClient } from "@angular/common/http";
+import { Subscription } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class DoctoresService {
-    
-    listDocAdm: Doctor_Admin[] = [
-        {id_doctor: 1, nombre: 'Doc', apellido: 'Tor', telefono: 911, direccion: 'Cruz Roja'},
-        {id_doctor: 2, nombre: 'Doc', apellido: 'Tor', telefono: 911, direccion: 'Cruz Roja'},
-    ];
+    URL_BASE = 'http://localhost:3000/api/';
 
-    constructor() { }
+    //listDocAdm: Doctor_Admin[] = [];
+
+    listDoctor: Doctor_Admin[] = [];
+
+    constructor(private httpClient: HttpClient) { 
+        this.getDoctores();
+    }
 
     getDoctores() {
-        return this.listDocAdm.slice();
-    }
+        const url = this.URL_BASE + 'doctores';
+     this.httpClient.get(url).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.listDoctor = res; // Asignar las mascotas recuperadas a la variable mascotas
+      },
+      err => {
+        console.log(err);
+      }
+    );
+    return this.listDoctor;
+  }
 }

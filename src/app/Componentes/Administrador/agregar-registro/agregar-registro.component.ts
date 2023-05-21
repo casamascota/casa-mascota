@@ -22,7 +22,7 @@ export class AgregarRegistroComponent {
       id_doctor: [null, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
-      telefono: [null, Validators.required],
+      numero_tel: [null, Validators.required],
       direccion: [null, Validators.required],
     });
     this.formularioEnfermero = this.formBuilder.group({
