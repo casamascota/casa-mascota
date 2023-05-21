@@ -17,54 +17,92 @@ export class ListaCitasComponent {
       this.getCitasAgendadas();
       
     }
-    getCitasAgendadas_():Observable<any> {
+
+    /* Este método se encarga de obtener las citas agendadas */
+    _getCitasAgendadas():Observable<any> {
       return this.httpClient.get<any[]>(this.URL_BASE + 'citas');
     }
 
-    getCitasAgendadas() {
-      this.getCitasAgendadas_().subscribe(
-        (res) => {
-          const auxLista = res;
+    /* Este se encarga de formatear, es decir agarra el id de la mascota y el id del
+    servicio y los cambia por el nombre de la mascota y el tipo de servicio */
 
-          this.citasList = res;
-          for(let i = 0; i < auxLista.length; i++){
-            const nombre = this.getMascota(auxLista[i].Mascota_id_mascota).subscribe
-            ((res) => {
-              auxLista[i].Mascota_id_mascota = res.nombre;
-            },
-            (error) => {
-              console.log(error);
-            });
-           
+    /**
+ * Recupera las citas agendadas y realiza modificaciones en los datos obtenidos.
+ */
+getCitasAgendadas() {
+  this._getCitasAgendadas().subscribe(
+    /**
+     * Se ejecuta cuando se recibe una respuesta exitosa.
+     * @param {any} res - La respuesta recibida.
+     */
+    (res) => {
+      // Almacenar la respuesta en una variable auxiliar
+      const auxLista = res;
+
+      // Actualizar la propiedad this.citasList con la respuesta recibida
+      this.citasList = res;
+
+      // Iterar sobre cada elemento de auxLista
+      for(let i = 0; i < auxLista.length; i++){
+        // Llamar a this.getMascota con el ID de mascota actual
+        this.getMascota(auxLista[i].Mascota_id_mascota).subscribe(
+          /**
+           * Se ejecuta cuando se recibe una respuesta exitosa.
+           * @param {any} res - La respuesta recibida.
+           */
+          (res) => {
+            // Actualizar el nombre de la mascota en el objeto actual de auxLista
+            auxLista[i].Mascota_id_mascota = res.nombre;
+          },
+          /**
+           * Se ejecuta cuando se produce un error.
+           * @param {any} error - El error recibido.
+           */
+          (error) => {
+            console.log(error);
           }
-          for(let i = 0; i < auxLista.length; i++){
-            const nombre = this.getServicio(auxLista[i].Servicio_id_servicio).subscribe
-            ((res) => {
-              auxLista[i].Servicio_id_servicio = res.tipo;
-            },
-            (error) => {
-              console.log(error);
-            });
+        );
+      }
 
+      // Iterar sobre cada elemento de auxLista
+      for(let i = 0; i < auxLista.length; i++){
+        // Llamar a this.getServicio con el ID de servicio actual
+        this.getServicio(auxLista[i].Servicio_id_servicio).subscribe(
+          /**
+           * Se ejecuta cuando se recibe una respuesta exitosa.
+           * @param {any} res - La respuesta recibida.
+           */
+          (res) => {
+            // Actualizar el tipo de servicio en el objeto actual de auxLista
+            auxLista[i].Servicio_id_servicio = res.tipo;
+          },
+          /**
+           * Se ejecuta cuando se produce un error.
+           * @param {any} error - El error recibido.
+           */
+          (error) => {
+            console.log(error);
           }
-
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-      
+        );
+      }
+    },
+    /**
+     * Se ejecuta cuando se produce un error.
+     * @param {any} error - El error recibido.
+     */
+    (error) => {
+      console.log(error);
     }
+  );
+}
 
-   
 
-
-    
-
+    /* Obtiene la mascota por id*/
     getMascota(idMascota: number): Observable<any> {
       return this.httpClient.get(`${this.URL_BASE}mascotas/${idMascota}`);
     }
 
+    /* Obtiene el servicio por id*/
     getServicio(idServicio: number): Observable<any> {
       return this.httpClient.get(`${this.URL_BASE}servicios/${idServicio}`);
     }
