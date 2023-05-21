@@ -8,6 +8,8 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./test-component.component.css']
 })
 export class TestComponentComponent {
+  mascotas: any[] = [];
+
   mascotaForm: FormGroup;
   URL_BASE = 'http://localhost:3000/api/';
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
@@ -22,6 +24,7 @@ export class TestComponentComponent {
       peso: [null, Validators.required],
       idOwner: [null, Validators.required]
     });
+    this.getMascotas();
   }
 
   onSubmit() {
@@ -42,5 +45,22 @@ export class TestComponentComponent {
       console.log("Formulario invalido");
     }
   }
+  onInit(){
+    this.getMascotas();
+  }
+  
+  getMascotas() {
+    const url = this.URL_BASE + 'mascotas';
+    this.http.get(url).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.mascotas = res; // Asignar las mascotas recuperadas a la variable mascotas
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+  
 
 }
