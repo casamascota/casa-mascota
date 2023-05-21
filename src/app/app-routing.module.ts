@@ -12,6 +12,7 @@ import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva
 import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
 import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
+import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
@@ -23,7 +24,9 @@ const routes: Routes = [
   { path: "citas", component: ReservaCitaComponent },
   { path: "citas-agendadas", component: ListaCitasComponent },
   { path: "lista-mascotas", component: ListaMascotasComponent },
-  { path: "revision" , component: FormRevisionComponent}
+  { path: "revision" , component: FormRevisionComponent},
+  { path: "estilista" , component: FormEstilistaComponent}
+
 
 
   

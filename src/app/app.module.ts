@@ -37,6 +37,7 @@ import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lis
 import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
+import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { FormRevisionComponent } from './Componentes/Administrador/form-revision
     ListaMascotasComponent,
     DetallesMascotaComponent,
     FormRevisionComponent,
+    FormEstilistaComponent,
   ],
   imports: [
     BrowserModule,
