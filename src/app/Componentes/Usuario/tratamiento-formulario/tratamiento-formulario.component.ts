@@ -15,7 +15,7 @@ export class TratamientoFormularioComponent {
       id_trat: ['',Validators.required],
       fecha_inicio: ['',Validators.required],
       fecha_final: ['',Validators.required],
-      id_diagnostico: ['',Validators.required]
+      Diagnostico_id_diagnostico: ['',Validators.required]
      
     });
   }

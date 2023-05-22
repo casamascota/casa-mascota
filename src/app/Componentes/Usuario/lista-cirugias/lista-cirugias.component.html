@@ -1,1 +1,23 @@
-<p>lista-cirugias works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID Cirugia</th>
+        <th>Fecha</th>
+        <th>Cirugia Realizada</th>
+        <th>Doctor</th>
+        <th>Enfermero</th>
+        <th>Diagnostico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cirugia of cirugiasList" (click)="abrirDetalleCirugia(cirugia)">
+        <td>{{ cirugia.id_cirugia }}</td>
+        <td>{{ cirugia.fecha }}</td>
+        <td>{{ cirugia.cirugiahecha }}</td>
+        <td>{{ cirugia.Doctor_id_doctor }}</td>
+        <td>{{ cirugia.Enfermero_id_enfermero }}</td>
+        <td>{{ cirugia.Diagnostico_id_diagnostico }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
