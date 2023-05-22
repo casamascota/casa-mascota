@@ -37,8 +37,6 @@ const routes: Routes = [
   { path: "cirugia-formulario" , component: CirugiaFormularioComponent},
   { path: "lista-cirugia" , component: ListaCirugiasComponent},
   { path: "lista-tratamientos" , component: ListaTratamientosComponent},
-  { path: "lista-tratamiento" , component: ListaCirugiasComponent},
-  { path: "lista-cirugia" , component: ListaTratamientosComponent},
 
 
 
