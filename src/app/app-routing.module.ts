@@ -22,8 +22,9 @@ import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamie
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
-  { path: "", component: RecursosEducativosComponent},
+  //{ path: "", component: RecursosEducativosComponent},
   { path: "adopciones", component: AdopcionesComponent},
+  { path: "recursoseducativos", component: RecursosEducativosComponent},
   { path: "registro", component: ListasRegistrosComponent },
   { path: "agregar_registro", component: AgregarRegistroComponent },
   { path: 'actualizar_registro_doc', component: ActualizarRegistroComponent },
