@@ -14,24 +14,27 @@ export class ListaMascotasComponent implements OnInit {
   mascotasList: any[] = [];
 
   constructor(private httpClient: HttpClient,private dialog: MatDialog) {
-  this.getAllMascotas();
-  this.getOwner();
+  this.getListaFormateada();
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
   getAllMascotas() {
       this.httpClient.get(this.URL_BASE + 'mascotas').subscribe(
          (res: any) => {
          this.mascotasList = res;
-         console.log(this.mascotasList);
+         //console.log(this.mascotasList);
       },
       err => {
          console.log(err);
          }
       );
    }
+
+  _getMascotas(): Observable<any> {
+    return this.httpClient.get<any[]>(this.URL_BASE + 'mascotas');
+  }
 
    abrirDetalleMascota(mascota: any) {
       const dialogRef = this.dialog.open(DetallesMascotaComponent, {
@@ -42,30 +45,21 @@ export class ListaMascotasComponent implements OnInit {
 
 
   _getOwner(): Observable<any> {
-    return this.httpClient.get<any[]>(this.URL_BASE + 'owner');
+    return this.httpClient.get<any[]>(this.URL_BASE + 'owners');
   }
 
-  getOwner() {
-    this._getOwner().subscribe(
+  getListaFormateada() {
+    this._getMascotas().subscribe(
       (res) => {
         const auxLista = res;
         this.mascotasList = res;
 
         for (let i = 0; i < auxLista.length; i++) {
-          this.getMascota(auxLista[i].Mascota_id_mascota).subscribe(
-            (res) => {
-              auxLista[i].Mascota_id_mascota = res.nombre;
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
-        }
-
-        for (let i = 0; i < auxLista.length; i++) {
           this.getOwnerById(auxLista[i].Owner_id_owner).subscribe(
             (res) => {
-              auxLista[i].Owner_id_owner = res.nombre;
+              auxLista[i].Owner_id_owner = res.nombre + " " + res.apellido;
+              console.log(auxLista[i].Owner_id_owner);
+              this.mascotasList = auxLista;
             },
             (error) => {
               console.log(error);
@@ -84,6 +78,6 @@ export class ListaMascotasComponent implements OnInit {
   }
 
   getOwnerById(idOwner: number): Observable<any> {
-    return this.httpClient.get(`${this.URL_BASE}owner/${idOwner}`);
+    return this.httpClient.get(`${this.URL_BASE}owners/${idOwner}`);
   }
 }
