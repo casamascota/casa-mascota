@@ -38,6 +38,11 @@ import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
 import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
+import { TratamientoFormularioComponent } from './Componentes/Usuario/tratamiento-formulario/tratamiento-formulario.component';
+import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
+import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formulario/cirugia-formulario.component';
+import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
+import { DetalleTratamientoComponent } from './Componentes/Usuario/detalle-tratamiento/detalle-tratamiento.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import { FormEstilistaComponent } from './Componentes/Administrador/form-estilis
     DetallesMascotaComponent,
     FormRevisionComponent,
     FormEstilistaComponent,
+    TratamientoFormularioComponent,
+    ListaTratamientosComponent,
+    CirugiaFormularioComponent,
+    ListaCirugiasComponent,
+    DetalleTratamientoComponent,
   ],
   imports: [
     BrowserModule,
