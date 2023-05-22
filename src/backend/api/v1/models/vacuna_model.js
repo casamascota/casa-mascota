@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3');
 
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 //Crear la tabla si no existe
 db.run(`CREATE TABLE IF NOT EXISTS Vacuna (
     id_vacuna integer NOT NULL CONSTRAINT Vacuna_pk PRIMARY KEY,
