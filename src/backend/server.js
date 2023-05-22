@@ -15,7 +15,10 @@ const citaRoute = require("./api/v1/routes/citaagendada_route");
 const cirugiasRoute = require("./api/v1/routes/cirugia_route");
 const tratamientosRoute = require("./api/v1/routes/tratamiento_route");
 const diagnosticosRoute = require("./api/v1/routes/diagnostico_route");
+const medicamentosRoute = require("./api/v1/routes/medicamentos_route");
+const vacunasRoute = require("./api/v1/routes/vacuna_route");
 const emailRoutes = require('./api/v1/routes/email_route');
+const tratamientoMedRoute = require("./api/v1/routes/tratamiento_med_route");
 const cors = require("cors");
 
 app.use(cors({ origin: "*" }));
@@ -32,6 +35,9 @@ app.use("/api/cirugias", cirugiasRoute);
 app.use("/api/tratamientos", tratamientosRoute);
 app.use("/api/diagnosticos", diagnosticosRoute);
 app.use("/api/revision", revisionRoute);
+app.use("/api/medicamentos", medicamentosRoute);
+app.use("/api/vacunas", vacunasRoute);
+app.use("/api/tratamientoMed", tratamientoMedRoute);
 app.use('/api/email', emailRoutes);
 
 app.get("/", (req, res) => {
