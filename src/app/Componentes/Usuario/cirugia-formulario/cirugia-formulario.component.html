@@ -1,0 +1,35 @@
+
+
+<h2>Formulario para Registro de Cirugias</h2>
+<form [formGroup]="formCirugia" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id_cirugia">ID de cirugia:</label>
+    <input type="number" id="id_cirugia" name="id_cirugia" formControlName="id_cirugia">
+  </div>
+
+  <div>
+    <label for="fecha">Fecha de la cirugia:</label>
+    <input type="date" id="fecha" name="fecha" formControlName="fecha">
+  </div>
+
+  <div>
+    <label for="cirugiahecha">Cirugia realizada:</label>
+    <input type="checkbox" id="cirugiahecha" name="cirugiahecha" [value]="formCirugia.value.cirugiahecha" formControlName="cirugiahecha">
+    <label>(pendiente)</label>
+  </div>
+   
+  <div>
+    <label for="Doctor_id_doctor">ID del Dueño:</label>
+    <input type="number" id="Doctor_id_doctor" name="Doctor_id_doctor" formControlName="Doctor_id_doctor">
+  </div>
+  <div>
+    <label for="Enfermero_id_enfermero">ID del Enfemero:</label>
+    <input type="Enfermero_id_enfermero" id="Enfermero_id_enfermero" name="id_dueno" formControlName="Enfermero_id_enfermero">
+  </div>
+  <div>
+    <label for="Diagnostico_id_diagnostico">ID del Dueño:</label>
+    <input type="number" id="Diagnostico_id_diagnostico" name="Diagnostico_id_diagnostico" formControlName="Diagnostico_id_diagnostico">
+  </div>
+
+  <button type="submit">Enviar</button>
+</form>

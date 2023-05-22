@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
 db.run(`CREATE TABLE IF NOT EXISTS Mascota (
    id_mascota integer NOT NULL CONSTRAINT Mascota_pk PRIMARY KEY,
@@ -11,9 +11,11 @@ db.run(`CREATE TABLE IF NOT EXISTS Mascota (
    genero varchar(50) NOT NULL,
    fecha_nacimiento datetime NOT NULL,
    peso double NOT NULL,
-   Owner_id_owner integer NOT NULL,
+   isAdopted boolean NOT NULL,
+   Owner_id_owner integer,
    CONSTRAINT Mascota_Owner FOREIGN KEY (Owner_id_owner)
    REFERENCES Owner (id_owner)
+   
 );`);
 
 // Función para obtener todas las mascotas
@@ -55,10 +57,10 @@ exports.getMascotasByOwnerId = (ownerId, callback) => {
 
 // Función para crear una nueva mascota
 exports.createMascota = (mascota, callback) => {
-  const { id, nombre, raza, edad, genero, fechaNac, peso, idOwner } = mascota;
+  const { id, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner } = mascota;
   db.run(
-    'INSERT INTO Mascota (id_mascota, nombre, raza, edad, genero, fechaNac, peso, idOwner) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-    [id, nombre, raza, edad, genero, fechaNac, peso, idOwner],
+    'INSERT INTO Mascota (id_mascota, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    [id, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner],
     (err) => {
       if (err) {
         console.error(err.message);
@@ -74,7 +76,7 @@ exports.createMascota = (mascota, callback) => {
 exports.updateMascota = (id, mascota, callback) => {
   const { nombre, raza, edad, genero, fechaNac, peso, idOwner  } = mascota;
   db.run(
-    'UPDATE Mascota SET nombre = ?, raza = ?, edad = ?, genero = ?, fecha_nacimiento = ?, peso = ?, Owner_id_owner = ? WHERE id_revision = ?',
+    'UPDATE Mascota SET nombre = ?, raza = ?, edad = ?, genero = ?, fecha_nacimiento = ?, peso = ?, Owner_id_owner = ? WHERE id_mascota = ?',
     [nombre, raza, edad, genero, fechaNac, peso, idOwner, id],
     (err) => {
       if (err) {

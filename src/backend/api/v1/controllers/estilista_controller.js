@@ -30,7 +30,7 @@ exports.createEstilista = (req, res) => {
     if (err) {
       res.status(500).json({ error: 'Error creando el estilista' })
     } else {
-      res.json({ message: 'Doctor creado exitosamente' })
+      res.json({ message: 'Estilista creado exitosamente' })
     }
   })
 }

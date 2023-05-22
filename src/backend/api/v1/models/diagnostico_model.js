@@ -1,9 +1,9 @@
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require("sqlite3").verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database("../casa_mascota_db.sqlite");
 
-db.run(`CREATE TABLE Diagnostico (
+db.run(`CREATE TABLE IF NOT EXISTS Diagnostico  (
    id_diagnostico integer NOT NULL CONSTRAINT Diagnostico_pk PRIMARY KEY,
    diagnostico varchar(100) NOT NULL,
    trat_requerido integer NOT NULL,
@@ -14,7 +14,7 @@ db.run(`CREATE TABLE Diagnostico (
 
 // Función para obtener todas los diagnósticos
 exports.getDiagnosticos = (callback) => {
-  db.all('SELECT * FROM Diagnostico', [], (err, rows) => {
+  db.all("SELECT * FROM Diagnostico", [], (err, rows) => {
     if (err) {
       console.error(err.message);
       callback(err);
@@ -26,24 +26,25 @@ exports.getDiagnosticos = (callback) => {
 
 // Función para obtener una sola diagnóstico por ID
 exports.getDiagnosticoById = (id, callback) => {
-  db.get('SELECT * FROM Diagnostico WHERE id_diagnostico = ?', [id], (err, row) => {
-    if (err) {
-      console.error(err.message);
-      callback(err);
-    } else {
-      callback(null, row);
+  db.get(
+    "SELECT * FROM Diagnostico WHERE id_diagnostico = ?",
+    [id],
+    (err, row) => {
+      if (err) {
+        console.error(err.message);
+        callback(err);
+      } else {
+        callback(null, row);
+      }
     }
-  });
+  );
 };
 
-
-
-
 // Función para crear un nuevo diagnóstico
-exports.createDiagnostico = (diagnostico, callback) => {
-  const { id, diagnostico, tratamiento, idRevision  } = diagnostico;
+exports.createDiagnostico = (diagnosticoObject, callback) => {
+  const { id, diagnostico, tratamiento, idRevision } = diagnosticoObject;
   db.run(
-    'INSERT INTO Diagnostico (id_diagnostico, diagnostico, trat_requerido, id_revision) VALUES (?, ?, ?, ?)',
+    "INSERT INTO Diagnostico (id_diagnostico, diagnostico, trat_requerido, id_revision) VALUES (?, ?, ?, ?)",
     [id, diagnostico, tratamiento, idRevision],
     (err) => {
       if (err) {
@@ -60,7 +61,7 @@ exports.createDiagnostico = (diagnostico, callback) => {
 exports.updateDiagnostico = (id, diagnostico, callback) => {
   const { diagnosticoDesc, tratamiento, idRevision } = diagnostico;
   db.run(
-    'UPDATE Diagnostico SET diagnostico = ?, tratamiento = ?, idRevision = ? WHERE id_revision = ?',
+    "UPDATE Diagnostico SET diagnostico = ?, tratamiento = ?, idRevision = ? WHERE id_revision = ?",
     [diagnosticoDesc, tratamiento, idRevision, id],
     (err) => {
       if (err) {
@@ -75,7 +76,7 @@ exports.updateDiagnostico = (id, diagnostico, callback) => {
 
 // Función para eliminar un diagnóstico por ID
 exports.deleteDiagnosticoById = (id, callback) => {
-  db.run('DELETE FROM Diagnostico WHERE id_Diagnostico = ?', [id], (err) => {
+  db.run("DELETE FROM Diagnostico WHERE id_Diagnostico = ?", [id], (err) => {
     if (err) {
       console.error(err.message);
       callback(err);
@@ -86,13 +87,13 @@ exports.deleteDiagnosticoById = (id, callback) => {
 };
 
 // Cierra la conexión a la base de datos cuando se detiene la aplicación
-process.on('SIGINT', () => {
+process.on("SIGINT", () => {
   db.close((err) => {
     if (err) {
       console.error(err.message);
     } else {
-      console.log('Conexión a la base de datos cerrada');
+      console.log("Conexión a la base de datos cerrada");
     }
     process.exit(0);
   });
-})
+});

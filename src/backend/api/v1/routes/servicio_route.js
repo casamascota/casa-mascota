@@ -7,5 +7,6 @@ router.get('/:id', servicioController.getServicioById)
 router.post('/', servicioController.createServicio)
 router.put('/:id', servicioController.updateServicio)
 router.delete('/:id', servicioController.deleteServicioById)
+router.get('/tipo/:tipo', servicioController.getIdByServicio)
 
 module.exports = router

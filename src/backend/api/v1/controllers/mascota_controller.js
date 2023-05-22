@@ -12,10 +12,10 @@ exports.getMascota = (req, res) => {
 
 exports.getMascotaById = (req, res) => {
   const id = req.params.id
-  Mascota.deleteMascotaById(id, (err, mascota) => {
+  Mascota.getMascotaById(id, (err, mascota) => {
     if (err) {
       res.status(500).json({ error: 'Error obteniendo la mascota' })
-    } else if (!mascotas) {
+    } else if (!mascota) {
       res.status(404).json({ error: `Mascota con id ${id} no encontrado` })
     } else {
       res.json(mascota)
@@ -38,6 +38,7 @@ exports.getMascotaByOwnerId = (req, res) => {
 
 
 exports.createMascota = (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
   const mascota = req.body
   console.log(mascota)
   Mascota.createMascota(mascota, (err) => {
