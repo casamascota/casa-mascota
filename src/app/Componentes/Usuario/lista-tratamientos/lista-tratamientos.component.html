@@ -1,0 +1,20 @@
+<p>Lista tratamientos --Borrar p  despues de probar--</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID Tratamiento</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha Final</th>
+        <th>Diagnostico ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tratamiento of tratamientosList" (click)="abrirDetalleTratamiento(tratamiento)">
+        <td>{{ tratamiento.id_trat }}</td>
+        <td>{{ tratamiento.fecha_inicio }}</td>
+        <td>{{ tratamiento.fecha_final }}</td>
+        <td>{{ tratamiento.id_diagnostico }}</td>
+      </tr>
+    </tbody>
+  </table>
+

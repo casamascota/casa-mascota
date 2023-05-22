@@ -1,0 +1,25 @@
+
+
+<h2>Formulario para Tratamiento</h2>
+<form [formGroup]="formTratamiento" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id_trat">ID de Tratamiento:</label>
+    <input type="number" id="id_trat" name="id_trat" formControlName="id_trat">
+  </div>
+
+  <div>
+    <label for="fecha_inicio">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha_inicio" name="fecha_inicio" formControlName="fecha_inicio">
+  </div>
+  
+  <div>
+    <label for="fecha_final">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha_final" name="fecha_final" formControlName="fecha_final">
+  </div>
+  <div >
+
+    <label for="id_diagnostico">ID del Dueño:</label>
+    <input type="number" id="id_diagnostico" name="id_diagnostico" formControlName="id_diagnostico">
+  </div>
+  <button type="submit">Enviar</button>
+</form>

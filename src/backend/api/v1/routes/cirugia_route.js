@@ -18,6 +18,13 @@ router.get(
   "/cirugia/:DiagnosticoId",
   cirugiaController.getCirugiaByDiagnosticoId
 );
+//QUERY GET ID CIRUGIA POR ID MASCOTA
+router.get("/mascotas/:id_mascota", cirugiaController.getCirugiaByMascotaId);
+//QUERY GET ID TRATAMIENTO POR ID MASCOTA
+router.get(
+  "/tratamiento/:id_trat",
+  cirugiaController.getCirugiaByTratamientoId
+);
 // Ruta para crear una nueva cirugia
 router.post("/", cirugiaController.createCirugia);
 // Ruta para actualizar una cirugia existente
