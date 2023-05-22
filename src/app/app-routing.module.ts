@@ -13,6 +13,12 @@ import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-cit
 import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
 import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
+//routing de formulario tratamientos y cirugias
+import { TratamientoFormularioComponent } from './Componentes/Usuario/tratamiento-formulario/tratamiento-formulario.component';
+import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formulario/cirugia-formulario.component';
+//routing de listas tratamientos y cirugias
+import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
+import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
@@ -25,7 +31,13 @@ const routes: Routes = [
   { path: "citas-agendadas", component: ListaCitasComponent },
   { path: "lista-mascotas", component: ListaMascotasComponent },
   { path: "revision" , component: FormRevisionComponent},
-  { path: "estilista" , component: FormEstilistaComponent}
+  { path: "estilista" , component: FormEstilistaComponent},
+  { path: "tratamiento-formulario" , component: TratamientoFormularioComponent},
+  { path: "cirugia-formulario" , component: CirugiaFormularioComponent},
+  { path: "lista-tratamiento" , component: ListaCirugiasComponent},
+  { path: "lista-cirugia" , component: ListaTratamientosComponent},
+  { path: "lista-tratamiento" , component: ListaCirugiasComponent},
+  { path: "lista-cirugia" , component: ListaTratamientosComponent},
 
 
 
