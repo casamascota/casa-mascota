@@ -9,7 +9,7 @@ db.run(`CREATE TABLE IF NOT EXISTS Owner (
     apellido varchar(50) NOT NULL,
     numero_tel varchar(50) NOT NULL,
     direccion varchar(100) NOT NULL
-)`);
+);`);
 
 // Función para obtener todos los Owners
 exports.getOwnerssql = (callback) => {

@@ -15,6 +15,7 @@ const citaRoute = require("./api/v1/routes/citaagendada_route");
 const cirugiasRoute = require("./api/v1/routes/cirugia_route");
 const tratamientosRoute = require("./api/v1/routes/tratamiento_route");
 const diagnosticosRoute = require("./api/v1/routes/diagnostico_route");
+const emailRoutes = require('./api/v1/routes/email_route');
 const cors = require("cors");
 
 app.use(cors({ origin: "*" }));
@@ -31,6 +32,7 @@ app.use("/api/cirugias", cirugiasRoute);
 app.use("/api/tratamientos", tratamientosRoute);
 app.use("/api/diagnosticos", diagnosticosRoute);
 app.use("/api/revision", revisionRoute);
+app.use('/api/email', emailRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hola desde Express.js!");

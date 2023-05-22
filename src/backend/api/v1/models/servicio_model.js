@@ -5,7 +5,7 @@ const UUID = require('uuid');
 
 const db = new sqlite3.Database('../casa_mascota_db.sqlite')
 
-// Crea la tabla "Estilista" si no existe
+// Crea la tabla "Servicio" si no existe
 db.run(`CREATE TABLE IF NOT EXISTS Servicio(
     id_servicio integer NOT NULL CONSTRAINT id_servicio PRIMARY KEY,
     tipo varchar(50) NOT NULL,

@@ -3,7 +3,7 @@ const sqlite3 = require('sqlite3').verbose();
 // Abre la base de datos en modo lectura/escritura
 const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
-db.run(`CREATE TABLE Diagnostico (
+db.run(`CREATE TABLE IF NOT EXISTS Diagnostico  (
    id_diagnostico integer NOT NULL CONSTRAINT Diagnostico_pk PRIMARY KEY,
    diagnostico varchar(100) NOT NULL,
    trat_requerido integer NOT NULL,

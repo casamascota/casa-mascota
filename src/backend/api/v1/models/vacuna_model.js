@@ -1,7 +1,18 @@
 const sqlite3 = require('sqlite3');
 
 const db = new sqlite3.Database('casa_mascota_db.sqlite');
-
+//Crear la tabla si no existe
+db.run(`CREATE TABLE IF NOT EXISTS Vacuna (
+    id_vacuna integer NOT NULL CONSTRAINT Vacuna_pk PRIMARY KEY,
+    nombre varchar(50) NOT NULL,
+    fecha datetime NOT NULL,
+    Doctor_id_doctor integer NOT NULL,
+    Cita_Agendada_id_cita integer NOT NULL,
+    CONSTRAINT Vacuna_Doctor FOREIGN KEY (Doctor_id_doctor)
+    REFERENCES Doctor (id_doctor),
+    CONSTRAINT Vacuna_Cita_Agendada FOREIGN KEY (Cita_Agendada_id_cita)
+    REFERENCES Cita_Agendada (id_cita)
+);`)
 // Obtener todas las vacunas
 exports.getVacunas = (callback) => {
   db.all('SELECT * FROM Vacuna', [], (err, rows) => {

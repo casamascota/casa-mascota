@@ -10,7 +10,7 @@ db.run(`CREATE TABLE IF NOT EXISTS Tratamiento (
     Diagnostico_id_diagnostico INTEGER NOT NULL,
     CONSTRAINT Tratamiento_Diagnostico FOREIGN KEY (Diagnostico_id_diagnostico)
       REFERENCES Diagnostico (id_diagnostico)
-  )`);
+  );`);
 
 // Función para obtener todos los tratamientos
 exports.getTratamientos = (callback) => {
