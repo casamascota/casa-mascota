@@ -8,7 +8,8 @@ db.run(`CREATE TABLE IF NOT EXISTS Owner (
     nombre varchar(50) NOT NULL,
     apellido varchar(50) NOT NULL,
     numero_tel varchar(50) NOT NULL,
-    direccion varchar(100) NOT NULL
+    direccion varchar(100) NOT NULL,
+    correo varchar(100) NOT NULL,
 );`);
 
 // Función para obtener todos los Owners
