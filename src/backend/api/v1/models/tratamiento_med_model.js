@@ -1,8 +1,8 @@
 const sqlite3= require('sqlite3');
 
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 //Crear la tabla si no existe
-db.run(`CREATE TABLE Tratamiento_Med(
+db.run(`CREATE TABLE IF NOT EXISTS Tratamiento_Med(
   id_trat_med integer NOT NULL CONSTRAINT Tratamiento_Med_pk PRIMARY KEY,
     Medicamentos_id_med integer NOT NULL,
     Tratamiento_id_trat integer NOT NULL,
