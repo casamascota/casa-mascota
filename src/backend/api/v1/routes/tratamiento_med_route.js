@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const tratamientoMedController = require('../controllers/tratamientoMedController');
+const tratamientoMedController = require('../controllers/tratamiento_med_controller');
 
 // Obtener todos los tratamientos medicamentos
 router.get('/', tratamientoMedController.getTratamientosMed);
