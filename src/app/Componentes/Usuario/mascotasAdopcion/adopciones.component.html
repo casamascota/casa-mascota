@@ -30,7 +30,8 @@
   </div>
 
   <div class="requirements">
-    <h2 class="subtitle">Requisitos: Adopción gatos y perros</h2>
+    <h2 class="subtitle">Requisitos: Adopción de mascotas</h2>
+    <p>Las adopciones se atienden de lunes a viernes de 9:00 a 13:30 – 14:30 a 17:30. Sábados y domingos de 10:00 a 16:00 horas.</p>
     <ul>
       <li>Fotocopia de C.I y la persona tiene que ser mayor de 21 años.</li>
       <li>Número de teléfono fijo.</li>
@@ -38,9 +39,41 @@
       <li>Casa propia y permiso escrito.</li>
       <li>Cubrir el 50% del costo de 2 vacunas (decavalente en perros y triple felina en gatos) y una cirugía de esterilización.
         Todo 170 Bs.</li>
+      <li>Realizar el llenado del siguiente formulario:</li>
     </ul>
-    <p>Las adopciones se atienden de lunes a viernes de 9:00 a 13:30 – 14:30 a 17:30. Sábados y domingos de 10:00 a 16:00 horas.</p>
   </div>
+
+  <div class="adoption-form-container">
+    <h2 class="subtitle">Formulario de Adopción</h2>
+    <form class="adoption-form" action="procesar_adopcion.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <br><br>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required>
+      <br><br>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+      <br><br>
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+      <br><br>
+      <label for="tipo_mascota">Tipo de mascota:</label>
+      <select id="tipo_mascota" name="tipo_mascota" required>
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+        <option value="gato">Loro</option>
+        <option value="gato">Tortuga</option>
+        <option value="gato">Hámster</option>
+      </select>
+      <br><br>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+      <br><br>
+      <button type="submit">Enviar solicitud de adopción</button>
+    </form>
+  </div>
+
 </body>
 
 </html>

@@ -64,4 +64,18 @@
   .requirements li {
     margin-bottom: 10px;
   }
+
+  .adoption-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+  
+  .adoption-form {
+    max-width: 400px;
+    width: 100%;
+  }
+  
   
