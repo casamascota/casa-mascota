@@ -3,11 +3,11 @@ const UUID = require('uuid');
 
 // Abre la base de datos en modo lectura/escritura
 
-const db = new sqlite3.Database('casa_mascota_db.sqlite')
+const db = new sqlite3.Database('../casa_mascota_db.sqlite')
 
-// Crea la tabla "Estilista" si no existe
-db.run(`CREATE TABLE  IF NOT EXISTS Servicio(
-    id_servicio integer NOT NULL CONSTRAINT Estilista_pk PRIMARY KEY,
+// Crea la tabla "Servicio" si no existe
+db.run(`CREATE TABLE IF NOT EXISTS Servicio(
+    id_servicio integer NOT NULL CONSTRAINT id_servicio PRIMARY KEY,
     tipo varchar(50) NOT NULL,
     costo double NOT NULL
 );`)
@@ -38,10 +38,10 @@ exports.getServicioById = (id, callback) => {
 
 // Función para crear un nuevo servicio
 exports.createServicio = (servicio, callback) => {
-  /*const id_doctor = UUID.v4()
-  console.log(id_doctor)*/
-  const { id, tipo, costo} = servicio
-  db.run('INSERT INTO Servicio (id_servicio, tipo, costo) VALUES (?, ?, ?)', [ id, tipo, costo], (err) => {
+ 
+  const {id, tipo, costo} = servicio
+  console.log(tipo)
+  db.run('INSERT INTO Servicio (id_servicio, tipo, costo) VALUES (?, ?, ?)', [id, tipo, costo], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)
@@ -72,6 +72,18 @@ exports.deleteServicioById = (id, callback) => {
       callback(err)
     } else {
       callback(null)
+    }
+  })
+}
+
+exports.getIdServicio = (tipo,callback) => {
+  db.get('SELECT id_servicio FROM Servicio WHERE tipo = ?', [tipo], (err, row) => {
+    if (err) {
+      console.error(err.message)
+      callback(err)
+    } else {
+      console.log(row)
+      callback(null, row)
     }
   })
 }

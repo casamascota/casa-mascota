@@ -1,6 +1,11 @@
 ### 
 Instrucciones para instalar y correr el proyecto
 
+###
+Si corren el proyecto después del 20/05, primero deben ejecutar:
+`npm install`
+
+
 ## Prerrequisitos
 Asegúrate de tener instalados los siguientes programas:
 
@@ -30,6 +35,7 @@ Antes de correr el servidor, necesitas crear la base de datos SQLite. Ejecuta el
 
 ## Correr el servidor
 Para correr el servidor de Express.js, ejecuta el siguiente comando en la carpeta raíz del proyecto:
+
 
 
 

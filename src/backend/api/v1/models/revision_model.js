@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
 db.run(`CREATE TABLE IF NOT EXISTS Revision (
     id_revision INTEGER NOT NULL CONSTRAINT Revision_pk PRIMARY KEY,
@@ -15,7 +15,7 @@ db.run(`CREATE TABLE IF NOT EXISTS Revision (
       REFERENCES Cita_Agendada (id_cita),
     CONSTRAINT Revision_Doctor FOREIGN KEY (Doctor_id_doctor)
       REFERENCES Doctor (id_doctor)
-  )`);
+  );`);
 
 // Función para obtener todas las revisiones
 exports.getRevisiones = (callback) => {

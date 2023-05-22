@@ -1,15 +1,16 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
 db.run(`CREATE TABLE IF NOT EXISTS Owner (
     id_owner integer NOT NULL CONSTRAINT Owner_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
     apellido varchar(50) NOT NULL,
-    numero_tel integer NOT NULL,
-    direccion varchar(100) NOT NULL
-)`);
+    numero_tel varchar(50) NOT NULL,
+    direccion varchar(100) NOT NULL,
+    correo varchar(100) NOT NULL
+);`);
 
 // Función para obtener todos los Owners
 exports.getOwnerssql = (callback) => {
@@ -38,10 +39,10 @@ exports.getOwnerByIdsql = (id, callback) => {
 
 // Función para crear un nuevo owner
 exports.createOwnersql = (tratamiento, callback) => {
-  const { id, nombre, apellido, numero_tel, direccion } = tratamiento;
+  const { id, nombre, apellido, numero_tel, direccion, correo } = tratamiento;
   db.run(
-    'INSERT INTO Owner (id_owner, nombre, apellido, numero_tel, direccion) VALUES (?, ?, ?, ?, ?)',
-    [id, nombre, apellido, numero_tel, direccion],
+    'INSERT INTO Owner (id_owner, nombre, apellido, numero_tel, direccion, correo) VALUES (?, ?, ?, ?, ?)',
+    [id, nombre, apellido, numero_tel, direccion, correo],
     (err) => {
       if (err) {
         console.error(err.message);
@@ -57,7 +58,7 @@ exports.createOwnersql = (tratamiento, callback) => {
 exports.updateOwnersql = (id, owner, callback) => {
   const { nombre, apellido, numero_tel, direccion } = owner;
   db.run(
-    'UPDATE Owner SET nombre = ?, apellido = ?, numero_tel = ?, direccion = ? WHERE id_owner = ?',
+    'UPDATE Owner SET nombre = ?, apellido = ?, numero_tel = ?, direccion = ?, correo = ?, WHERE id_owner = ?',
     [nombre, apellido, numero_tel, direccion, id],
     (err) => {
       if (err) {

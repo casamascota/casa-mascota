@@ -1,18 +1,17 @@
 const sqlite3 = require('sqlite3').verbose()
-const UUID = require('uuid');
 
 // Abre la base de datos en modo lectura/escritura
 
-const db = new sqlite3.Database('casa_mascota_db.sqlite')
+const db = new sqlite3.Database('../casa_mascota_db.sqlite')
 
-/* Crea la tabla "Estilista" si no existe
-db.run(`CREATE TABLE Estilista IF NOT EXISTS(
+//Crea la tabla "Estilista" si no existe
+db.run(`CREATE TABLE IF NOT EXISTS Estilista (
     id_estilista integer NOT NULL CONSTRAINT Estilista_pk PRIMARY KEY,
     nombre varchar(50) NOT NULL,
     apellido varchar(50) NOT NULL,
-    numero_tel integer NOT NULL
+    numero_tel varchar(50) NOT NULL
 );`)
-*/
+
 // Función para obtener todos los doctores
 exports.getEstilistas = (callback) => {
   db.all('SELECT * FROM Estilista', [], (err, rows) => {

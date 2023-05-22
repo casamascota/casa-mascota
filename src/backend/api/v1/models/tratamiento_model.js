@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
 db.run(`CREATE TABLE IF NOT EXISTS Tratamiento (
     id_trat INTEGER NOT NULL CONSTRAINT Tratamiento_pk PRIMARY KEY,
@@ -10,7 +10,7 @@ db.run(`CREATE TABLE IF NOT EXISTS Tratamiento (
     Diagnostico_id_diagnostico INTEGER NOT NULL,
     CONSTRAINT Tratamiento_Diagnostico FOREIGN KEY (Diagnostico_id_diagnostico)
       REFERENCES Diagnostico (id_diagnostico)
-  )`);
+  );`);
 
 // Función para obtener todos los tratamientos
 exports.getTratamientos = (callback) => {

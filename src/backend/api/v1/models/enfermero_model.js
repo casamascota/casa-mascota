@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose()
 
 // Abre la base de datos en modo lectura/escritura
 
-const db = new sqlite3.Database('casa_mascota_db.sqlite')
+const db = new sqlite3.Database('../casa_mascota_db.sqlite')
 
 // Crea la tabla "Estilista" si no existe
 db.run(`CREATE TABLE IF NOT EXISTS Enfermero (
@@ -55,8 +55,8 @@ exports.createEnfermero = (enfermero, callback) => {
 
 // Función para actualizar un enfermero existente
 exports.updateEnfermero = (id, enfermero, callback) => {
-  const { nombre, apellido, telefono, direccion } = enfermero
-  db.run('UPDATE Enfermero SET nombre = ?, apellidos = ?, numero_tel = ?, direccion = ? WHERE id = ?', [nombre, apellido, telefono, direccion, id], (err) => {
+  const { nombre, apellido, numero_tel, direccion } = enfermero
+  db.run('UPDATE Enfermero SET nombre = ?, apellidos = ?, numero_tel = ?, direccion = ? WHERE id_enfermero = ?', [nombre, apellido, numero_tel, direccion, id], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)
@@ -68,7 +68,7 @@ exports.updateEnfermero = (id, enfermero, callback) => {
 
 // Función para eliminar un enfermero por ID
 exports.deleteEnfemeroById = (id, callback) => {
-  db.run('DELETE FROM Enfemero WHERE id = ?', [id], (err) => {
+  db.run('DELETE FROM Enfermero WHERE id_enfermero = ?', [id], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)

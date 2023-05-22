@@ -1,13 +1,13 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Abre la base de datos en modo lectura/escritura
-const db = new sqlite3.Database('casa_mascota_db.sqlite');
+const db = new sqlite3.Database('../casa_mascota_db.sqlite');
 
 db.run(`CREATE TABLE IF NOT EXISTS Medicamentos (
   id_med integer NOT NULL CONSTRAINT Medicamentos_pk PRIMARY KEY,
   nombre varchar(50) NOT NULL,
   tipo varchar(50) NOT NULL
-)`);
+);`);
 
 // Función para obtener todos los Medicamentos
 exports.getMedicamentossql = (callback) => {
