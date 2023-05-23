@@ -15,6 +15,7 @@ export class ListaCirugiasComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private dialog: MatDialog) {
     this.getListaFormateada();
+    console.log(this.cirugiasList);
   }
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class ListaCirugiasComponent implements OnInit {
     this.httpClient.get(this.URL_BASE + 'cirugias').subscribe(
       (res: any) => {
         this.cirugiasList = res;
+        console.log(res);
       },
       err => {
         console.log(err);
