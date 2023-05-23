@@ -7,7 +7,7 @@ router.get('/:id', pelqueriaController.getPeluqueriaById);
 router.get('/estilista/:estilistaId', pelqueriaController.getPeluqueriaByEstilistaId);
 router.post('/', pelqueriaController.createPeluqueria);
 router.put('/:id', pelqueriaController.updatePeluqueria);
-router.delete('/:id', pelqueriaController.deletePeluqueria);
+router.delete('/:id', pelqueriaController.deletePeluqueriaById);
 
 
 module.exports = router;

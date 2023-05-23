@@ -19,6 +19,7 @@ const medicamentosRoute = require("./api/v1/routes/medicamentos_route");
 const vacunasRoute = require("./api/v1/routes/vacuna_route");
 const emailRoutes = require('./api/v1/routes/email_route');
 const tratamientoMedRoute = require("./api/v1/routes/tratamiento_med_route");
+const peluqueriaRoute = require("./api/v1/routes/peluqueria_route");
 const cors = require("cors");
 
 app.use(cors({ origin: "*" }));
@@ -39,6 +40,7 @@ app.use("/api/medicamentos", medicamentosRoute);
 app.use("/api/vacunas", vacunasRoute);
 app.use("/api/tratamientoMed", tratamientoMedRoute);
 app.use('/api/email', emailRoutes);
+app.use("/api/peluqueria", peluqueriaRoute);
 
 app.get("/", (req, res) => {
   res.send("Hola desde Express.js!");

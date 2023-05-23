@@ -67,8 +67,8 @@ exports.getCirugiaByDiagnosticoId = (req, res) => {
 };
 //query para obtener id de cirugia por id de mascota
 exports.getCirugiaByMascotaId = (req, res) => {
-  const MascotaId = req.params.MascotaId;
-  Cirugiasql.getCirugiaByMacotaIdsql(MascotaId, (err, cirugias) => {
+  const id_mascota = req.params.MascotaId;
+  Cirugiasql.getCirugiaByMacotaIdsql(id_mascota, (err, cirugias) => {
     if (err) {
       res.status(500).json({ error: "Error obteniendo la cirugia" });
     } else {

@@ -1,27 +1,35 @@
 <h1 class="display-6">Detalle de la mascota</h1>
 
-<!-- <h2>Cirugias Mascota</h2>
- Tabla de cirugías 
+<h2 style="color: #454545;">Cirugias Mascota</h2>
+
 <table class="table table-success table-striped-columns">
   <thead>
     <tr>
-      <th scope="col">Fecha</th>
-      <th scope="col">Descripción</th>
+      <th scope="col" style="color: #454545;">Fecha</th>
+      <th scope="col" style="color: #454545;">Descripción</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let cirugia of mascota.cirugias">
-      <td>{{ cirugia.fecha }}</td>
+      <td style="color: #FF6000;">{{ cirugia.fecha }}</td>
       <td>{{ cirugia.descripcion }}</td>
     </tr>
   </tbody>
 </table>
-<br> -->
-<h2>Historial de Citas de la Mascota {{mascota.nombre}} </h2>
+<br>
+<h2 style="color: #454545;">Tratamientos Mascota</h2>
 <!-- Tabla de tratamientos -->
 <table class="table table-success table-striped-columns">
   <thead>
     <tr>
+      <th scope="col" style="color: #454545;">Fecha</th>
+      <th scope="col" style="color: #454545;">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tratamiento of mascota.tratamientos">
+      <td style="color: #FF6000;">{{ tratamiento.fecha }}</td>
+      <td>{{ tratamiento.descripcion }}</td>
       <th scope="col">ID Cita</th>
       <th scope="col">ID Servicio</th>
       <th scope="col">Hora</th>
@@ -33,7 +41,6 @@
       <td>{{ cita.Servicio_id_servicio }}</td>
 
       <td>{{ cita.hora }}</td>
-
     </tr>
   </tbody>
 </table>
