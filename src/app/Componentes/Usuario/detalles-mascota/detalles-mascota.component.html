@@ -22,14 +22,18 @@
 <table class="table table-success table-striped-columns">
   <thead>
     <tr>
-      <th scope="col">Fecha</th>
-      <th scope="col">Descripción</th>
+      <th scope="col">ID Cita</th>
+      <th scope="col">ID Servicio</th>
+      <th scope="col">Hora</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let tratamiento of mascota.tratamientos">
-      <td>{{ tratamiento.fecha }}</td>
-      <td>{{ tratamiento.descripcion }}</td>
+    <tr *ngFor="let cita of mascota.citas">
+      <td>{{ cita.id_cita }}</td>
+      <td>{{ cita.Servicio_id_servicio }}</td>
+
+      <td>{{ cita.hora }}</td>
+
     </tr>
   </tbody>
 </table>

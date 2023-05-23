@@ -23,6 +23,19 @@ exports.getMascotaById = (req, res) => {
   })
 }
 
+exports.getCitasByMascotaId = (req, res) => {
+  const id = req.params.id
+  Mascota.getCitasByMascotaId(id, (err, citas) => {
+    if (err) {
+      res.status(500).json({ error: 'Error obteniendo las citas' })
+    } else if (!citas) {
+      res.status(404).json({ error: `Citas con id ${id} no encontrado` })
+    } else {
+      res.json(citas)
+    }
+  })
+}
+
 exports.getMascotaByOwnerId = (req, res) => {
    const id = req.params.id
    Mascota.getMascotasByOwnerId(id, (err, mascotas) => {
