@@ -1,275 +1,274 @@
-<div>
-  <form>
-    <label>Añadir<label>
-    <select>
-      <option value="doctor/admin">Doctor</option>
-      <option value="enfermero">Enfermero</option>
-      <option value="mascota">Mascota</option>
-      <option value="owner">Tutor</option>
-      <option value="estilista">Estilista</option>
-    </select>
-  <form>
- 
-<div class="body">
-  <div class="center">
-    <ng-container [ngSwitch]="selectedForm">
-      <form *ngSwitchCase="'doctor/admin'" [formGroup]="formularioAdmDoc" (ngSubmit)="enviarFormularioAdmDoc()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Doctor:</mat-label>
-          <input matInput type="number" formControlName="id_doctor" />
-          <div *ngIf="formularioAdmDoc.controls['id_doctor'].invalid && formularioAdmDoc.controls['id_doctor'].touched">
-            <div *ngIf="formularioAdmDoc.controls['id_doctor'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Nombre:</mat-label>
-          <input matInput type="text" formControlName="nombre" />
-          <div *ngIf="formularioAdmDoc.controls['nombre'].invalid && formularioAdmDoc.controls['nombre'].touched">
-            <div *ngIf="formularioAdmDoc.controls['nombre'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-        
-        <mat-form-field class="ancho">
-          <mat-label>Apellido:</mat-label>
-          <input matInput type="text" formControlName="apellido" />
-          <div *ngIf="formularioAdmDoc.controls['apellido'].invalid && formularioAdmDoc.controls['apellido'].touched">
-            <div *ngIf="formularioAdmDoc.controls['apellido'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+  <div class="card" style="width: 40rem;">
+    <form >
+      <select>
+        <option value="doctor/admin">Doctor</option>
+        <option value="enfermero">Enfermero</option>
+        <option value="mascota">Mascota</option>
+        <option value="owner">Tutor</option>
+        <option value="estilista">Estilista</option>
+      </select>
+    <form>
+    <div class="card-body">
 
-        <mat-form-field class="ancho">
-          <mat-label>Telefono:</mat-label>
-          <input matInput type="number" formControlName="numero_tel" />
-          <div *ngIf="formularioAdmDoc.controls['numero_tel'].invalid && formularioAdmDoc.controls['numero_tel'].touched">
-            <div *ngIf="formularioAdmDoc.controls['numero_tel'].errors?.['telefono']"></div>
-          </div>
-        </mat-form-field>
+  <ng-container [ngSwitch]="selectedForm">
+    <form *ngSwitchCase="'doctor/admin'" [formGroup]="formularioAdmDoc" (ngSubmit)="enviarFormularioAdmDoc()">
+      <mat-form-field class="ancho">
+        <mat-label>ID Doctor:</mat-label>
+        <input matInput type="number" formControlName="id_doctor" />
+        <div *ngIf="formularioAdmDoc.controls['id_doctor'].invalid && formularioAdmDoc.controls['id_doctor'].touched">
+          <div *ngIf="formularioAdmDoc.controls['id_doctor'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="ancho">
+        <mat-label>Nombre:</mat-label>
+        <input matInput type="text" formControlName="nombre" />
+        <div *ngIf="formularioAdmDoc.controls['nombre'].invalid && formularioAdmDoc.controls['nombre'].touched">
+          <div *ngIf="formularioAdmDoc.controls['nombre'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
       
-        <mat-form-field class="ancho">
-          <mat-label>Direccion:</mat-label>
-          <input matInput type="text" formControlName="direccion" />
-          <div *ngIf="formularioAdmDoc.controls['direccion'].invalid && formularioAdmDoc.controls['direccion'].touched">
-            <div *ngIf="formularioAdmDoc.controls['direccion'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-        <br>
-        <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioAdmDoc.invalid">Guardar</button>
-      </form>
+      <mat-form-field class="ancho">
+        <mat-label>Apellido:</mat-label>
+        <input matInput type="text" formControlName="apellido" />
+        <div *ngIf="formularioAdmDoc.controls['apellido'].invalid && formularioAdmDoc.controls['apellido'].touched">
+          <div *ngIf="formularioAdmDoc.controls['apellido'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-      <form *ngSwitchCase="'enfermero'" [formGroup]="formularioEnfermero" (ngSubmit)="enviarFormularioEnfermero()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Enfermero:</mat-label>
-          <input matInput type="number" formControlName="id_enfermero" />
-          <div *ngIf="formularioEnfermero.controls['id_enfermero'].invalid && formularioEnfermero.controls['id_enfermero'].touched">
-            <div *ngIf="formularioEnfermero.controls['id_enfermero'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Telefono:</mat-label>
+        <input matInput type="number" formControlName="numero_tel" />
+        <div *ngIf="formularioAdmDoc.controls['numero_tel'].invalid && formularioAdmDoc.controls['numero_tel'].touched">
+          <div *ngIf="formularioAdmDoc.controls['numero_tel'].errors?.['telefono']"></div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="ancho">
+        <mat-label>Direccion:</mat-label>
+        <input matInput type="text" formControlName="direccion" />
+        <div *ngIf="formularioAdmDoc.controls['direccion'].invalid && formularioAdmDoc.controls['direccion'].touched">
+          <div *ngIf="formularioAdmDoc.controls['direccion'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <br>
+      <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioAdmDoc.invalid">Guardar</button>
+    </form>
 
-        <mat-form-field class="ancho">
-          <mat-label>Nombre:</mat-label>
-          <input matInput type="text" formControlName="nombre" />
-          <div *ngIf="formularioEnfermero.controls['nombre'].invalid && formularioEnfermero.controls['nombre'].touched">
-            <div *ngIf="formularioEnfermero.controls['nombre'].errors?.['required']">El nombre es requerido.</div>
-          </div>
-        </mat-form-field>
+    <form *ngSwitchCase="'enfermero'" [formGroup]="formularioEnfermero" (ngSubmit)="enviarFormularioEnfermero()">
+      <mat-form-field class="ancho">
+        <mat-label>ID Enfermero:</mat-label>
+        <input matInput type="number" formControlName="id_enfermero" />
+        <div *ngIf="formularioEnfermero.controls['id_enfermero'].invalid && formularioEnfermero.controls['id_enfermero'].touched">
+          <div *ngIf="formularioEnfermero.controls['id_enfermero'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Apellido:</mat-label>
-          <input matInput type="text" formControlName="apellido" />
-          <div *ngIf="formularioEnfermero.controls['apellido'].invalid && formularioEnfermero.controls['apellido'].touched">
-            <div *ngIf="formularioEnfermero.controls['apellido'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Nombre:</mat-label>
+        <input matInput type="text" formControlName="nombre" />
+        <div *ngIf="formularioEnfermero.controls['nombre'].invalid && formularioEnfermero.controls['nombre'].touched">
+          <div *ngIf="formularioEnfermero.controls['nombre'].errors?.['required']">El nombre es requerido.</div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Telefono:</mat-label>
-          <input matInput type="number" formControlName="telefono" />
-          <div *ngIf="formularioEnfermero.controls['telefono'].invalid && formularioEnfermero.controls['telefono'].touched">
-            <div *ngIf="formularioEnfermero.controls['telefono'].errors?.['telefono']"></div>
-          </div>
-        </mat-form-field>
-      
-        <mat-form-field class="ancho">
-          <mat-label>Direccion:</mat-label>
-          <input matInput type="text" formControlName="direccion" />
-          <div *ngIf="formularioEnfermero.controls['direccion'].invalid && formularioEnfermero.controls['direccion'].touched">
-            <div *ngIf="formularioEnfermero.controls['direccion'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-        <br>
-        <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioEnfermero.invalid">Guardar</button>
-      </form>
+      <mat-form-field class="ancho">
+        <mat-label>Apellido:</mat-label>
+        <input matInput type="text" formControlName="apellido" />
+        <div *ngIf="formularioEnfermero.controls['apellido'].invalid && formularioEnfermero.controls['apellido'].touched">
+          <div *ngIf="formularioEnfermero.controls['apellido'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-      <form *ngSwitchCase="'mascota'" [formGroup]="formularioMascota" (ngSubmit)="enviarFormularioMascota()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Mascota:</mat-label>
-          <input matInput type="number" formControlName="id_mascota" />
-          <div *ngIf="formularioMascota.controls['id_mascota'].invalid && formularioMascota.controls['id_mascota'].touched">
-            <div *ngIf="formularioMascota.controls['id_mascota'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Telefono:</mat-label>
+        <input matInput type="number" formControlName="telefono" />
+        <div *ngIf="formularioEnfermero.controls['telefono'].invalid && formularioEnfermero.controls['telefono'].touched">
+          <div *ngIf="formularioEnfermero.controls['telefono'].errors?.['telefono']"></div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="ancho">
+        <mat-label>Direccion:</mat-label>
+        <input matInput type="text" formControlName="direccion" />
+        <div *ngIf="formularioEnfermero.controls['direccion'].invalid && formularioEnfermero.controls['direccion'].touched">
+          <div *ngIf="formularioEnfermero.controls['direccion'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <br>
+      <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioEnfermero.invalid">Guardar</button>
+    </form>
 
-        <mat-form-field class="ancho">
-          <mat-label>Nombre:</mat-label>
-          <input matInput type="text" formControlName="nombre" />
-          <div *ngIf="formularioMascota.controls['nombre'].invalid && formularioMascota.controls['nombre'].touched">
-            <div *ngIf="formularioMascota.controls['nombre'].errors?.['required']">El nombre es requerido.</div>
-          </div>
-        </mat-form-field>
+    <form *ngSwitchCase="'mascota'" [formGroup]="formularioMascota" (ngSubmit)="enviarFormularioMascota()">
+      <mat-form-field class="ancho">
+        <mat-label>ID Mascota:</mat-label>
+        <input matInput type="number" formControlName="id_mascota" />
+        <div *ngIf="formularioMascota.controls['id_mascota'].invalid && formularioMascota.controls['id_mascota'].touched">
+          <div *ngIf="formularioMascota.controls['id_mascota'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Raza:</mat-label>
-          <input matInput type="text" formControlName="raza" />
-          <div *ngIf="formularioMascota.controls['raza'].invalid && formularioMascota.controls['raza'].touched">
-            <div *ngIf="formularioMascota.controls['raza'].errors?.['required']">La raza es requerida.</div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Nombre:</mat-label>
+        <input matInput type="text" formControlName="nombre" />
+        <div *ngIf="formularioMascota.controls['nombre'].invalid && formularioMascota.controls['nombre'].touched">
+          <div *ngIf="formularioMascota.controls['nombre'].errors?.['required']">El nombre es requerido.</div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Edad:</mat-label>
-          <input matInput type="number" id="edad" formControlName="edad" />
-          <div *ngIf="formularioMascota.controls['edad'].invalid && formularioMascota.controls['edad'].touched">
-            <div *ngIf="formularioMascota.controls['edad'].errors?.['required']">La edad es requerido.</div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Raza:</mat-label>
+        <input matInput type="text" formControlName="raza" />
+        <div *ngIf="formularioMascota.controls['raza'].invalid && formularioMascota.controls['raza'].touched">
+          <div *ngIf="formularioMascota.controls['raza'].errors?.['required']">La raza es requerida.</div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Genero:</mat-label>
-          <select id="genero" name="genero" formControlName="genero" matNativeControl required>
-            <option value="Macho">Macho</option>
-            <option value="Hembra">Hembra</option>
-          </select>
-          <div *ngIf="formularioMascota.controls['genero'].invalid && formularioMascota.controls['genero'].touched">
-            <div *ngIf="formularioMascota.controls['genero'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Edad:</mat-label>
+        <input matInput type="number" id="edad" formControlName="edad" />
+        <div *ngIf="formularioMascota.controls['edad'].invalid && formularioMascota.controls['edad'].touched">
+          <div *ngIf="formularioMascota.controls['edad'].errors?.['required']">La edad es requerido.</div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Fecha de nacimiento:</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <div *ngIf="formularioMascota.controls['fechaNacimiento'].invalid && formularioMascota.controls['fechaNacimiento'].touched">
-            <div *ngIf="formularioMascota.controls['fechaNacimiento'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Genero:</mat-label>
+        <select id="genero" name="genero" formControlName="genero" matNativeControl required>
+          <option value="Macho">Macho</option>
+          <option value="Hembra">Hembra</option>
+        </select>
+        <div *ngIf="formularioMascota.controls['genero'].invalid && formularioMascota.controls['genero'].touched">
+          <div *ngIf="formularioMascota.controls['genero'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-        <!--
-        <mat-form-field class="ancho">
-          <mat-label>Fecha de nacimiento:</mat-label>
-          <input matInput type="date" id="fechaNacimiento" formControlName="fechaNacimiento" />
-          <div *ngIf="formularioMascota.controls['fechaNacimiento'].invalid && formularioMascota.controls['fechaNacimiento'].touched">
-            <div *ngIf="formularioMascota.controls['fechaNacimiento'].errors?.['required']">La fecha de nacmiento es requerida.</div>
-          </div>
-        </mat-form-field>-->
+      <mat-form-field class="ancho">
+        <mat-label>Fecha de nacimiento:</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <div *ngIf="formularioMascota.controls['fechaNacimiento'].invalid && formularioMascota.controls['fechaNacimiento'].touched">
+          <div *ngIf="formularioMascota.controls['fechaNacimiento'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Peso:</mat-label>
-          <input matInput type="number" id="peso" formControlName="peso" />
-          <div *ngIf="formularioMascota.controls['peso'].invalid && formularioMascota.controls['peso'].touched">
-            <div *ngIf="formularioMascota.controls['peso'].errors?.['required']">El peso es requerido.</div>
-          </div>
-        </mat-form-field>
+      <!--
+      <mat-form-field class="ancho">
+        <mat-label>Fecha de nacimiento:</mat-label>
+        <input matInput type="date" id="fechaNacimiento" formControlName="fechaNacimiento" />
+        <div *ngIf="formularioMascota.controls['fechaNacimiento'].invalid && formularioMascota.controls['fechaNacimiento'].touched">
+          <div *ngIf="formularioMascota.controls['fechaNacimiento'].errors?.['required']">La fecha de nacmiento es requerida.</div>
+        </div>
+      </mat-form-field>-->
 
-        <mat-form-field class="ancho">
-          <mat-label>Especie:</mat-label>
-          <input matInput type="text" id="especie" formControlName="especie" />
-          <div *ngIf="formularioMascota.controls['especie'].invalid && formularioMascota.controls['especie'].touched">
-            <div *ngIf="formularioMascota.controls['especie'].errors?.['especie']">La especie es requerida.</div>
-          </div>
-        </mat-form-field>
-        <br>
-        <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioMascota.invalid">Guardar</button>
-      </form>
+      <mat-form-field class="ancho">
+        <mat-label>Peso:</mat-label>
+        <input matInput type="number" id="peso" formControlName="peso" />
+        <div *ngIf="formularioMascota.controls['peso'].invalid && formularioMascota.controls['peso'].touched">
+          <div *ngIf="formularioMascota.controls['peso'].errors?.['required']">El peso es requerido.</div>
+        </div>
+      </mat-form-field>
 
-      <form *ngSwitchCase="'owner'" [formGroup]="formularioOwner" (ngSubmit)="enviarFormularioOwner()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Owner:</mat-label>
-          <input matInput type="number" formControlName="id_owner" />
-          <div *ngIf="formularioOwner.controls['id_owner'].invalid && formularioOwner.controls['id_owner'].touched">
-            <div *ngIf="formularioOwner.controls['id_owner'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Especie:</mat-label>
+        <input matInput type="text" id="especie" formControlName="especie" />
+        <div *ngIf="formularioMascota.controls['especie'].invalid && formularioMascota.controls['especie'].touched">
+          <div *ngIf="formularioMascota.controls['especie'].errors?.['especie']">La especie es requerida.</div>
+        </div>
+      </mat-form-field>
+      <br>
+      <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioMascota.invalid">Guardar</button>
+    </form>
 
-        <mat-form-field class="ancho">
-          <mat-label>Nombre:</mat-label>
-          <input matInput type="text" formControlName="nombre" />
-          <div *ngIf="formularioOwner.controls['nombre'].invalid && formularioOwner.controls['nombre'].touched">
-            <div *ngIf="formularioOwner.controls['nombre'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+    <form *ngSwitchCase="'owner'" [formGroup]="formularioOwner" (ngSubmit)="enviarFormularioOwner()">
+      <mat-form-field class="ancho">
+        <mat-label>ID Owner:</mat-label>
+        <input matInput type="number" formControlName="id_owner" />
+        <div *ngIf="formularioOwner.controls['id_owner'].invalid && formularioOwner.controls['id_owner'].touched">
+          <div *ngIf="formularioOwner.controls['id_owner'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Apellido:</mat-label>
-          <input matInput type="text" formControlName="apellido" />
-          <div *ngIf="formularioOwner.controls['apellido'].invalid && formularioOwner.controls['apellido'].touched">
-            <div *ngIf="formularioOwner.controls['apellido'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-      
-        <mat-form-field class="ancho">
-          <mat-label>Telefono:</mat-label>
-          <input matInput type="number" formControlName="telefono" />
-          <div *ngIf="formularioOwner.controls['telefono'].invalid && formularioOwner.controls['telefono'].touched">
-            <div *ngIf="formularioOwner.controls['telefono'].errors?.['telefono']"></div>
-          </div>
-        </mat-form-field>
-      
-        <mat-form-field class="ancho">
-          <mat-label>Direccion:</mat-label>
-          <input matInput type="text" formControlName="direccion" />
-          <div *ngIf="formularioOwner.controls['direccion'].invalid && formularioOwner.controls['direccion'].touched">
-            <div *ngIf="formularioOwner.controls['direccion'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-        <br>
-        <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioOwner.invalid">Guardar</button>
-      </form>
+      <mat-form-field class="ancho">
+        <mat-label>Nombre:</mat-label>
+        <input matInput type="text" formControlName="nombre" />
+        <div *ngIf="formularioOwner.controls['nombre'].invalid && formularioOwner.controls['nombre'].touched">
+          <div *ngIf="formularioOwner.controls['nombre'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-      <form *ngSwitchCase="'estilista'" [formGroup]="formularioEstilista" (ngSubmit)="enviarFormularioEstilista()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Estilista:</mat-label>
-          <input matInput type="number" formControlName="id_estilista" />
-          <div *ngIf="formularioEstilista.controls['id_estilista'].invalid && formularioEstilista.controls['id_estilista'].touched">
-            <div *ngIf="formularioEstilista.controls['id_estilista'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Apellido:</mat-label>
+        <input matInput type="text" formControlName="apellido" />
+        <div *ngIf="formularioOwner.controls['apellido'].invalid && formularioOwner.controls['apellido'].touched">
+          <div *ngIf="formularioOwner.controls['apellido'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="ancho">
+        <mat-label>Telefono:</mat-label>
+        <input matInput type="number" formControlName="telefono" />
+        <div *ngIf="formularioOwner.controls['telefono'].invalid && formularioOwner.controls['telefono'].touched">
+          <div *ngIf="formularioOwner.controls['telefono'].errors?.['telefono']"></div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="ancho">
+        <mat-label>Direccion:</mat-label>
+        <input matInput type="text" formControlName="direccion" />
+        <div *ngIf="formularioOwner.controls['direccion'].invalid && formularioOwner.controls['direccion'].touched">
+          <div *ngIf="formularioOwner.controls['direccion'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <br>
+      <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioOwner.invalid">Guardar</button>
+    </form>
 
-        <mat-form-field class="ancho">
-          <mat-label>Nombre:</mat-label>
-          <input matInput type="text" formControlName="nombre" />
-          <div *ngIf="formularioEstilista.controls['nombre'].invalid && formularioEstilista.controls['nombre'].touched">
-            <div *ngIf="formularioEstilista.controls['nombre'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+    <form *ngSwitchCase="'estilista'" [formGroup]="formularioEstilista" (ngSubmit)="enviarFormularioEstilista()">
+      <mat-form-field class="ancho">
+        <mat-label>ID Estilista:</mat-label>
+        <input matInput type="number" formControlName="id_estilista" />
+        <div *ngIf="formularioEstilista.controls['id_estilista'].invalid && formularioEstilista.controls['id_estilista'].touched">
+          <div *ngIf="formularioEstilista.controls['id_estilista'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-        <mat-form-field class="ancho">
-          <mat-label>Apellido:</mat-label>
-          <input matInput type="text" formControlName="apellido" />
-          <div *ngIf="formularioEstilista.controls['apellido'].invalid && formularioEstilista.controls['apellido'].touched">
-            <div *ngIf="formularioEstilista.controls['apellido'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-      
-        <mat-form-field class="ancho">
-          <mat-label>Telefono:</mat-label>
-          <input matInput type="number" formControlName="telefono" />
-          <div *ngIf="formularioEstilista.controls['telefono'].invalid && formularioEstilista.controls['telefono'].touched">
-            <div *ngIf="formularioEstilista.controls['telefono'].errors?.['telefono']"></div>
-          </div>
-        </mat-form-field>
-      
-        <mat-form-field class="ancho">
-          <mat-label>Direccion:</mat-label>
-          <input matInput type="text" formControlName="direccion" />
-          <div *ngIf="formularioEstilista.controls['direccion'].invalid && formularioEstilista.controls['direccion'].touched">
-            <div *ngIf="formularioEstilista.controls['direccion'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-        <br>
-        <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioEstilista.invalid">Guardar</button>
-      </form>
-    </ng-container>
+      <mat-form-field class="ancho">
+        <mat-label>Nombre:</mat-label>
+        <input matInput type="text" formControlName="nombre" />
+        <div *ngIf="formularioEstilista.controls['nombre'].invalid && formularioEstilista.controls['nombre'].touched">
+          <div *ngIf="formularioEstilista.controls['nombre'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="ancho">
+        <mat-label>Apellido:</mat-label>
+        <input matInput type="text" formControlName="apellido" />
+        <div *ngIf="formularioEstilista.controls['apellido'].invalid && formularioEstilista.controls['apellido'].touched">
+          <div *ngIf="formularioEstilista.controls['apellido'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="ancho">
+        <mat-label>Telefono:</mat-label>
+        <input matInput type="number" formControlName="telefono" />
+        <div *ngIf="formularioEstilista.controls['telefono'].invalid && formularioEstilista.controls['telefono'].touched">
+          <div *ngIf="formularioEstilista.controls['telefono'].errors?.['telefono']"></div>
+        </div>
+      </mat-form-field>
+    
+      <mat-form-field class="ancho">
+        <mat-label>Direccion:</mat-label>
+        <input matInput type="text" formControlName="direccion" />
+        <div *ngIf="formularioEstilista.controls['direccion'].invalid && formularioEstilista.controls['direccion'].touched">
+          <div *ngIf="formularioEstilista.controls['direccion'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <br>
+      <button type="submit" class="btn btn-outline-secondary"  mat-raised-button color="primary" [disabled]="formularioEstilista.invalid">Guardar</button>
+    </form>
+  </ng-container>
   </div>
-</div>
