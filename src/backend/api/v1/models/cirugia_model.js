@@ -105,7 +105,7 @@ exports.getCirugiaByDiagnosticoIdsql = (DiagnosticoId, callback) => {
 //QUERY PARA OBTENER ID CIRUGIA POR MASCOTA ID
 exports.getCirugiaByMacotaIdsql = (MascotaId, callback) => {
   db.all(
-    "SELECT c.id_cirugia FROM Cirugia c JOIN diagnostico d ON c.id_diagnostico = d.id_diagnostico JOIN revision r ON d.id_revision = r.id_revision JOIN Cita_Agendada a ON r.id_cita = a.id_cita JOIN Mascota m ON a.id_mascota = m.id_mascota WHERE m.id_mascota = ?",
+    "SELECT Cirugia.id_cirugia FROM Cirugia JOIN diagnostico ON Cirugia.Diagnostico_id_diagnostico = diagnostico.id_diagnostico JOIN revision ON diagnostico.id_revision = revision.id_revision JOIN Cita_Agendada ON revision.Cita_Agendada_id_cita = Cita_Agendada.id_cita JOIN Mascota ON Cita_Agendada.Mascota_id_mascota = Mascota.id_mascota WHERE Mascota.id_mascota = ?",
     [MascotaId],
     (err, rows) => {
       if (err) {
