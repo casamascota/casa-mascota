@@ -1,0 +1,53 @@
+.carousel-header {
+    background-color: #FF6000;
+    color: #454545;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nosotros-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .nosotros-column {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .nosotros-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #454545;
+  }
+
+  .nosotros-description {
+    margin-top: 10px;
+    color: #454545;
+  }
+
+  /* Estilos de las imágenes */
+  .imagenes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .imagen-grande {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .imagen-pequeña {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
