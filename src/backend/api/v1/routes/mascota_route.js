@@ -8,5 +8,6 @@ router.post('/', mascotaController.createMascota)
 router.put('/:id', mascotaController.updateMascota)
 router.delete('/:id', mascotaController.deleteMascotaById)
 router.get('/owner/:id', mascotaController.getMascotaByOwnerId)
+router.get('/:id/citas', mascotaController.getCitasByMascotaId)
 
 module.exports = router

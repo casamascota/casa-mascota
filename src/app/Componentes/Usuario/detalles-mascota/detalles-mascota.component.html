@@ -1,7 +1,7 @@
 <h1 class="display-6">Detalle de la mascota</h1>
 
 <h2 style="color: #454545;">Cirugias Mascota</h2>
-<!-- Tabla de cirugías -->
+
 <table class="table table-success table-striped-columns">
   <thead>
     <tr>
@@ -30,6 +30,17 @@
     <tr *ngFor="let tratamiento of mascota.tratamientos">
       <td style="color: #FF6000;">{{ tratamiento.fecha }}</td>
       <td>{{ tratamiento.descripcion }}</td>
+      <th scope="col">ID Cita</th>
+      <th scope="col">ID Servicio</th>
+      <th scope="col">Hora</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cita of mascota.citas">
+      <td>{{ cita.id_cita }}</td>
+      <td>{{ cita.Servicio_id_servicio }}</td>
+
+      <td>{{ cita.hora }}</td>
     </tr>
   </tbody>
 </table>
