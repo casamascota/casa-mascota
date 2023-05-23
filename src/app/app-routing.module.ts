@@ -22,8 +22,9 @@ import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamie
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
-  { path: "", component: RecursosEducativosComponent},
+  //{ path: "", component: RecursosEducativosComponent},
   { path: "adopciones", component: AdopcionesComponent},
+  { path: "recursoseducativos", component: RecursosEducativosComponent},
   { path: "registro", component: ListasRegistrosComponent },
   { path: "agregar_registro", component: AgregarRegistroComponent },
   { path: 'actualizar_registro_doc', component: ActualizarRegistroComponent },
@@ -34,10 +35,8 @@ const routes: Routes = [
   { path: "estilista" , component: FormEstilistaComponent},
   { path: "tratamiento-formulario" , component: TratamientoFormularioComponent},
   { path: "cirugia-formulario" , component: CirugiaFormularioComponent},
-  { path: "lista-tratamiento" , component: ListaCirugiasComponent},
-  { path: "lista-cirugia" , component: ListaTratamientosComponent},
-  { path: "lista-tratamiento" , component: ListaCirugiasComponent},
-  { path: "lista-cirugia" , component: ListaTratamientosComponent},
+  { path: "lista-cirugia" , component: ListaCirugiasComponent},
+  { path: "lista-tratamientos" , component: ListaTratamientosComponent},
 
 
 
