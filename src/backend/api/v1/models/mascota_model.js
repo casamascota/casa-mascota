@@ -30,6 +30,17 @@ exports.getMascotas = (callback) => {
   });
 };
 
+exports.getCitasByMascotaId = (id, callback) => {
+  db.all('SELECT * FROM Cita_Agendada WHERE Mascota_id_mascota = ?', [id], (err, rows) => {
+    if (err) {
+      console.error(err.message);
+      callback(err);
+    } else {
+      callback(null, rows);
+    }
+  });
+}
+
 // Función para obtener una sola mascota por ID
 exports.getMascotaById = (id, callback) => {
   db.get('SELECT * FROM Mascota WHERE id_mascota = ?', [id], (err, row) => {
