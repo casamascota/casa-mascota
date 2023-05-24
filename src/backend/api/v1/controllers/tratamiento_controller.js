@@ -1,5 +1,4 @@
 const Tratamiento = require('../models/tratamiento_model');
-
 // Obtener todos los tratamientos
 exports.getTratamientos = (req, res) => {
   Tratamiento.getTratamientos((err, tratamientos) => {
