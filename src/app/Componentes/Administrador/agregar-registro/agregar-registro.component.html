@@ -1,26 +1,23 @@
-<div>
-  <form>
-    <label>Añadir<label>
-    <select>
+<div class="selector">
+  <mat-form-field>
+    <mat-label>Añadir</mat-label>
+    <select [(ngModel)] = "selectedForm" matNativeControl required>
       <option value="doctor/admin">Doctor</option>
       <option value="enfermero">Enfermero</option>
       <option value="mascota">Mascota</option>
       <option value="owner">Tutor</option>
       <option value="estilista">Estilista</option>
     </select>
-  <form>
- 
+  </mat-form-field>
+</div>
+
 <div class="body">
   <div class="center">
     <ng-container [ngSwitch]="selectedForm">
       <form *ngSwitchCase="'doctor/admin'" [formGroup]="formularioAdmDoc" (ngSubmit)="enviarFormularioAdmDoc()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Doctor:</mat-label>
-          <input matInput type="number" formControlName="id_doctor" />
-          <div *ngIf="formularioAdmDoc.controls['id_doctor'].invalid && formularioAdmDoc.controls['id_doctor'].touched">
-            <div *ngIf="formularioAdmDoc.controls['id_doctor'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+        <div class="d-flex flex-column text-center mb-5">
+          <h1 class="display-4 m-0"><span class="text-primary">Agregar</span> Doctor</h1>
+        </div>
 
         <mat-form-field class="ancho">
           <mat-label>Nombre:</mat-label>
@@ -42,7 +39,7 @@
           <mat-label>Telefono:</mat-label>
           <input matInput type="number" formControlName="numero_tel" />
           <div *ngIf="formularioAdmDoc.controls['numero_tel'].invalid && formularioAdmDoc.controls['numero_tel'].touched">
-            <div *ngIf="formularioAdmDoc.controls['numero_tel'].errors?.['telefono']"></div>
+            <div *ngIf="formularioAdmDoc.controls['numero_tel'].errors?.['required']"></div>
           </div>
         </mat-form-field>
       
@@ -58,13 +55,9 @@
       </form>
 
       <form *ngSwitchCase="'enfermero'" [formGroup]="formularioEnfermero" (ngSubmit)="enviarFormularioEnfermero()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Enfermero:</mat-label>
-          <input matInput type="number" formControlName="id_enfermero" />
-          <div *ngIf="formularioEnfermero.controls['id_enfermero'].invalid && formularioEnfermero.controls['id_enfermero'].touched">
-            <div *ngIf="formularioEnfermero.controls['id_enfermero'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+        <div class="d-flex flex-column text-center mb-5">
+          <h1 class="display-4 m-0"><span class="text-primary">Agregar</span> Enfermero</h1>
+        </div>
 
         <mat-form-field class="ancho">
           <mat-label>Nombre:</mat-label>
@@ -84,9 +77,9 @@
 
         <mat-form-field class="ancho">
           <mat-label>Telefono:</mat-label>
-          <input matInput type="number" formControlName="telefono" />
-          <div *ngIf="formularioEnfermero.controls['telefono'].invalid && formularioEnfermero.controls['telefono'].touched">
-            <div *ngIf="formularioEnfermero.controls['telefono'].errors?.['telefono']"></div>
+          <input matInput type="number" formControlName="numero_tel" />
+          <div *ngIf="formularioEnfermero.controls['numero_tel'].invalid && formularioEnfermero.controls['numero_tel'].touched">
+            <div *ngIf="formularioEnfermero.controls['numero_tel'].errors?.['required']"></div>
           </div>
         </mat-form-field>
       
@@ -102,13 +95,9 @@
       </form>
 
       <form *ngSwitchCase="'mascota'" [formGroup]="formularioMascota" (ngSubmit)="enviarFormularioMascota()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Mascota:</mat-label>
-          <input matInput type="number" formControlName="id_mascota" />
-          <div *ngIf="formularioMascota.controls['id_mascota'].invalid && formularioMascota.controls['id_mascota'].touched">
-            <div *ngIf="formularioMascota.controls['id_mascota'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+        <div class="d-flex flex-column text-center mb-5">
+          <h1 class="display-4 m-0"><span class="text-primary">Agregar</span> Mascota</h1>
+        </div>
 
         <mat-form-field class="ancho">
           <mat-label>Nombre:</mat-label>
@@ -155,15 +144,6 @@
           </div>
         </mat-form-field>
 
-        <!--
-        <mat-form-field class="ancho">
-          <mat-label>Fecha de nacimiento:</mat-label>
-          <input matInput type="date" id="fechaNacimiento" formControlName="fechaNacimiento" />
-          <div *ngIf="formularioMascota.controls['fechaNacimiento'].invalid && formularioMascota.controls['fechaNacimiento'].touched">
-            <div *ngIf="formularioMascota.controls['fechaNacimiento'].errors?.['required']">La fecha de nacmiento es requerida.</div>
-          </div>
-        </mat-form-field>-->
-
         <mat-form-field class="ancho">
           <mat-label>Peso:</mat-label>
           <input matInput type="number" id="peso" formControlName="peso" />
@@ -184,13 +164,9 @@
       </form>
 
       <form *ngSwitchCase="'owner'" [formGroup]="formularioOwner" (ngSubmit)="enviarFormularioOwner()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Owner:</mat-label>
-          <input matInput type="number" formControlName="id_owner" />
-          <div *ngIf="formularioOwner.controls['id_owner'].invalid && formularioOwner.controls['id_owner'].touched">
-            <div *ngIf="formularioOwner.controls['id_owner'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+        <div class="d-flex flex-column text-center mb-5">
+          <h1 class="display-4 m-0"><span class="text-primary">Agregar</span> Owner</h1>
+        </div>
 
         <mat-form-field class="ancho">
           <mat-label>Nombre:</mat-label>
@@ -210,9 +186,9 @@
       
         <mat-form-field class="ancho">
           <mat-label>Telefono:</mat-label>
-          <input matInput type="number" formControlName="telefono" />
-          <div *ngIf="formularioOwner.controls['telefono'].invalid && formularioOwner.controls['telefono'].touched">
-            <div *ngIf="formularioOwner.controls['telefono'].errors?.['telefono']"></div>
+          <input matInput type="number" formControlName="numero_tel" />
+          <div *ngIf="formularioOwner.controls['numero_tel'].invalid && formularioOwner.controls['numero_tel'].touched">
+            <div *ngIf="formularioOwner.controls['numero_tel'].errors?.['required']"></div>
           </div>
         </mat-form-field>
       
@@ -228,13 +204,9 @@
       </form>
 
       <form *ngSwitchCase="'estilista'" [formGroup]="formularioEstilista" (ngSubmit)="enviarFormularioEstilista()">
-        <mat-form-field class="ancho">
-          <mat-label>ID Estilista:</mat-label>
-          <input matInput type="number" formControlName="id_estilista" />
-          <div *ngIf="formularioEstilista.controls['id_estilista'].invalid && formularioEstilista.controls['id_estilista'].touched">
-            <div *ngIf="formularioEstilista.controls['id_estilista'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
+        <div class="d-flex flex-column text-center mb-5">
+          <h1 class="display-4 m-0"><span class="text-primary">Agregar</span> Estilista</h1>
+        </div>
 
         <mat-form-field class="ancho">
           <mat-label>Nombre:</mat-label>
@@ -254,9 +226,9 @@
       
         <mat-form-field class="ancho">
           <mat-label>Telefono:</mat-label>
-          <input matInput type="number" formControlName="telefono" />
-          <div *ngIf="formularioEstilista.controls['telefono'].invalid && formularioEstilista.controls['telefono'].touched">
-            <div *ngIf="formularioEstilista.controls['telefono'].errors?.['telefono']"></div>
+          <input matInput type="number" formControlName="numero_tel" />
+          <div *ngIf="formularioEstilista.controls['numero_tel'].invalid && formularioEstilista.controls['numero_tel'].touched">
+            <div *ngIf="formularioEstilista.controls['numero_tel'].errors?.['required']"></div>
           </div>
         </mat-form-field>
       

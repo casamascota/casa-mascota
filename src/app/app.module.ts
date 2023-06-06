@@ -8,11 +8,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 //----Componentes
+import { NavBarComponent } from './Componentes/Usuario/NavBar/NavBar.component';
 import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
 import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
 import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
+import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
+import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
+import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
+import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
+import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
+import { TratamientoFormularioComponent } from './Componentes/Usuario/tratamiento-formulario/tratamiento-formulario.component';
+import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
+import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formulario/cirugia-formulario.component';
+import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
+import { DetalleTratamientoComponent } from './Componentes/Usuario/detalle-tratamiento/detalle-tratamiento.component';
+import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia/detalles-cirugia.component';
+import { FooterComponent } from './Componentes/Usuario/Footer/Footer.component';
 
 //----Modulos
 import { FormsModule } from '@angular/forms';
@@ -31,19 +46,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
-import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
-import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
-import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
-import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
-import { TratamientoFormularioComponent } from './Componentes/Usuario/tratamiento-formulario/tratamiento-formulario.component';
-import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
-import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formulario/cirugia-formulario.component';
-import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
-import { DetalleTratamientoComponent } from './Componentes/Usuario/detalle-tratamiento/detalle-tratamiento.component';
-import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia/detalles-cirugia.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia
     ListaCirugiasComponent,
     DetalleTratamientoComponent,
     DetallesCirugiaComponent,
+    NavBarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

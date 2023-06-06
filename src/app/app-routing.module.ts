@@ -21,10 +21,9 @@ import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lis
 import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
 
 const routes: Routes = [
+  { path: "", component: RecursosEducativosComponent},
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
-  //{ path: "", component: RecursosEducativosComponent},
   { path: "adopciones", component: AdopcionesComponent},
-  { path: "recursoseducativos", component: RecursosEducativosComponent},
   { path: "registro", component: ListasRegistrosComponent },
   { path: "agregar_registro", component: AgregarRegistroComponent },
   { path: 'actualizar_registro_doc', component: ActualizarRegistroComponent },
