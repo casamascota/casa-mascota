@@ -7,27 +7,20 @@ import { HttpClient } from "@angular/common/http";
 })
 
 export class DoctoresService {
-    URL_BASE = 'http://localhost:3000/api/';
+  URL_BASE = 'http://localhost:3000/api/';
 
-    //listDocAdm: Doctor_Admin[] = [];
+  constructor(private httpClient: HttpClient) {}
 
-    listDoctor: Doctor_Admin[] = [];
-
-    constructor(private httpClient: HttpClient) { 
-        this.getDoctores();
-    }
-
-    getDoctores() {
-        const url = this.URL_BASE + 'doctores';
-     this.httpClient.get(url).subscribe(
-      (res: any) => {
+  getDoctores(): Promise<Doctor_Admin[]> {
+    const url = this.URL_BASE + 'doctores';
+    return this.httpClient.get(url).toPromise()
+      .then((res: any) => {
         console.log(res);
-        this.listDoctor = res; 
-      },
-      err => {
+        return res as Doctor_Admin[];
+      })
+      .catch((err) => {
         console.log(err);
-      }
-    );
-    return this.listDoctor;
+        return [];
+      });
   }
 }

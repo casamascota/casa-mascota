@@ -10,34 +10,29 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./listas-registros.component.css']
 })
 export class ListasRegistrosComponent implements OnInit {
+  selectedForm: string;
   URL_BASE = 'http://localhost:3000/api/';
   listDoctores: Doctor_Admin[] = [];
 
-  displayedColumns: string[] = ['id_doctor', 'nombre', 'apellido', 'telefono', 'direccion', 'acciones'];
+  displayedColumns: string[] = ['id_doctor', 'nombre', 'apellido', 'numero_tel', 'direccion', 'acciones'];
   dataSource!: MatTableDataSource<Doctor_Admin>;
 
   constructor(private _doctoresServices: DoctoresService) {
+    this.selectedForm = 'doctor/admin';
     this.cargarDoctores();
    }
 
   ngOnInit() {
   }
 
-  cargarDoctores() {
-    /*const url = this.URL_BASE + 'doctores';
-    this.http.get(url).subscribe(
-      (res: any) => {
-        console.log(res);
-        this.listDoctores = res; // Asignar las mascotas recuperadas a la variable mascotas
-      },
-      err => {
-        console.log(err);
-      }
-    );*/
-    this.listDoctores = this._doctoresServices.getDoctores();
-    console.log("Lista" + this.listDoctores);
-  
-    this.dataSource = new MatTableDataSource(this.listDoctores);
+  async cargarDoctores() {
+    try {
+      this.listDoctores = await this._doctoresServices.getDoctores();
+      console.log("Lista: ", this.listDoctores);
+      this.dataSource = new MatTableDataSource<Doctor_Admin>(this.listDoctores);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   applyFilter(event: Event) {
@@ -49,7 +44,4 @@ export class ListasRegistrosComponent implements OnInit {
     console.log(id);
     this.cargarDoctores();
   }
-
-  
-
 }

@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: "adopciones", component: AdopcionesComponent},
   { path: "registro", component: ListasRegistrosComponent },
   { path: "agregar_registro", component: AgregarRegistroComponent },
-  { path: 'actualizar_registro_doc', component: ActualizarRegistroComponent },
+  { path: 'actualizar_registro', component: ActualizarRegistroComponent },
   { path: "citas", component: ReservaCitaComponent },
   { path: "citas-agendadas", component: ListaCitasComponent },
   { path: "lista-mascotas", component: ListaMascotasComponent },
