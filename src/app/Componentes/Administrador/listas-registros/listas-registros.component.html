@@ -1,6 +1,6 @@
 <div class="selector">
   <mat-form-field>
-    <mat-label>Añadir</mat-label>
+    <mat-label>Listas</mat-label>
     <select [(ngModel)] = "selectedForm" matNativeControl required>
       <option value="doctor/admin">Doctor</option>
       <option value="enfermero">Enfermero</option>
@@ -11,18 +11,19 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Filter</mat-label>
+    <mat-label>Filtrar</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input autocomplete="off">
   </mat-form-field>
   <br>
   <button mat-fab extended color="primary" routerLink="/agregar_registro">
     <mat-icon>add</mat-icon>
-    Agregar
+    Agregar 
   </button>
 </div>
 
 <div class="body">
   <div class="center">
+    <h1 class="display-4 mb-4" style="text-align: center;">Casa de la Mascota<span class="text-primary"> Lista doctores</span></h1>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.
