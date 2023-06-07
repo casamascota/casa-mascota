@@ -83,16 +83,37 @@ export class AgregarRegistroComponent{
   
   enviarFormularioEnfermero() {
     if (this.formularioEnfermero.valid) {
-      console.log("Enfermero: ");
+      const url = this.URL_BASE + 'enfermeros';
+      const formData = this.formularioEnfermero.value;
+
+      this.http.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      )
+
       console.log(this.formularioEnfermero.value);
     }
   }
 
   enviarFormularioOwner() {
     if (this.formularioOwner.valid) {
-      console.log("Owner: ");
+      const url = this.URL_BASE + 'owners';
+      const formData = this.formularioOwner.value;
+
+      this.http.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      )
+
       console.log(this.formularioOwner.value);
-      
     }
   }
 
@@ -105,7 +126,18 @@ export class AgregarRegistroComponent{
 
   enviarFormularioEstilista() {
     if (this.formularioEstilista.valid) {
-      console.log ("Estilista: ");
+      const url = this.URL_BASE + 'estilistas';
+      const formData = this.formularioEstilista.value;
+
+      this.http.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      )
+
       console.log(this.formularioEstilista.value);
     }
   }

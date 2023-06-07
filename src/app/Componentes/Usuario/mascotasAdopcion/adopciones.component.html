@@ -1,79 +1,79 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Casa de la Mascota - Programa de Adopciones</title>
-  <link rel="stylesheet" type="text/css" href="adopciones.component.css">
-</head>
-
-<body>
-  <h1 class="center">Casa de la Mascota</h1>
-  <p class="center">Pionera en implantar el programa de Adopciones en Bolivia</p>
-
+<!-- Booking Start -->
+<div class="container-fluid">
   <div class="container">
-    <h2 class="subtitle">Los perros y gatos entran a un Programa de adopción</h2>
-    <p>Los interesados deben llenar una evaluación previa para ser aprobados antes de firmar el Certificado de Adopción (documento privado).
-      Mediante este, el nuevo propietario se compromete a darle albergue, alimentación y un seguimiento mínimo veterinario.</p>
-    <p>No encadenarlo, no maltratarlo, no utilizarlo en experimentos científicos y no cederlos a terceros sin conocimiento de nuestra organización
-      son otros requisitos para la adopción.</p>
+      <div class="row align-items-center">
+          <div class="col-lg-5">
+              <div class="bg-primary py-5 px-4 px-sm-5">
+                  <form class="py-5">
+                      <div class="form-group">
+                          <input type="text" class="form-control border-0 p-4" placeholder="Nombre" required="required" />
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control border-0 p-4" placeholder="Apellido" required="required" />
+                      </div>
+                      <div class="form-group">
+                          <input type="email" class="form-control border-0 p-4" placeholder="Correo" required="required" />
+                      </div>
+                      <div class="form-group">
+                        <input type="number" class="form-control border-0 p-4" placeholder="Telefono" required="required" />
+                      </div>
+                      <div class="form-group">
+                          <select class="custom-select border-0 px-4" style="height: 47px;">
+                              <option selected>Tipo mascota</option>
+                              <option value="1">Perro</option>
+                              <option value="2">Gato</option>
+                              <option value="3">Loro</option>
+                              <option value="4">Tortuga</option>
+                              <option value="5">Hamster</option>
+                          </select>
+                      </div>
+                      <div>
+                          <button class="btn btn-dark btn-block border-0 py-3" type="submit">Enviar solicitud </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
+              <h1 class="display-4 mb-4">Casa de <span class="text-primary">la Mascota</span></h1>
+              <p>Las adopciones se atienden de lunes a viernes de 9:00 a 13:30 – 14:30 a 17:30. Sábados y domingos de 10:00 a 16:00 horas.</p>
+              <div class="row py-2">
+                  <div class="col-sm-6">
+                      <div class="d-flex flex-column">
+                          <div class="d-flex align-items-center mb-2">
+                              <h1 class="flaticon-house font-weight-normal text-secondary m-0 mr-3"></h1>
+                              <h5 class="text-truncate m-0">Casa propia y permiso escrito.</h5>
+                          </div>
+                          <p>Fotocopia de la última factura de luz o agua.</p>
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="d-flex flex-column">
+                          <div class="d-flex align-items-center mb-2">
+                              <h1 class="flaticon-food font-weight-normal text-secondary m-0 mr-3"></h1>
+                              <h5 class="text-truncate m-0">Fotocopia de C.I.</h5>
+                          </div>
+                          <p>La persona tiene que ser mayor de 21 años.</p>
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="d-flex flex-column">
+                          <div class="d-flex align-items-center mb-2">
+                              <h1 class="flaticon-grooming font-weight-normal text-secondary m-0 mr-3"></h1>
+                              <h5 class="text-truncate m-0">Cubrir el 50% del costo de 2 vacunas</h5>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="d-flex flex-column">
+                          <div class="d-flex align-items-center mb-2">
+                              <h1 class="flaticon-toy font-weight-normal text-secondary m-0 mr-3"></h1>
+                              <h5 class="text-truncate m-0">Número de teléfono fijo.</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-
-  <div class="charts-container">
-    <div class="chart">
-      <div class="chart-circle" style="--percent: 85;"></div>
-      <span class="chart-label">Seguridad</span>
-    </div>
-    <div class="chart">
-      <div class="chart-circle" style="--percent: 80;"></div>
-      <span class="chart-label">Mejores Doctores</span>
-    </div>
-  </div>
-
-  <div class="requirements">
-    <h2 class="subtitle">Requisitos: Adopción de mascotas</h2>
-    <p>Las adopciones se atienden de lunes a viernes de 9:00 a 13:30 – 14:30 a 17:30. Sábados y domingos de 10:00 a 16:00 horas.</p>
-    <ul>
-      <li>Fotocopia de C.I y la persona tiene que ser mayor de 21 años.</li>
-      <li>Número de teléfono fijo.</li>
-      <li>Fotocopia de la última factura de luz o agua.</li>
-      <li>Casa propia y permiso escrito.</li>
-      <li>Cubrir el 50% del costo de 2 vacunas (decavalente en perros y triple felina en gatos) y una cirugía de esterilización.
-        Todo 170 Bs.</li>
-      <li>Realizar el llenado del siguiente formulario:</li>
-    </ul>
-  </div>
-
-  <div class="adoption-form-container">
-    <h2 class="subtitle">Formulario de Adopción</h2>
-    <form class="adoption-form" action="procesar_adopcion.php" method="POST">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
-      <br><br>
-      <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido" name="apellido" required>
-      <br><br>
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required>
-      <br><br>
-      <label for="telefono">Teléfono:</label>
-      <input type="tel" id="telefono" name="telefono" required>
-      <br><br>
-      <label for="tipo_mascota">Tipo de mascota:</label>
-      <select id="tipo_mascota" name="tipo_mascota" required>
-        <option value="perro">Perro</option>
-        <option value="gato">Gato</option>
-        <option value="gato">Loro</option>
-        <option value="gato">Tortuga</option>
-        <option value="gato">Hámster</option>
-      </select>
-      <br><br>
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" required></textarea>
-      <br><br>
-      <button type="submit">Enviar solicitud de adopción</button>
-    </form>
-  </div>
-
-</body>
-
-</html>
+</div>
+<!-- Booking Start -->
