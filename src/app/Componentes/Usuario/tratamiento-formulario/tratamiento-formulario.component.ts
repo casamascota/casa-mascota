@@ -41,8 +41,8 @@ export class TratamientoFormularioComponent {
     const correo = 'diego.tiger.ac@gmail.com'; // Cambia por la dirección de correo a la que deseas enviar el correo
     const formData = {
       to: correo,
-      subject: 'Nuevo formulario de contacto',
-      text: 'Se ha enviado un nuevo formulario de contacto'
+      subject: 'Actualizacion de Tratamiento',
+      text: 'Esperamos que este correo te encuentre bien. En Casa de la Mascota, nos complace brindarte un excelente servicio y cuidado para tu amada mascota. Queremos informarte que hemos realizado una actualización en el tratamiento de tu mascota, con el objetivo de garantizar su bienestar y mejorar su calidad de vida.  Nos gustaría recordarte que, como dueño responsable, desempeñas un papel fundamental en el cuidado de tu mascota.'
     };
 
     this.httpClient.post(url, formData).subscribe(
