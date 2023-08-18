@@ -4,7 +4,6 @@
     <select [(ngModel)] = "selectedForm" matNativeControl required>
       <option value="doctor/admin">Doctor</option>
       <option value="enfermero">Enfermero</option>
-      <option value="mascota">Mascota</option>
       <option value="owner">Tutor</option>
       <option value="estilista">Estilista</option>
     </select>
@@ -94,75 +93,6 @@
         <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioEnfermero.invalid">Guardar</button>
       </form>
 
-      <form *ngSwitchCase="'mascota'" [formGroup]="formularioMascota" (ngSubmit)="enviarFormularioMascota()">
-        <div class="d-flex flex-column text-center mb-5">
-          <h1 class="display-4 m-0"><span class="text-primary">Agregar</span> Mascota</h1>
-        </div>
-
-        <mat-form-field class="ancho">
-          <mat-label>Nombre:</mat-label>
-          <input matInput type="text" formControlName="nombre" />
-          <div *ngIf="formularioMascota.controls['nombre'].invalid && formularioMascota.controls['nombre'].touched">
-            <div *ngIf="formularioMascota.controls['nombre'].errors?.['required']">El nombre es requerido.</div>
-          </div>
-        </mat-form-field>
-
-        <mat-form-field class="ancho">
-          <mat-label>Raza:</mat-label>
-          <input matInput type="text" formControlName="raza" />
-          <div *ngIf="formularioMascota.controls['raza'].invalid && formularioMascota.controls['raza'].touched">
-            <div *ngIf="formularioMascota.controls['raza'].errors?.['required']">La raza es requerida.</div>
-          </div>
-        </mat-form-field>
-
-        <mat-form-field class="ancho">
-          <mat-label>Edad:</mat-label>
-          <input matInput type="number" id="edad" formControlName="edad" />
-          <div *ngIf="formularioMascota.controls['edad'].invalid && formularioMascota.controls['edad'].touched">
-            <div *ngIf="formularioMascota.controls['edad'].errors?.['required']">La edad es requerido.</div>
-          </div>
-        </mat-form-field>
-
-        <mat-form-field class="ancho">
-          <mat-label>Genero:</mat-label>
-          <select id="genero" name="genero" formControlName="genero" matNativeControl required>
-            <option value="Macho">Macho</option>
-            <option value="Hembra">Hembra</option>
-          </select>
-          <div *ngIf="formularioMascota.controls['genero'].invalid && formularioMascota.controls['genero'].touched">
-            <div *ngIf="formularioMascota.controls['genero'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-
-        <mat-form-field class="ancho">
-          <mat-label>Fecha de nacimiento:</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <div *ngIf="formularioMascota.controls['fechaNacimiento'].invalid && formularioMascota.controls['fechaNacimiento'].touched">
-            <div *ngIf="formularioMascota.controls['fechaNacimiento'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-
-        <mat-form-field class="ancho">
-          <mat-label>Peso:</mat-label>
-          <input matInput type="number" id="peso" formControlName="peso" />
-          <div *ngIf="formularioMascota.controls['peso'].invalid && formularioMascota.controls['peso'].touched">
-            <div *ngIf="formularioMascota.controls['peso'].errors?.['required']">El peso es requerido.</div>
-          </div>
-        </mat-form-field>
-
-        <mat-form-field class="ancho">
-          <mat-label>Especie:</mat-label>
-          <input matInput type="text" id="especie" formControlName="especie" />
-          <div *ngIf="formularioMascota.controls['especie'].invalid && formularioMascota.controls['especie'].touched">
-            <div *ngIf="formularioMascota.controls['especie'].errors?.['especie']">La especie es requerida.</div>
-          </div>
-        </mat-form-field>
-        <br>
-        <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioMascota.invalid">Guardar</button>
-      </form>
-
       <form *ngSwitchCase="'owner'" [formGroup]="formularioOwner" (ngSubmit)="enviarFormularioOwner()">
         <div class="d-flex flex-column text-center mb-5">
           <h1 class="display-4 m-0"><span class="text-primary">Agregar</span> Owner</h1>
@@ -199,6 +129,14 @@
             <div *ngIf="formularioOwner.controls['direccion'].errors?.['required']"></div>
           </div>
         </mat-form-field>
+
+        <mat-form-field class="ancho">
+          <mat-label>Correo:</mat-label>
+          <input matInput type="text" formControlName="correo" />
+          <div *ngIf="formularioOwner.controls['correo'].invalid && formularioOwner.controls['correo'].touched">
+            <div *ngIf="formularioOwner.controls['correo'].errors?.['required']"></div>
+          </div>
+        </mat-form-field>
         <br>
         <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioOwner.invalid">Guardar</button>
       </form>
@@ -229,14 +167,6 @@
           <input matInput type="number" formControlName="numero_tel" />
           <div *ngIf="formularioEstilista.controls['numero_tel'].invalid && formularioEstilista.controls['numero_tel'].touched">
             <div *ngIf="formularioEstilista.controls['numero_tel'].errors?.['required']"></div>
-          </div>
-        </mat-form-field>
-      
-        <mat-form-field class="ancho">
-          <mat-label>Direccion:</mat-label>
-          <input matInput type="text" formControlName="direccion" />
-          <div *ngIf="formularioEstilista.controls['direccion'].invalid && formularioEstilista.controls['direccion'].touched">
-            <div *ngIf="formularioEstilista.controls['direccion'].errors?.['required']"></div>
           </div>
         </mat-form-field>
         <br>

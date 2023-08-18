@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //----Componentes
 import { NavBarComponent } from './Componentes/Usuario/NavBar/NavBar.component';
-import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
+import { MascotaFormularioComponent } from './Componentes/Administrador/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
 import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
@@ -21,9 +21,9 @@ import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
 import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
-import { TratamientoFormularioComponent } from './Componentes/Usuario/tratamiento-formulario/tratamiento-formulario.component';
+import { TratamientoFormularioComponent } from './Componentes/Administrador/tratamiento-formulario/tratamiento-formulario.component';
 import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
-import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formulario/cirugia-formulario.component';
+import { CirugiaFormularioComponent } from './Componentes/Administrador/cirugia-formulario/cirugia-formulario.component';
 import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
 import { DetalleTratamientoComponent } from './Componentes/Usuario/detalle-tratamiento/detalle-tratamiento.component';
 import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia/detalles-cirugia.component';

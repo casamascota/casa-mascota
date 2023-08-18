@@ -1,5 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
 import { AdopcionesComponent } from './Componentes/Usuario/mascotasAdopcion/adopciones.component';
@@ -7,20 +9,25 @@ import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEduca
 
 import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
 
-import { MascotaFormularioComponent } from './Componentes/Usuario/mascota-formulario/mascota-formulario.component';
+import { MascotaFormularioComponent } from './Componentes/Administrador/mascota-formulario/mascota-formulario.component';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
 import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
 import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
 import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
 //routing de formulario tratamientos y cirugias
-import { TratamientoFormularioComponent } from './Componentes/Usuario/tratamiento-formulario/tratamiento-formulario.component';
-import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formulario/cirugia-formulario.component';
+import { TratamientoFormularioComponent } from './Componentes/Administrador/tratamiento-formulario/tratamiento-formulario.component';
+import { CirugiaFormularioComponent } from './Componentes/Administrador/cirugia-formulario/cirugia-formulario.component';
 //routing de listas tratamientos y cirugias
 import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
 import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
 
+/*
+// Componentes EF
+import { PresentacionComponent } from './FinalTecWeb/Presentacion/Presentacion.component';
+import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';*/
 const routes: Routes = [
+  
   { path: "", component: RecursosEducativosComponent},
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
   { path: "adopciones", component: AdopcionesComponent},
@@ -37,7 +44,10 @@ const routes: Routes = [
   { path: "lista-cirugia" , component: ListaCirugiasComponent},
   { path: "lista-tratamientos" , component: ListaTratamientosComponent},
 
-
+  /* Componentes EF
+  { path: "", component: PresentacionComponent},
+  { path: "registro", component: ListasRegistrosComponent },
+*/
 
   
 ];

@@ -3,11 +3,6 @@
 <h2>Formulario de Registro de Mascota</h2>
 <form [formGroup]="formMascota" (ngSubmit)="onSubmit()">
   <div>
-    <label for="id_mascota">ID de Mascota:</label>
-    <input type="number" id="id_mascota" name="id_mascota" formControlName="id_mascota">
-  </div>
-
-  <div>
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" formControlName="nombre">
   </div>
@@ -51,5 +46,5 @@
     <label for="id_dueno">ID del Dueño:</label>
     <input type="text" id="id_dueno" name="id_dueno" formControlName="Owner_id_owner">
   </div>
-  <button type="submit">Enviar</button>
+  <button type="submit">Guardar</button>
 </form>
