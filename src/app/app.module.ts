@@ -46,25 +46,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
-import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
-import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
-import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
-import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
-import { TratamientoFormularioComponent } from './Componentes/Usuario/tratamiento-formulario/tratamiento-formulario.component';
-import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
-import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formulario/cirugia-formulario.component';
-import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
-import { DetalleTratamientoComponent } from './Componentes/Usuario/detalle-tratamiento/detalle-tratamiento.component';
-import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia/detalles-cirugia.component';
 import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
 import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavBarComponent,
+    FooterComponent,
     MascotaFormularioComponent,
     AgregarRegistroComponent,
     ListasRegistrosComponent,

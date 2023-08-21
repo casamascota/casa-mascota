@@ -23,6 +23,8 @@ import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lis
 import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
 import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
 import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
+import { NavBarComponent } from './Componentes/Usuario/NavBar/NavBar.component';
+import { FooterComponent } from './Componentes/Usuario/Footer/Footer.component';
 
 /*
 // Componentes EF
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: "lista-tratamientos" , component: ListaTratamientosComponent},
   { path: "inicio" , component: InicioComponent},
   { path: "nosotros" , component: NosotrosComponent},
+  { path: "app-navbar" , component:  NavBarComponent},
+  { path: "app-footer" , component: FooterComponent },
 
 
   
