@@ -41,7 +41,7 @@ exports.getOwnerByIdsql = (id, callback) => {
 exports.createOwnersql = (tratamiento, callback) => {
   const { id, nombre, apellido, numero_tel, direccion, correo } = tratamiento;
   db.run(
-    'INSERT INTO Owner (id_owner, nombre, apellido, numero_tel, direccion, correo) VALUES (?, ?, ?, ?, ?)',
+    'INSERT INTO Owner (id_owner, nombre, apellido, numero_tel, direccion, correo) VALUES (?, ?, ?, ?, ?, ?)',
     [id, nombre, apellido, numero_tel, direccion, correo],
     (err) => {
       if (err) {

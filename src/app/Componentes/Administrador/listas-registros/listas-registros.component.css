@@ -9,3 +9,25 @@ th {
 .pointer {
     cursor: pointer;
 }
+
+.selector {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 5rem;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+}
+
+.center {
+    width: 100%;
+    max-width: 80%;
+}
+
+/*Colocar boton a la derecha*/
+.agregar {
+    margin-left: 80%;
+}

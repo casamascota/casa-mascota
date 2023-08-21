@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DoctoresService } from '../../services/doctor.service';
 
-
 @Component({
   selector: 'app-agregar-registro',
   templateUrl: './agregar-registro.component.html',
@@ -15,52 +14,40 @@ export class AgregarRegistroComponent{
   formularioAdmDoc: FormGroup;
   formularioEnfermero: FormGroup;
   formularioOwner: FormGroup;
-  formularioMascota: FormGroup;
   formularioEstilista: FormGroup;
   URL_BASE = 'http://localhost:3000/api/';
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.formularioAdmDoc = this.formBuilder.group({
-      id_doctor: [null, Validators.required],
+      id_doctor: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
       numero_tel: [null, Validators.required],
       direccion: [null, Validators.required],
     });
     this.formularioEnfermero = this.formBuilder.group({
-      id_enfermero: [null, Validators.required],
+      id_enfermero: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
-      telefono: [null, Validators.required],
+      numero_tel: [null, Validators.required],
       direccion: [null, Validators.required],
     });
     this.formularioOwner = this.formBuilder.group({
-      id_owner: [null, Validators.required],
+      id_owner: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
-      telefono: [null, Validators.required],
-      direccion: [null, Validators.required]
-    });
-    this.formularioMascota = this.formBuilder.group({
-      id_mascota: [null, Validators.required],
-      nombre: [null, Validators.required],
-      raza: [null, Validators.required],
-      edad: [null, Validators.required],
-      genero: [null, Validators.required],
-      fechaNacimiento: [null, Validators.required],
-      peso: [null, Validators.required],
-      especie: [null, Validators.required],
+      numero_tel: [null, Validators.required],
+      direccion: [null, Validators.required],
+      correo: [null, Validators.required],
     });
     this.formularioEstilista = this.formBuilder.group({
-      id_estilista: [null, Validators.required],
+      id_estilista: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
-      telefono: [null, Validators.required],
-      direccion: [null, Validators.required],
+      numero_tel: [null, Validators.required],
     });
 
     this.selectedForm = 'doctor/admin';
-  
   }
   
   enviarFormularioAdmDoc() {
@@ -71,6 +58,7 @@ export class AgregarRegistroComponent{
       this.http.post(url, formData).subscribe(
         res => {
           console.log(res);
+          alert('Doctor guardado con exito');
         },
         err => {
           console.log(err);
@@ -84,29 +72,57 @@ export class AgregarRegistroComponent{
   
   enviarFormularioEnfermero() {
     if (this.formularioEnfermero.valid) {
-      console.log("Enfermero: ");
+      const url = this.URL_BASE + 'enfermeros';
+      const formData = this.formularioEnfermero.value;
+
+      this.http.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+          alert('Enfermero guardado con exito');
+        },
+        err => {
+          console.log(err);
+        }
+      )
+
       console.log(this.formularioEnfermero.value);
     }
   }
 
   enviarFormularioOwner() {
     if (this.formularioOwner.valid) {
-      console.log("Owner: ");
-      console.log(this.formularioOwner.value);
-      
-    }
-  }
+      const url = this.URL_BASE + 'owners';
+      const formData = this.formularioOwner.value;
 
-  enviarFormularioMascota() {
-    if (this.formularioMascota.valid) {
-      console.log("Mascota: ");
-      console.log(this.formularioMascota.value);
+      this.http.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+          alert('Owner guardado con exito');
+        },
+        err => {
+          console.log(err);
+        }
+      )
+
+      console.log(this.formularioOwner.value);
     }
   }
 
   enviarFormularioEstilista() {
     if (this.formularioEstilista.valid) {
-      console.log ("Estilista: ");
+      const url = this.URL_BASE + 'estilistas';
+      const formData = this.formularioEstilista.value;
+
+      this.http.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+          alert('Estilista guardado con exito');
+        },
+        err => {
+          console.log(err);
+        }
+      )
+
       console.log(this.formularioEstilista.value);
     }
   }

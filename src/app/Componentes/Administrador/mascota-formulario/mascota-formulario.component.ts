@@ -17,17 +17,15 @@ export class MascotaFormularioComponent {
 
   constructor(private httpClient: HttpClient, private formBuilder: FormBuilder ) { 
     this.formMascota = this.formBuilder.group({
-      id_mascota: ['',Validators.required],
+      id_mascota: [1,Validators.required],
       nombre: ['',Validators.required],
       raza: ['',Validators.required],
       edad: ['',Validators.required], 
       genero : ['',Validators.required],
       fecha_nacimiento: ['',Validators.required],
-      
       peso: ['',Validators.required],
       isAdopted: [0,Validators.required],
-      Owner_id_owner: ['',Validators.required]
-     
+      Owner_id_owner: ['',Validators.required],
     });
   }
 
@@ -37,13 +35,23 @@ export class MascotaFormularioComponent {
   }
 
   guardarMascota() {
-    this.httpClient.post(this.URL_BASE + 'mascotas', this.formMascota.value).subscribe(
-      (response: any) => {
-        console.log(response);
-        alert('Mascota guardada con exito');
-      },
-      (error) => console.log(error)
-    );
+    if (this.formMascota.valid) {
+      const url = this.URL_BASE + 'mascotas';
+      const formData = this.formMascota.value;
+
+      this.httpClient.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+          alert('Mascota guardada con exito');
+        },
+        err => {
+          console.log(err);
+        }
+      )
+      
+      console.log(this.formMascota.value);
+    }
+    
   }
 
 

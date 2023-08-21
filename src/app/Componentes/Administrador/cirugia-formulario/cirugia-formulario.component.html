@@ -3,11 +3,6 @@
 <h2>Formulario para Registro de Cirugias</h2>
 <form [formGroup]="formCirugia" (ngSubmit)="onSubmit()">
   <div>
-    <label for="id_cirugia">ID de cirugia:</label>
-    <input type="number" id="id_cirugia" name="id_cirugia" formControlName="id_cirugia">
-  </div>
-
-  <div>
     <label for="fecha">Fecha de la cirugia:</label>
     <input type="date" id="fecha" name="fecha" formControlName="fecha">
   </div>
@@ -19,7 +14,7 @@
   </div>
    
   <div>
-    <label for="Doctor_id_doctor">ID del Dueño:</label>
+    <label for="Doctor_id_doctor">ID del Doctor:</label>
     <input type="number" id="Doctor_id_doctor" name="Doctor_id_doctor" formControlName="Doctor_id_doctor">
   </div>
   <div>
