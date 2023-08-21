@@ -19,6 +19,8 @@ import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formul
 //routing de listas tratamientos y cirugias
 import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
 import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
+import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
+import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 
 const routes: Routes = [
   { path: 'mascota-formulario' , component: MascotaFormularioComponent },
@@ -37,7 +39,8 @@ const routes: Routes = [
   { path: "cirugia-formulario" , component: CirugiaFormularioComponent},
   { path: "lista-cirugia" , component: ListaCirugiasComponent},
   { path: "lista-tratamientos" , component: ListaTratamientosComponent},
-
+  { path: "inicio" , component: InicioComponent},
+  { path: "nosotros" , component: NosotrosComponent},
 
 
   

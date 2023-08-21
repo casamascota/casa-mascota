@@ -16,8 +16,9 @@
   
   .charts-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 30px;
+    justify-items: center;
   }
   
   .chart {
@@ -42,7 +43,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #009688;
+    background-color: transparent;
     transform-origin: center center;
     transform: rotate(var(--percent));
   }
@@ -53,7 +54,7 @@
   }
   
   .requirements {
-    max-width: 600px;
+    max-width: 800px;
     margin: 30px auto;
   }
   
@@ -66,16 +67,54 @@
   }
 
   .adoption-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
+    width: 100%; 
+    max-width: 800px; 
+    height: auto;
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .adoption-form {
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  
+  .display-1{
+    font-size: 3rem;
+}
+.adoption-form {
+  max-width: 800px;
+  max-height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffe6c7;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #454545;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #454545;
+  border-radius: 4px;
+  color: #454545;
+}
+
+input[type="checkbox"] {
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff6000;
+  color: #dbd5d5;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}

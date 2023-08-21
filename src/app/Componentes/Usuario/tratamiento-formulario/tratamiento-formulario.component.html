@@ -1,25 +1,42 @@
 
-
-<h2>Formulario para Tratamiento</h2>
-<form [formGroup]="formTratamiento" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="id_trat">ID de Tratamiento:</label>
-    <input type="number" id="id_trat" name="id_trat" formControlName="id_trat">
-  </div>
-
-  <div>
-    <label for="fecha_inicio">Fecha Inicio:</label>
-    <input type="date" id="fecha_inicio" name="fecha_inicio" formControlName="fecha_inicio">
-  </div>
-  
-  <div>
-    <label for="fecha_final">Fecha Final:</label>
-    <input type="date" id="fecha_final" name="fecha_final" formControlName="fecha_final">
-  </div>
-  <div >
-
-    <label for="id_diagnostico">ID del Dueño:</label>
-    <input type="number" id="id_diagnostico" name="id_diagnostico" formControlName="id_diagnostico">
-  </div>
-  <button type="submit">Enviar</button>
-</form>
+<br>
+<h1 class="display-1" style="font-family:'Copperplate';text-align: center;">Formulario para Tratamiento</h1>
+<p style="text-align: center;">Porfavor llene la siguiente información</p>
+<div class="recursos" style="max-width: 80%; margin-left: 8%;">
+  <mat-grid-list cols="2" rowHeight="400px">
+    <mat-grid-tile>
+      <mat-card class="example-card">
+          <mat-card-content>
+            <form [formGroup]="formTratamiento" (ngSubmit)="onSubmit()">
+              <div>
+                <label for="id_trat">ID de Tratamiento:</label>
+                <input type="number" id="id_trat" name="id_trat" formControlName="id_trat">
+              </div>
+            
+              <div>
+                <label for="fecha_inicio">Fecha Inicio:</label>
+                <input type="date" id="fecha_inicio" name="fecha_inicio" formControlName="fecha_inicio">
+              </div>
+              
+              <div>
+                <label for="fecha_final">Fecha Final:</label>
+                <input type="date" id="fecha_final" name="fecha_final" formControlName="fecha_final">
+              </div>
+              <div >
+            
+                <label for="id_diagnostico">ID del Dueño:</label>
+                <input type="number" id="id_diagnostico" name="id_diagnostico" formControlName="id_diagnostico">
+              </div>
+              <button type="submit">Enviar</button>
+            </form>
+          </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <img mat-card-image src="https://basekit-product.s3-eu-west-1.amazonaws.com/Image+Sets/localBusiness/vets/vets_image-2.jpg" alt="Photo of a Shiba Inu">  
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <hr>
+</div>

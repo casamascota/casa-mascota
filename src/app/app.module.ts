@@ -44,6 +44,8 @@ import { CirugiaFormularioComponent } from './Componentes/Usuario/cirugia-formul
 import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
 import { DetalleTratamientoComponent } from './Componentes/Usuario/detalle-tratamiento/detalle-tratamiento.component';
 import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia/detalles-cirugia.component';
+import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
+import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia
     ListaCirugiasComponent,
     DetalleTratamientoComponent,
     DetallesCirugiaComponent,
+    InicioComponent,
+    NosotrosComponent,
   ],
   imports: [
     BrowserModule,
