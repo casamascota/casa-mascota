@@ -1,9 +1,5 @@
 <h2>Reserva de Citas</h2>
 <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()">
-   <div>
-      <label>ID Cita:</label>
-      <input type="number" formControlName="id_cita" required>
-    </div>
   <div>
     <label>Fecha:</label>
     <input type="date" formControlName="fecha" required>
@@ -15,13 +11,19 @@
   </div>
   <div>
     <label>Tipo de Servicio:</label>
+    <select [(ngModel)] = "selectService" formControlName="Servicio_id_servicio" required>
+      <option value="1">Veterinario</option>
+      <option value="2">Estilista</option>
+    </select>
+<!--
     <select formControlName="id_servicio" required>
       <option *ngFor="let servicio of serviciosList" [value]="servicio.id_servicio">{{ servicio.tipo }}</option>
     </select>
+  -->
   </div>
   <div>
     <label>ID Mascota:</label>
-    <input type="number" formControlName="id_mascota" required>
+    <input type="number" formControlName="Mascota_id_mascota" required>
   </div>
   <button type="submit">Reservar</button>
 </form>

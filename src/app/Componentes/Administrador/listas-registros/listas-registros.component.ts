@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Doctor_Admin } from '../../interfaces/doctor-adm';
 import { MatTableDataSource } from '@angular/material/table';
 import { DoctoresService } from '../../services/doctor.service';
@@ -10,34 +11,35 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./listas-registros.component.css']
 })
 export class ListasRegistrosComponent implements OnInit {
+  formularioAdmDoc: FormGroup;
   URL_BASE = 'http://localhost:3000/api/';
   listDoctores: Doctor_Admin[] = [];
 
-  displayedColumns: string[] = ['id_doctor', 'nombre', 'apellido', 'telefono', 'direccion', 'acciones'];
+  displayedColumns: string[] = ['id_doctor', 'nombre', 'apellido', 'numero_tel', 'direccion', 'acciones'];
   dataSource!: MatTableDataSource<Doctor_Admin>;
 
-  constructor(private _doctoresServices: DoctoresService) {
+  constructor(private formBuilder: FormBuilder, private _doctoresServices: DoctoresService, private http: HttpClient) {
+    this.formularioAdmDoc = this.formBuilder.group({
+      id_doctor: [1, Validators.required],
+      nombre: [null, Validators.required],
+      apellido: [null, Validators.required],
+      numero_tel: [null, Validators.required],
+      direccion: [null, Validators.required],
+    });
     this.cargarDoctores();
    }
 
   ngOnInit() {
   }
 
-  cargarDoctores() {
-    /*const url = this.URL_BASE + 'doctores';
-    this.http.get(url).subscribe(
-      (res: any) => {
-        console.log(res);
-        this.listDoctores = res; // Asignar las mascotas recuperadas a la variable mascotas
-      },
-      err => {
-        console.log(err);
-      }
-    );*/
-    this.listDoctores = this._doctoresServices.getDoctores();
-    console.log("Lista" + this.listDoctores);
-  
-    this.dataSource = new MatTableDataSource(this.listDoctores);
+  async cargarDoctores() {
+    try {
+      this.listDoctores = await this._doctoresServices.getDoctores();
+      console.log("Lista: ", this.listDoctores);
+      this.dataSource = new MatTableDataSource<Doctor_Admin>(this.listDoctores);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   applyFilter(event: Event) {
@@ -50,6 +52,22 @@ export class ListasRegistrosComponent implements OnInit {
     this.cargarDoctores();
   }
 
-  
+  enviarFormularioAdmDoc() {
+    if (this.formularioAdmDoc.valid) {
+      const url = this.URL_BASE + 'doctores';
+      const formData = this.formularioAdmDoc.value;
 
+      this.http.post(url, formData).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      )
+
+      console.log(this.formularioAdmDoc.value);
+
+    }
+  }
 }
