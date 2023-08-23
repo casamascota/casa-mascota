@@ -19,21 +19,18 @@ export class AgregarRegistroComponent{
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.formularioAdmDoc = this.formBuilder.group({
-      id_doctor: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
       numero_tel: [null, Validators.required],
       direccion: [null, Validators.required],
     });
     this.formularioEnfermero = this.formBuilder.group({
-      id_enfermero: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
       numero_tel: [null, Validators.required],
       direccion: [null, Validators.required],
     });
     this.formularioOwner = this.formBuilder.group({
-      id_owner: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
       numero_tel: [null, Validators.required],
@@ -41,7 +38,6 @@ export class AgregarRegistroComponent{
       correo: [null, Validators.required],
     });
     this.formularioEstilista = this.formBuilder.group({
-      id_estilista: [1, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
       numero_tel: [null, Validators.required],

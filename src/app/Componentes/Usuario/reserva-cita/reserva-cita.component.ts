@@ -8,19 +8,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reserva-cita.component.css']
 })
 export class ReservaCitaComponent {
+  selectService: string;
   URL_BASE = 'http://localhost:3000/api/';
   serviciosList : any = [];
   reservaForm : FormGroup;
   idServicio : number = 0;
+  
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.reservaForm = this.formBuilder.group({
-      id_cita: [null, Validators.required],
+      id_cita: [1, Validators.required],
       fecha: [null, Validators.required],
-      hora : [null, Validators.required],
-      id_servicio : [null, Validators.required],
-      id_mascota : [null, Validators.required]
+      hora: [null, Validators.required],
+      Mascota_id_mascota : [null, Validators.required],
+      Servicio_id_servicio : [null, Validators.required],
     });
-  
+
+    this.selectService = "veterinario";
    }
    
   onSubmit() {
@@ -30,9 +33,8 @@ export class ReservaCitaComponent {
         id_cita: this.reservaForm.value.id_cita,
         fecha: this.reservaForm.value.fecha,
         hora: this.reservaForm.value.hora,
-        Mascota_id_mascota: this.reservaForm.value.id_mascota,
-        Servicio_id_servicio: this.reservaForm.value.id_servicio
-
+        Mascota_id_mascota: this.reservaForm.value.Mascota_id_mascota,
+        Servicio_id_servicio: this.reservaForm.value.Servicio_id_servicio,
       }).subscribe(
         (res) => {
           console.log(res);
