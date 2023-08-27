@@ -4,6 +4,7 @@ import { Doctor_Admin } from '../../interfaces/doctor-adm';
 import { MatTableDataSource } from '@angular/material/table';
 import { DoctoresService } from '../../services/doctor.service';
 import { HttpClient } from '@angular/common/http';
+import { ModalService } from '../modals/modal-update-doctor/modal-update-doctor.service';
 
 @Component({
   selector: 'app-listas-registros',
@@ -18,7 +19,7 @@ export class ListasRegistrosComponent implements OnInit {
   displayedColumns: string[] = ['id_doctor', 'nombre', 'apellido', 'numero_tel', 'direccion', 'acciones'];
   dataSource!: MatTableDataSource<Doctor_Admin>;
 
-  constructor(private formBuilder: FormBuilder, private _doctoresServices: DoctoresService, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private _doctoresServices: DoctoresService, private http: HttpClient, private modalService: ModalService) {
     this.formularioAdmDoc = this.formBuilder.group({
       id_doctor: [1, Validators.required],
       nombre: [null, Validators.required],
@@ -47,11 +48,6 @@ export class ListasRegistrosComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  eliminarDoc(id: number) {
-    console.log(id);
-    this.cargarDoctores();
-  }
-
   enviarFormularioAdmDoc() {
     if (this.formularioAdmDoc.valid) {
       const url = this.URL_BASE + 'doctores';
@@ -69,5 +65,29 @@ export class ListasRegistrosComponent implements OnInit {
       console.log(this.formularioAdmDoc.value);
 
     }
+  }
+
+  modificarDoc(id: number) {
+    const dialogRef = this.modalService.openModal(id);
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.cargarDoctores();
+    });
+
+  }
+
+  eliminarDoc(id: number) {
+    console.log(id);
+    const url = this.URL_BASE + 'doctores/';
+    this.http.delete(url + id).subscribe(
+      res => {
+        alert('Doctor eliminado');
+        console.log(res);
+        this.cargarDoctores();
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 }

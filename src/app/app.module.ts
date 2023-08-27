@@ -48,6 +48,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
 import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
+import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/modal-update-doctor/modal-update-doctor.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.compo
     DetallesCirugiaComponent,
     InicioComponent,
     NosotrosComponent,
+    ModalUpdateDoctorComponent,
   ],
   imports: [
     BrowserModule,
