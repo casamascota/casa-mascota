@@ -42,10 +42,10 @@ exports.getDiagnosticoById = (id, callback) => {
 
 // Función para crear un nuevo diagnóstico
 exports.createDiagnostico = (diagnosticoObject, callback) => {
-  const { id, diagnostico, tratamiento, idRevision } = diagnosticoObject;
+  const { diagnostico, tratamiento, idRevision } = diagnosticoObject;
   db.run(
-    "INSERT INTO Diagnostico (id_diagnostico, diagnostico, trat_requerido, id_revision) VALUES (?, ?, ?, ?)",
-    [id, diagnostico, tratamiento, idRevision],
+    "INSERT INTO Diagnostico (diagnostico, trat_requerido, id_revision) VALUES (?, ?, ?)",
+    [diagnostico, tratamiento, idRevision],
     (err) => {
       if (err) {
         console.error(err.message);

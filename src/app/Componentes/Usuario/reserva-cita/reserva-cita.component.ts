@@ -16,7 +16,6 @@ export class ReservaCitaComponent {
   
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.reservaForm = this.formBuilder.group({
-      id_cita: [1, Validators.required],
       fecha: [null, Validators.required],
       hora: [null, Validators.required],
       Mascota_id_mascota : [null, Validators.required],
@@ -30,7 +29,6 @@ export class ReservaCitaComponent {
     if (this.reservaForm.valid) {
       // Realizar la lógica de envío de la reserva
       this.http.post<any[]>(this.URL_BASE + 'citas', {
-        id_cita: this.reservaForm.value.id_cita,
         fecha: this.reservaForm.value.fecha,
         hora: this.reservaForm.value.hora,
         Mascota_id_mascota: this.reservaForm.value.Mascota_id_mascota,

@@ -39,10 +39,10 @@ exports.getOwnerByIdsql = (id, callback) => {
 
 // Función para crear un nuevo owner
 exports.createOwnersql = (tratamiento, callback) => {
-  const { id, nombre, apellido, numero_tel, direccion, correo } = tratamiento;
+  const { nombre, apellido, numero_tel, direccion, correo } = tratamiento;
   db.run(
     'INSERT INTO Owner (nombre, apellido, numero_tel, direccion, correo) VALUES (?, ?, ?, ?, ?)',
-    [id, nombre, apellido, numero_tel, direccion, correo],
+    [nombre, apellido, numero_tel, direccion, correo],
     (err) => {
       if (err) {
         console.error(err.message);

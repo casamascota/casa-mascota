@@ -59,10 +59,10 @@ exports.getVacunasByCitaAgendadaId = (citaAgendadaId, callback) => {
 
 // Crear una nueva vacuna
 exports.createVacuna = (vacuna, callback) => {
-  const { id_vacuna, nombre, fecha, Doctor_id_doctor, Cita_Agendada_id_cita } = vacuna;
+  const { nombre, fecha, Doctor_id_doctor, Cita_Agendada_id_cita } = vacuna;
   db.run(
-    'INSERT INTO Vacuna (id_vacuna, nombre, fecha, Doctor_id_doctor, Cita_Agendada_id_cita) VALUES (?, ?, ?, ?, ?)',
-    [id_vacuna, nombre, fecha, Doctor_id_doctor, Cita_Agendada_id_cita],
+    'INSERT INTO Vacuna (nombre, fecha, Doctor_id_doctor, Cita_Agendada_id_cita) VALUES (?, ?, ?, ?, ?)',
+    [nombre, fecha, Doctor_id_doctor, Cita_Agendada_id_cita],
     (err) => {
       if (err) {
         callback(err);

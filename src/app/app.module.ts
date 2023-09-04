@@ -8,23 +8,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 //----Componentes
-import { NavBarComponent } from './Componentes/Usuario/NavBar/NavBar.component';
+// ADMIN
 import { MascotaFormularioComponent } from './Componentes/Administrador/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
-import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
 import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
-import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
-import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
-import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
-import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { ListaCitasComponent } from './Componentes/Administrador/lista-citas/lista-citas.component';
+import { ListaMascotasComponent } from './Componentes/Administrador/lista-mascotas/lista-mascotas.component';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
 import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
 import { TratamientoFormularioComponent } from './Componentes/Administrador/tratamiento-formulario/tratamiento-formulario.component';
-import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
+import { ListaTratamientosComponent } from './Componentes/Administrador/lista-tratamientos/lista-tratamientos.component';
 import { CirugiaFormularioComponent } from './Componentes/Administrador/cirugia-formulario/cirugia-formulario.component';
-import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
+import { ListaCirugiasComponent } from './Componentes/Administrador/lista-cirugias/lista-cirugias.component';
+
+// USER
+import { NavBarComponent } from './Componentes/Usuario/NavBar/NavBar.component';
+import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
+import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
+import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
 import { DetalleTratamientoComponent } from './Componentes/Usuario/detalle-tratamiento/detalle-tratamiento.component';
 import { DetallesCirugiaComponent } from './Componentes/Usuario/detalles-cirugia/detalles-cirugia.component';
 import { FooterComponent } from './Componentes/Usuario/Footer/Footer.component';
@@ -35,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 //----Material
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';

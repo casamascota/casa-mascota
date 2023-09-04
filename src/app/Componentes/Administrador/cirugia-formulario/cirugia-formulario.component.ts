@@ -15,7 +15,6 @@ export class CirugiaFormularioComponent {
 
   constructor(private httpClient: HttpClient, private formBuilder: FormBuilder ) { 
     this.formCirugia = this.formBuilder.group({
-      id_cirugia: [1,Validators.required], //El id esta con 1 por defecto, en la base de datos se autoincrementa cuando hay un id repetido
       fecha: ['',Validators.required],
       cirugiahecha:[1, Validators.required],
       Doctor_id_doctor: ['',Validators.required],

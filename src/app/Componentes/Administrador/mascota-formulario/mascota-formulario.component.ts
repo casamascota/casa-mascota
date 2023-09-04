@@ -17,7 +17,6 @@ export class MascotaFormularioComponent {
 
   constructor(private httpClient: HttpClient, private formBuilder: FormBuilder ) { 
     this.formMascota = this.formBuilder.group({
-      id_mascota: [1,Validators.required],
       nombre: ['',Validators.required],
       raza: ['',Validators.required],
       edad: ['',Validators.required], 

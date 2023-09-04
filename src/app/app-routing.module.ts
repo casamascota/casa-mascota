@@ -11,16 +11,16 @@ import { ActualizarRegistroComponent } from './Componentes/Administrador/actuali
 
 import { MascotaFormularioComponent } from './Componentes/Administrador/mascota-formulario/mascota-formulario.component';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
-import { ListaCitasComponent } from './Componentes/Usuario/lista-citas/lista-citas.component';
-import { ListaMascotasComponent } from './Componentes/Usuario/lista-mascotas/lista-mascotas.component';
+import { ListaCitasComponent } from './Componentes/Administrador/lista-citas/lista-citas.component';
+import { ListaMascotasComponent } from './Componentes/Administrador/lista-mascotas/lista-mascotas.component';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
 import { FormEstilistaComponent } from './Componentes/Administrador/form-estilista/form-estilista.component';
 //routing de formulario tratamientos y cirugias
 import { TratamientoFormularioComponent } from './Componentes/Administrador/tratamiento-formulario/tratamiento-formulario.component';
 import { CirugiaFormularioComponent } from './Componentes/Administrador/cirugia-formulario/cirugia-formulario.component';
 //routing de listas tratamientos y cirugias
-import { ListaCirugiasComponent } from './Componentes/Usuario/lista-cirugias/lista-cirugias.component';
-import { ListaTratamientosComponent } from './Componentes/Usuario/lista-tratamientos/lista-tratamientos.component';
+import { ListaCirugiasComponent } from './Componentes/Administrador/lista-cirugias/lista-cirugias.component';
+import { ListaTratamientosComponent } from './Componentes/Administrador/lista-tratamientos/lista-tratamientos.component';
 import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
 import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 import { NavBarComponent } from './Componentes/Usuario/NavBar/NavBar.component';

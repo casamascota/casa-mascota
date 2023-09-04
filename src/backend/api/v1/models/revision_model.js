@@ -67,10 +67,10 @@ exports.getRevisionesByCitaId = (citaId, callback) => {
 
 // Función para crear una nueva revisión
 exports.createRevision = (revision, callback) => {
-  const { id, fecha_revision, sistema_car, peso, sistema_nervioso, Cita_Agendada_id_cita, Doctor_id_doctor } = revision;
+  const { fecha_revision, sistema_car, peso, sistema_nervioso, Cita_Agendada_id_cita, Doctor_id_doctor } = revision;
   db.run(
-    'INSERT INTO Revision (id_revision, fecha_revision, sistema_car, peso, sistema_nervioso, Cita_Agendada_id_cita, Doctor_id_doctor) VALUES (?, ?, ?, ?, ?, ?, ?)',
-    [id, fecha_revision, sistema_car, peso, sistema_nervioso, Cita_Agendada_id_cita, Doctor_id_doctor],
+    'INSERT INTO Revision (fecha_revision, sistema_car, peso, sistema_nervioso, Cita_Agendada_id_cita, Doctor_id_doctor) VALUES (?, ?, ?, ?, ?, ?)',
+    [fecha_revision, sistema_car, peso, sistema_nervioso, Cita_Agendada_id_cita, Doctor_id_doctor],
     (err) => {
       if (err) {
         console.error(err.message);

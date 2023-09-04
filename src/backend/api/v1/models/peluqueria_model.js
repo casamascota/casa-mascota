@@ -51,10 +51,10 @@ exports.getPeluqueriaByEstilistaId = (estilistaId, callback) => {
 
 
 exports.createPeluqueria = (peluqueria, callback) => {
-  const { id, fecha, descripcion, estilistaId, citaId} = peluqueria;
+  const { fecha, descripcion, estilistaId, citaId} = peluqueria;
   db.run(
-    'INSERT INTO Peluqueria (id_pel, fecha, descripcion, Estilista_id_estilista, Cita_Agendada_id_cita) VALUES (?, ?, ?, ?, ?)',
-    [id, fecha, descripcion, estilistaId, citaId],
+    'INSERT INTO Peluqueria (fecha, descripcion, Estilista_id_estilista, Cita_Agendada_id_cita) VALUES (?, ?, ?, ?)',
+    [fecha, descripcion, estilistaId, citaId],
     (err) => {
       if (err) {
         console.error(err.message);
