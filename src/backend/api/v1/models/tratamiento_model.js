@@ -50,10 +50,10 @@ exports.getTratamientosByDiagnosticoId = (diagnosticoId, callback) => {
 
 // Función para crear un nuevo tratamiento
 exports.createTratamiento = (tratamiento, callback) => {
-  const { id, fecha_inicio, fecha_final, Diagnostico_id_diagnostico } = tratamiento;
+  const { fecha_inicio, fecha_final, Diagnostico_id_diagnostico } = tratamiento;
   db.run(
-    'INSERT INTO Tratamiento (id_trat, fecha_inicio, fecha_final, Diagnostico_id_diagnostico) VALUES (?, ?, ?, ?)',
-    [id, fecha_inicio, fecha_final, Diagnostico_id_diagnostico],
+    'INSERT INTO Tratamiento (fecha_inicio, fecha_final, Diagnostico_id_diagnostico) VALUES (?, ?, ?)',
+    [fecha_inicio, fecha_final, Diagnostico_id_diagnostico],
     (err) => {
       if (err) {
         console.error(err.message);

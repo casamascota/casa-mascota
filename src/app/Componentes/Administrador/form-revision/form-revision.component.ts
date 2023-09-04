@@ -12,7 +12,6 @@ export class FormRevisionComponent {
   revisionForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.revisionForm = this.formBuilder.group({
-      id_revision: ['', Validators.required],
       fecha_revision: ['', Validators.required],
       sistema_car: ['', Validators.required],
       peso: ['', Validators.required],

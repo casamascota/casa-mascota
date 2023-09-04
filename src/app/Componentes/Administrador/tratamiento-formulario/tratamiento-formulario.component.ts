@@ -12,7 +12,6 @@ export class TratamientoFormularioComponent {
   URL_BASE = 'http://localhost:3000/api/';
   constructor(private httpClient: HttpClient, private formBuilder: FormBuilder ) { 
     this.formTratamiento = this.formBuilder.group({
-      id_trat: [1,Validators.required], //Cuando hay un id repetido se autoincrementa
       fecha_inicio: ['',Validators.required],
       fecha_final: ['',Validators.required],
       Diagnostico_id_diagnostico: ['',Validators.required]

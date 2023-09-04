@@ -42,8 +42,8 @@ exports.getEnfermeroById = (id, callback) => {
 exports.createEnfermero = (enfermero, callback) => {
   /*const id_doctor = UUID.v4()
   console.log(id_doctor)*/
-  const { id, nombre, apellido, numero_tel, direccion } = enfermero
-  db.run('INSERT INTO Enfermero (id_enfermero, nombre, apellidos, numero_tel, direccion) VALUES (?, ?, ?, ?, ?)', [ id, nombre, apellido, numero_tel,direccion], (err) => {
+  const { nombre, apellido, numero_tel, direccion } = enfermero
+  db.run('INSERT INTO Enfermero (nombre, apellidos, numero_tel, direccion) VALUES (?, ?, ?, ?)', [ nombre, apellido, numero_tel,direccion], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)

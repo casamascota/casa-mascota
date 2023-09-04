@@ -137,7 +137,6 @@ exports.getCirugiaByTratamientoIdsql = (TratamientoId, callback) => {
 // Función para crear una nueva revisión
 exports.createCirugiasql = (revision, callback) => {
   const {
-    id,
     fecha,
     cirugiahecha,
     Doctor_id_doctor,
@@ -145,9 +144,8 @@ exports.createCirugiasql = (revision, callback) => {
     Diagnostico_id_diagnostico,
   } = revision;
   db.run(
-    "INSERT INTO Cirugia (id_cirugia, fecha, cirugiahecha, Doctor_id_doctor, Enfermero_id_enfermero, Diagnostico_id_diagnostico) VALUES (?, ?, ?, ?, ?, ?)",
+    "INSERT INTO Cirugia (fecha, cirugiahecha, Doctor_id_doctor, Enfermero_id_enfermero, Diagnostico_id_diagnostico) VALUES (?, ?, ?, ?, ?)",
     [
-      id,
       fecha,
       cirugiahecha,
       Doctor_id_doctor,

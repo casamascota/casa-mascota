@@ -69,10 +69,10 @@ exports.getCitaAgendadaByTipoServiciosql = (tipoServicio, callback) => {
 // Función para crear una nueva cita agendada o
 // *****Reserva de citas por internet.******
 exports.createCitaAgendadasql = (citaagendada, callback) => {
-  const { id, fecha, hora, Mascota_id_mascota, Servicio_id_servicio } = citaagendada;
+  const { fecha, hora, Mascota_id_mascota, Servicio_id_servicio } = citaagendada;
   db.run(
-    'INSERT INTO Cita_Agendada (id_cita, fecha, hora, Mascota_id_mascota, Servicio_id_servicio) VALUES (?, ?, ?, ?, ?)',
-    [id, fecha, hora, Mascota_id_mascota, Servicio_id_servicio],
+    'INSERT INTO Cita_Agendada (fecha, hora, Mascota_id_mascota, Servicio_id_servicio) VALUES (?, ?, ?, ?)',
+    [fecha, hora, Mascota_id_mascota, Servicio_id_servicio],
     (err) => {
       if (err) {
         console.error(err.message);

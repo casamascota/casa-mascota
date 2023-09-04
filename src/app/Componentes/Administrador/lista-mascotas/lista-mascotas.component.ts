@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { DetallesMascotaComponent } from '../detalles-mascota/detalles-mascota.component';
+import { DetallesMascotaComponent } from '../../Usuario/detalles-mascota/detalles-mascota.component';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 

@@ -36,10 +36,10 @@ exports.getMedicamentoByIdsql = (id, callback) => {
 
 // Función para crear un nuevo Medicamento
 exports.createMedicamentosql = (medicamento, callback) => {
-  const { id, nombre, tipo } = medicamento;
+  const { nombre, tipo } = medicamento;
   db.run(
-    'INSERT INTO Medicamentos (id_med, nombre, tipo) VALUES (?, ?, ?)',
-    [id, nombre, tipo],
+    'INSERT INTO Medicamentos (nombre, tipo) VALUES (?, ?)',
+    [nombre, tipo],
     (err) => {
       if (err) {
         console.error(err.message);

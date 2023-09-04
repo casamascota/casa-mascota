@@ -68,10 +68,10 @@ exports.getMascotasByOwnerId = (ownerId, callback) => {
 
 // Función para crear una nueva mascota
 exports.createMascota = (mascota, callback) => {
-  const { id, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner } = mascota;
+  const { nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner } = mascota;
   db.run(
-    'INSERT INTO Mascota (id_mascota, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-    [id, nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner],
+    'INSERT INTO Mascota (nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    [nombre, raza, edad, genero, fecha_nacimiento, peso, isAdopted, Owner_id_owner],
     (err) => {
       if (err) {
         console.error(err.message);

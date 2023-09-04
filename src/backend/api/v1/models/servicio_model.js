@@ -39,9 +39,9 @@ exports.getServicioById = (id, callback) => {
 // Función para crear un nuevo servicio
 exports.createServicio = (servicio, callback) => {
  
-  const {id, tipo, costo} = servicio
+  const {tipo, costo} = servicio
   console.log(tipo)
-  db.run('INSERT INTO Servicio (id_servicio, tipo, costo) VALUES (?, ?, ?)', [id, tipo, costo], (err) => {
+  db.run('INSERT INTO Servicio (tipo, costo) VALUES (?, ?)', [tipo, costo], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)

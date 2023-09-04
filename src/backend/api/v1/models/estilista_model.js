@@ -40,8 +40,8 @@ exports.getEstilistaById = (id, callback) => {
 exports.createEstilista = (estilista, callback) => {
   /*const id_doctor = UUID.v4()
   console.log(id_doctor)*/
-  const { id, nombre, apellido, numero_tel } = estilista
-  db.run('INSERT INTO Estilista (id_estilista, nombre, apellido, numero_tel) VALUES (?, ?, ?, ?)', [ id, nombre, apellido, numero_tel], (err) => {
+  const { nombre, apellido, numero_tel } = estilista
+  db.run('INSERT INTO Estilista (nombre, apellido, numero_tel) VALUES (?, ?, ?)', [ nombre, apellido, numero_tel], (err) => {
     if (err) {
       console.error(err.message)
       callback(err)

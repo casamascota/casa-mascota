@@ -82,10 +82,10 @@ exports.getTratamientosMedByTratamientoId = (tratamientoId, callback) => {
 
 // Crear un nuevo tratamiento medicamento
 exports.createTratamientoMed = (tratamientoMed, callback) => {
-  const { id_trat_med, Medicamentos_id_med, Tratamiento_id_trat, Doctor_id_doctor } = tratamientoMed;
+  const { Medicamentos_id_med, Tratamiento_id_trat, Doctor_id_doctor } = tratamientoMed;
   db.run(
-    'INSERT INTO Tratamiento_Med (id_trat_med, Medicamentos_id_med, Tratamiento_id_trat, Doctor_id_doctor) VALUES (?, ?, ?, ?)',
-    [id_trat_med, Medicamentos_id_med, Tratamiento_id_trat, Doctor_id_doctor],
+    'INSERT INTO Tratamiento_Med (Medicamentos_id_med, Tratamiento_id_trat, Doctor_id_doctor) VALUES (?, ?, ?)',
+    [Medicamentos_id_med, Tratamiento_id_trat, Doctor_id_doctor],
     (err) => {
       if (err) {
         callback(err);
