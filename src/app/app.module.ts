@@ -52,6 +52,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
 import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/modal-update-doctor/modal-update-doctor.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/m
     MatNativeDateModule,
     MatCardModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [],
 

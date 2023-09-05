@@ -1,21 +1,32 @@
 
+<div class="body">
+  <div class="center">
+    <h1 class="display-4 mb-4" style="text-align: center;">Agregar<span class="text-primary"> Mascota</span></h1>
+    <form [formGroup]="formTratamiento" (ngSubmit)="onSubmit()">
+      <mat-form-field class="ancho">
+        <mat-label>Fecha de inicio:</mat-label>
+        <input matInput type="date" formControlName="fecha_inicio" />
+        <div *ngIf="formTratamiento.controls['fecha_inicio'].invalid && formTratamiento.controls['fecha_inicio'].touched">
+          <div *ngIf="formTratamiento.controls['fecha_inicio'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Fecha de final:</mat-label>
+        <input matInput type="date" formControlName="fecha_final" />
+        <div *ngIf="formTratamiento.controls['fecha_final'].invalid && formTratamiento.controls['fecha_final'].touched">
+          <div *ngIf="formTratamiento.controls['fecha_final'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>ID del Dueño:</mat-label>
+        <input matInput type="text" formControlName="Diagnostico_id_diagnostico" />
+        <div *ngIf="formTratamiento.controls['Diagnostico_id_diagnostico'].invalid && formTratamiento.controls['Diagnostico_id_diagnostico'].touched">
+          <div *ngIf="formTratamiento.controls['Diagnostico_id_diagnostico'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
 
-
-<h2>Formulario para Tratamiento</h2>
-<form [formGroup]="formTratamiento" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="fecha_inicio">Fecha Inicio:</label>
-    <input type="date" id="fecha_inicio" name="fecha_inicio" formControlName="fecha_inicio">
+      <br>
+      <button button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formTratamiento.invalid" (click)="guardarTratamiento()">Guardar</button>
+    </form>
   </div>
-  
-  <div>
-    <label for="fecha_final">Fecha Final:</label>
-    <input type="date" id="fecha_final" name="fecha_final" formControlName="fecha_final">
-  </div>
-  <div >
-
-    <label for="Diagnostico_id_diagnostico">ID del Dueño:</label>
-    <input type="number" id="Diagnostico_id_diagnostico" name="Diagnostico_id_diagnostico" formControlName="Diagnostico_id_diagnostico">
-  </div>
-  <button type="submit">Enviar</button>
-</form>
+</div>
