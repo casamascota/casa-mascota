@@ -39,16 +39,11 @@
   <button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formularioAdmDoc.invalid">Guardar</button>
 </form>
 -->
-<div class="selector">  
+<div class="selector" >  
   <mat-form-field>
     <mat-label>Filtrar</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input autocomplete="off">
   </mat-form-field>
-  <br>
-  <button mat-fab extended color="primary" routerLink="/agregar_registro">
-    <mat-icon>add</mat-icon>
-    Agregar 
-  </button>
 </div>
 
 <div class="body">
@@ -110,3 +105,8 @@
     </table>  
   </div>
 </div>
+<br>
+<button mat-fab extended color="primary" routerLink="/agregar_registro" style=" margin-left: 9rem;">
+  <mat-icon>add</mat-icon>
+  Agregar 
+</button>
