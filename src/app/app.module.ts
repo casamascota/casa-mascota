@@ -53,6 +53,8 @@ import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
 import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/modal-update-doctor/modal-update-doctor.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ModalUpdateCirugiaComponent } from './Componentes/Administrador/modals/modal-update-cirugia/modal-update-cirugia.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     InicioComponent,
     NosotrosComponent,
     ModalUpdateDoctorComponent,
+    ModalUpdateCirugiaComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +105,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatPaginatorModule
   ],
   providers: [],
 

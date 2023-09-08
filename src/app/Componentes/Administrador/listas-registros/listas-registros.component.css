@@ -3,7 +3,7 @@ table {
   }
 
 th {
-    width: 18%;
+    width: 15%;
 }
 
 .pointer {
@@ -11,9 +11,8 @@ th {
 }
 
 .selector {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 9rem;
+    display: flex;
+    
 }
 
 .body {

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Doctor_Admin } from '../../interfaces/doctor-adm';
 import { MatTableDataSource } from '@angular/material/table';
 import { DoctoresService } from '../../services/doctor.service';
 import { HttpClient } from '@angular/common/http';
 import { ModalService } from '../modals/modal-update-doctor/modal-update-doctor.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-listas-registros',
@@ -18,17 +19,19 @@ export class ListasRegistrosComponent implements OnInit {
 
   displayedColumns: string[] = ['id_doctor', 'nombre', 'apellido', 'numero_tel', 'direccion', 'acciones'];
   dataSource!: MatTableDataSource<Doctor_Admin>;
+  pageSize = 10; // Define el número de elementos por página
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private formBuilder: FormBuilder, private _doctoresServices: DoctoresService, private http: HttpClient, private modalService: ModalService) {
     this.formularioAdmDoc = this.formBuilder.group({
-      id_doctor: [1, Validators.required],
+      id_doctor: [null, Validators.required],
       nombre: [null, Validators.required],
       apellido: [null, Validators.required],
       numero_tel: [null, Validators.required],
       direccion: [null, Validators.required],
     });
     this.cargarDoctores();
-   }
+  }
 
   ngOnInit() {
   }
@@ -38,10 +41,19 @@ export class ListasRegistrosComponent implements OnInit {
       this.listDoctores = await this._doctoresServices.getDoctores();
       console.log("Lista: ", this.listDoctores);
       this.dataSource = new MatTableDataSource<Doctor_Admin>(this.listDoctores);
+  
+      // Asigna el paginador al dataSource
+      this.dataSource.paginator = this.paginator;
     } catch (error) {
       console.log(error);
     }
-  }
+  }  
+  
+  applyPaginator(event: any) {
+    this.pageSize = event.pageSize;
+    // Asigna el paginador obtenido a la propiedad paginator del MatTableDataSource
+    this.dataSource.paginator = this.paginator;
+  }  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -60,10 +72,9 @@ export class ListasRegistrosComponent implements OnInit {
         err => {
           console.log(err);
         }
-      )
+      );
 
       console.log(this.formularioAdmDoc.value);
-
     }
   }
 
@@ -73,7 +84,6 @@ export class ListasRegistrosComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.cargarDoctores();
     });
-
   }
 
   eliminarDoc(id: number) {
@@ -88,6 +98,6 @@ export class ListasRegistrosComponent implements OnInit {
       err => {
         console.log(err);
       }
-    )
+    );
   }
 }
