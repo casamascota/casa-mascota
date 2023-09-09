@@ -53,6 +53,7 @@ import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
 import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/modal-update-doctor/modal-update-doctor.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +79,10 @@ import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/m
     InicioComponent,
     NosotrosComponent,
     ModalUpdateDoctorComponent,
+    ModalUpdateCirugiaComponent,
+    ModalUpdateTratamientosComponent,
+    ModalUpdateCitasComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -100,7 +105,9 @@ import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/m
     MatNativeDateModule,
     MatCardModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule,
+    MatPaginatorModule
   ],
   providers: [],
 

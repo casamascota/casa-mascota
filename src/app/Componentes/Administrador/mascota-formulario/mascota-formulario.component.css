@@ -1,3 +1,21 @@
+.body {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 100%;
+}
+
+.center {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.ancho {
+  width: 80%;
+}
+/*
+//Antiguo formulario
 h2 {
    color: #454545;
    font-size: 24px;
@@ -46,4 +64,4 @@ h2 {
    border-radius: 4px;
    font-weight: bold;
    cursor: pointer;
- }
+ }*/
