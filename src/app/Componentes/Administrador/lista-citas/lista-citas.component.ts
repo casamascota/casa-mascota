@@ -17,7 +17,7 @@ export class ListaCitasComponent {
   URL_BASE = 'http://localhost:3000/api/';
   citasList: Cita_Admin[] = [];
 
-  displayedColumns: string[] = ['id_cita','fecha','hora', 'Mascota_id_mascota','Servicio_id_servicio'];
+  displayedColumns: string[] = ['id_cita','fecha','hora', 'Mascota_id_mascota','Servicio_id_servicio','acciones'];
   dataSource!: MatTableDataSource<Cita_Admin>;
   pageSize = 10; // Define el número de elementos por página
   @ViewChild(MatPaginator) paginator!: MatPaginator;

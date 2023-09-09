@@ -88,7 +88,7 @@ export class ListaCirugiasComponent implements OnInit {
 
   eliminarCir(id: number) {
     console.log(id);
-    const url = this.URL_BASE + 'cirugia/';
+    const url = this.URL_BASE + 'cirugias/';
     this.http.delete(url + id).subscribe(
       res => {
         alert('Cirugia eliminada');

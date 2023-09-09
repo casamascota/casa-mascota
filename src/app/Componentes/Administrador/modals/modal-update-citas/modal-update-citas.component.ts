@@ -11,6 +11,7 @@ import { Cita_Admin } from 'src/app/Componentes/interfaces/cita-adm';
 })
 export class ModalUpdateCitasComponent {
   formularioAdmCit: FormGroup;
+  Servicio_id_servicio: any = ['Veterinario', 'Estilista'];
   URL_BASE = 'http://localhost:3000/api/';
 
   constructor(
@@ -20,10 +21,10 @@ export class ModalUpdateCitasComponent {
     private http: HttpClient,
   ) {
     this.formularioAdmCit = this.formBuilder.group({
-      id_cita: [null, Validators.required],
       fecha: [null, Validators.required],
       hora: [null, Validators.required],
-      Mascota_id_mascota: [null, Validators.required],
+      Servicio_id_servicio: ['',Validators.required],
+      Mascota_id_mascota : [null, Validators.required],
     });
   }
 
@@ -32,7 +33,7 @@ export class ModalUpdateCitasComponent {
   }
 
   buscarCit() {
-    const url = this.URL_BASE + 'Citas/';
+    const url = this.URL_BASE + 'citas/';
     this.http.get<Cita_Admin>(url + this.data.id).subscribe(
       res => {
         console.log(res);
@@ -55,7 +56,7 @@ export class ModalUpdateCitasComponent {
 
   actualizarFormularioAdmCit() {
     if (this.formularioAdmCit.valid) {
-      const url = this.URL_BASE + 'Citas/';
+      const url = this.URL_BASE + 'citas/';
       const formData = {
         id_cita: this.formularioAdmCit.get('id_cita')?.value,
         fecha: this.formularioAdmCit.get('fecha')?.value,
