@@ -55,6 +55,7 @@ import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/m
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ModalUpdateCirugiaComponent } from './Componentes/Administrador/modals/modal-update-cirugia/modal-update-cirugia.component';
+import { ModalUpdateTratamientosComponent } from './Componentes/Administrador/modals/modal-update-tratamientos/modal-update-tratamientos.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { ModalUpdateCirugiaComponent } from './Componentes/Administrador/modals/
     NosotrosComponent,
     ModalUpdateDoctorComponent,
     ModalUpdateCirugiaComponent,
+    ModalUpdateTratamientosComponent,
   ],
   imports: [
     BrowserModule,
