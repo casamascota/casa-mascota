@@ -1,3 +1,4 @@
+
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { Tratamiento_Admin } from '../../interfaces/tratamiento-adm';
@@ -6,6 +7,11 @@ import { TratamientoService } from '../../services/tratamiento.service';
 import { HttpClient } from '@angular/common/http';
 import { ModalUpdateTratamientosService } from '../modals/modal-update-tratamientos/modal-update-tratamientos.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { DetallesMascotaComponent } from '../../Usuario/detalles-mascota/detalles-mascota.component';
+import { Observable } from 'rxjs';
+import { DetalleTratamientoComponent } from '../../Usuario/detalle-tratamiento/detalle-tratamiento.component';
+
 
 @Component({
   selector: 'app-lista-tratamientos',

@@ -28,11 +28,22 @@ export class ReservaCitaComponent {
 
   guardarCita() {
     if (this.reservaForm.valid) {
+
       const url = this.URL_BASE + 'citas';
       const formData = this.reservaForm.value;
 
       this.httpClient.post(url, formData).subscribe(
         res => {
+
+      // Realizar la lógica de envío de la reserva
+      this.http.post<any[]>(this.URL_BASE + 'citas', {
+        fecha: this.reservaForm.value.fecha,
+        hora: this.reservaForm.value.hora,
+        Mascota_id_mascota: this.reservaForm.value.Mascota_id_mascota,
+        Servicio_id_servicio: this.reservaForm.value.Servicio_id_servicio,
+      }).subscribe(
+        (res) => {
+
           console.log(res);
           alert('Cita guardada con exito');
         },

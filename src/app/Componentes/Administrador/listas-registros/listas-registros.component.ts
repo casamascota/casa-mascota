@@ -5,7 +5,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DoctoresService } from '../../services/doctor.service';
 import { HttpClient } from '@angular/common/http';
 import { ModalService } from '../modals/modal-update-doctor/modal-update-doctor.service';
+
 import { MatPaginator } from '@angular/material/paginator';
+
+
 
 @Component({
   selector: 'app-listas-registros',
@@ -84,6 +87,7 @@ export class ListasRegistrosComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.cargarDoctores();
     });
+
   }
 
   eliminarDoc(id: number) {
@@ -98,6 +102,10 @@ export class ListasRegistrosComponent implements OnInit {
       err => {
         console.log(err);
       }
+
     );
+
+    )
+
   }
 }
