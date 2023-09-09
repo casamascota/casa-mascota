@@ -49,18 +49,18 @@ export class ListaCirugiasComponent implements OnInit {
       this.cirugiasList = await this._cirugiasServices.getCirugias();
       console.log("Lista: ", this.cirugiasList);
       this.dataSource = new MatTableDataSource<Cirugia_Admin>(this.cirugiasList);
-  
+
       this.dataSource.paginator = this.paginator;
     } catch (error) {
       console.log(error);
     }
-  }  
+  }
 
   applyPaginator(event: any) {
     this.pageSize = event.pageSize;
     // Asigna el paginador obtenido a la propiedad paginator del MatTabledataSource
     this.dataSource.paginator = this.paginator;
-  }  
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -110,10 +110,10 @@ export class ListaCirugiasComponent implements OnInit {
 
 
 
-  
+
 
   getAllCirugias() {
-    this.httpClient.get(this.URL_BASE + 'cirugias').subscribe(
+    this.http.get(this.URL_BASE + 'cirugias').subscribe(
       (res: any) => {
         this.cirugiasList = res;
         console.log(res);
@@ -125,26 +125,28 @@ export class ListaCirugiasComponent implements OnInit {
   }
 
   _getCirugias(): Observable<any> {
-    return this.httpClient.get<any[]>(this.URL_BASE + 'cirugias');
+    return this.http.get<any[]>(this.URL_BASE + 'cirugias');
   }
 
-  abrirDetalleCirugia(cirugia: any) {
+  /*abrirDetalleCirugia(cirugia: any) {
     const dialogRef = this.dialog.open(DetallesCirugiaComponent, {
       width: '600px',
       data: cirugia
     });
   }
 
+   */
+
   _getDoctor(): Observable<any> {
-    return this.httpClient.get<any[]>(this.URL_BASE + 'doctores');
+    return this.http.get<any[]>(this.URL_BASE + 'doctores');
   }
 
   _getEnfermero(): Observable<any> {
-    return this.httpClient.get<any[]>(this.URL_BASE + 'enfermeros');
+    return this.http.get<any[]>(this.URL_BASE + 'enfermeros');
   }
 
   _getDiagnostico(): Observable<any> {
-    return this.httpClient.get<any[]>(this.URL_BASE + 'diagnosticos');
+    return this.http.get<any[]>(this.URL_BASE + 'diagnosticos');
   }
 
   getListaFormateada() {
@@ -192,19 +194,19 @@ export class ListaCirugiasComponent implements OnInit {
   }
 
   getCirugia(id_cirugia: number): Observable<any> {
-    return this.httpClient.get(`${this.URL_BASE}cirugias/${id_cirugia}`);
+    return this.http.get(`${this.URL_BASE}cirugias/${id_cirugia}`);
   }
 
   getDoctorById(id_doctor: number): Observable<any> {
-    return this.httpClient.get(`${this.URL_BASE}doctores/${id_doctor}`);
+    return this.http.get(`${this.URL_BASE}doctores/${id_doctor}`);
   }
 
   getEnfermeroById(id_enfermero: number): Observable<any> {
-    return this.httpClient.get(`${this.URL_BASE}enfermeros/${id_enfermero}`);
+    return this.http.get(`${this.URL_BASE}enfermeros/${id_enfermero}`);
   }
 
   getDiagnosticoById(id_diagnostico: number): Observable<any> {
-    return this.httpClient.get(`${this.URL_BASE}diagnosticos/${id_diagnostico}`);
+    return this.http.get(`${this.URL_BASE}diagnosticos/${id_diagnostico}`);
   }
 }
-}
+

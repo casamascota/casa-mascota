@@ -13,14 +13,14 @@ th {
 
 .selector {
   display: flex;
-  
+
 }
 
 .body {
   display: flex;
   justify-content: center;
   height: 100%;
-  
+
 }
 
 .center {
@@ -31,7 +31,7 @@ th {
 /*Colocar boton a la derecha*/
 .agregar {
   margin-left: 80%;
-
+}
 .container {
   text-align: center;
   margin-bottom: 20px;

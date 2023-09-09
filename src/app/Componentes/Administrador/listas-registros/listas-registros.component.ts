@@ -44,19 +44,19 @@ export class ListasRegistrosComponent implements OnInit {
       this.listDoctores = await this._doctoresServices.getDoctores();
       console.log("Lista: ", this.listDoctores);
       this.dataSource = new MatTableDataSource<Doctor_Admin>(this.listDoctores);
-  
+
       // Asigna el paginador al dataSource
       this.dataSource.paginator = this.paginator;
     } catch (error) {
       console.log(error);
     }
-  }  
-  
+  }
+
   applyPaginator(event: any) {
     this.pageSize = event.pageSize;
     // Asigna el paginador obtenido a la propiedad paginator del MatTableDataSource
     this.dataSource.paginator = this.paginator;
-  }  
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -105,7 +105,7 @@ export class ListasRegistrosComponent implements OnInit {
 
     );
 
-    )
+
 
   }
 }

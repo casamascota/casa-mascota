@@ -9,55 +9,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReservaCitaComponent {
   reservaForm: FormGroup;
-  Servicio_id_servicio: any = ['Veterinario', 'Estilista'];
+  Servicio_id_servicio: any[] = ['Veterinario', 'Estilista'];
   URL_BASE = 'http://localhost:3000/api/';
 
-  constructor(private httpClient: HttpClient, private formBuilder: FormBuilder ) { 
+  constructor(private httpClient: HttpClient, private formBuilder: FormBuilder ) {
     this.reservaForm = this.formBuilder.group({
       fecha: [null, Validators.required],
       hora: [null, Validators.required],
-      Servicio_id_servicio: ['',Validators.required],
-      Mascota_id_mascota : [null, Validators.required],
+      Servicio_id_servicio: ['', Validators.required],
+      Mascota_id_mascota: [null, Validators.required],
     });
   }
 
   onSubmit() {
-    console.log(this.reservaForm.value);
-    this.guardarCita();
+    if (this.reservaForm.valid) {
+      console.log(this.reservaForm.value);
+      this.guardarCita();
+    }
   }
 
   guardarCita() {
-    if (this.reservaForm.valid) {
+    const formData = this.reservaForm.value;
 
-      const url = this.URL_BASE + 'citas';
-      const formData = this.reservaForm.value;
-
-      this.httpClient.post(url, formData).subscribe(
-        res => {
-
-      // Realizar la lógica de envío de la reserva
-      this.http.post<any[]>(this.URL_BASE + 'citas', {
-        fecha: this.reservaForm.value.fecha,
-        hora: this.reservaForm.value.hora,
-        Mascota_id_mascota: this.reservaForm.value.Mascota_id_mascota,
-        Servicio_id_servicio: this.reservaForm.value.Servicio_id_servicio,
-      }).subscribe(
-        (res) => {
-
-          console.log(res);
-          alert('Cita guardada con exito');
-        },
-        err => {
-          console.log(err);
-        }
-      )
-      
-      console.log(this.reservaForm.value);
-    }
-    
+    this.httpClient.post(this.URL_BASE + 'citas', formData).subscribe(
+      (res) => {
+        console.log(res);
+        alert('Cita guardada con éxito');
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
-
-
-
-  
 }
