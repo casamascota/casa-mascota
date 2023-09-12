@@ -8,62 +8,37 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reserva-cita.component.css']
 })
 export class ReservaCitaComponent {
-  selectService: string;
+  reservaForm: FormGroup;
+  Servicio_id_servicio: any[] = ['Veterinario', 'Estilista'];
   URL_BASE = 'http://localhost:3000/api/';
-  serviciosList : any = [];
-  reservaForm : FormGroup;
-  idServicio : number = 0;
-  
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+
+  constructor(private httpClient: HttpClient, private formBuilder: FormBuilder ) {
     this.reservaForm = this.formBuilder.group({
       fecha: [null, Validators.required],
       hora: [null, Validators.required],
-      Mascota_id_mascota : [null, Validators.required],
-      Servicio_id_servicio : [null, Validators.required],
+      Servicio_id_servicio: ['', Validators.required],
+      Mascota_id_mascota: [null, Validators.required],
     });
+  }
 
-    this.selectService = "veterinario";
-   }
-   
   onSubmit() {
     if (this.reservaForm.valid) {
-      // Realizar la lógica de envío de la reserva
-      this.http.post<any[]>(this.URL_BASE + 'citas', {
-        fecha: this.reservaForm.value.fecha,
-        hora: this.reservaForm.value.hora,
-        Mascota_id_mascota: this.reservaForm.value.Mascota_id_mascota,
-        Servicio_id_servicio: this.reservaForm.value.Servicio_id_servicio,
-      }).subscribe(
-        (res) => {
-          console.log(res);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-        
-    } else {
-      console.log("Formulario inválido");
       console.log(this.reservaForm.value);
+      this.guardarCita();
     }
   }
 
-  getServicios() {
-    this.http.get<any[]>(this.URL_BASE + 'servicios').subscribe(
+  guardarCita() {
+    const formData = this.reservaForm.value;
+
+    this.httpClient.post(this.URL_BASE + 'citas', formData).subscribe(
       (res) => {
-        this.serviciosList = res;
+        console.log(res);
+        alert('Cita guardada con éxito');
       },
-      (error) => {
-        console.log(error);
+      (err) => {
+        console.log(err);
       }
     );
   }
-
-  
-
-  ngOnInit(): void {
-    this.getServicios();
-  }
-  
-
 }

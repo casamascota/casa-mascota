@@ -1,50 +1,69 @@
+<div class="body">
+  <div class="center">
+    <h1 class="display-4 mb-4" style="text-align: center;">Agregar<span class="text-primary"> Mascota</span></h1>
+    <form [formGroup]="formMascota" (ngSubmit)="onSubmit()">
+      <mat-form-field class="ancho">
+        <mat-label>Nombre:</mat-label>
+        <input matInput type="text" formControlName="nombre" />
+        <div *ngIf="formMascota.controls['nombre'].invalid && formMascota.controls['nombre'].touched">
+          <div *ngIf="formMascota.controls['nombre'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Raza:</mat-label>
+        <input matInput type="text" formControlName="raza" />
+        <div *ngIf="formMascota.controls['raza'].invalid && formMascota.controls['raza'].touched">
+          <div *ngIf="formMascota.controls['raza'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Edad:</mat-label>
+        <input matInput type="number" formControlName="edad" />
+        <div *ngIf="formMascota.controls['edad'].invalid && formMascota.controls['edad'].touched">
+          <div *ngIf="formMascota.controls['edad'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      
+      <mat-form-field class="ancho">
+        <mat-label>Género:</mat-label>
+        <select matNativeControl id="genero" name="genero" formControlName="genero">
+          <option value=""></option>
+          <option value="{{ genero[0] }}">{{ genero[0] }}</option>
+          <option value="{{ genero[1] }}">{{ genero[1] }}</option>
+        </select>
+        <div *ngIf="formMascota.controls['genero'].invalid && formMascota.controls['genero'].touched">
+          <div *ngIf="formMascota.controls['genero'].errors?.['required']">Este campo es obligatorio.</div>
+        </div>
+      </mat-form-field>
 
-
-<h2>Formulario de Registro de Mascota</h2>
-<form [formGroup]="formMascota" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" formControlName="nombre">
+      <mat-form-field class="ancho">
+        <mat-label>Fecha de Nacimiento:</mat-label>
+        <input matInput type="date" formControlName="fecha_nacimiento" />
+        <div *ngIf="formMascota.controls['fecha_nacimiento'].invalid && formMascota.controls['fecha_nacimiento'].touched">
+          <div *ngIf="formMascota.controls['fecha_nacimiento'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="ancho">
+        <mat-label>Peso:</mat-label>
+        <input matInput type="number" formControlName="peso" />
+        <div *ngIf="formMascota.controls['peso'].invalid && formMascota.controls['peso'].touched">
+          <div *ngIf="formMascota.controls['peso'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <br>
+      <mat-checkbox formControlName="isAdopted" id="adoptado" name="adoptado">
+        Tiene Dueño?
+      </mat-checkbox>
+      <mat-form-field style="width: 50%; margin-left: 1em;">
+        <mat-label>ID del dueño:</mat-label>
+        <input matInput type="text" formControlName="Owner_id_owner" />
+        <div *ngIf="formMascota.controls['Owner_id_owner'].invalid && formMascota.controls['Owner_id_owner'].touched">
+          <div *ngIf="formMascota.controls['Owner_id_owner'].errors?.['required']"></div>
+        </div>
+      </mat-form-field>
+      <br>
+      <button button type="submit" class="ancho" mat-raised-button color="primary" [disabled]="formMascota.invalid" (click)="guardarMascota()">Guardar</button>
+    </form>
   </div>
+</div>
 
-  <div>
-    <label for="raza">Raza:</label>
-    <input type="text" id="raza" name="raza" formControlName="raza">
-  </div>
-
-  <div>
-    <label for="edad">Edad:</label>
-    <input type="number" id="edad" name="edad" formControlName="edad">
-  </div>
-
-  <div>
-    <label for="genero">Género:</label>
-    <select id="genero" name="genero" formControlName="genero">
-      <option value=""></option>
-      <option value="{{genero[1]}}">{{genero[0]}}</option>
-      <option value="{{genero[1]}}">{{genero[1]}}</option>
-
-    </select>
-  </div>
-
-  <div>
-    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" formControlName="fecha_nacimiento">
-  </div>
-
-  <div>
-    <label for="peso">Peso:</label>
-    <input type="number" id="peso" name="peso" step="0.01" formControlName="peso">
-  </div>
-
-  <div>
-    <label for="adoptado">Tiene Dueño:</label>
-    <input type="checkbox" id="adoptado" name="adoptado" [value]="formMascota.value.isAdopted" formControlName="isAdopted">
-  </div>
-   
-  <div >
-    <label for="id_dueno">ID del Dueño:</label>
-    <input type="text" id="id_dueno" name="id_dueno" formControlName="Owner_id_owner">
-  </div>
-  <button type="submit">Guardar</button>
-</form>

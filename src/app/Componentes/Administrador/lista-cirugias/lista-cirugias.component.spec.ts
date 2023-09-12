@@ -7,15 +7,17 @@ describe('ListaCirugiasComponent', () => {
   let fixture: ComponentFixture<ListaCirugiasComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       declarations: [ ListaCirugiasComponent ]
     })
     .compileComponents();
-
+  });
+  beforeEach(() => {
     fixture = TestBed.createComponent(ListaCirugiasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  })
+
 
   it('should create', () => {
     expect(component).toBeTruthy();
