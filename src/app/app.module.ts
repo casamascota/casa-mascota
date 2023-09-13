@@ -12,7 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MascotaFormularioComponent } from './Componentes/Administrador/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
-import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
 import { ListaCitasComponent } from './Componentes/Administrador/lista-citas/lista-citas.component';
 import { ListaMascotasComponent } from './Componentes/Administrador/lista-mascotas/lista-mascotas.component';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
@@ -74,7 +73,6 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     AgregarRegistroComponent,
     ListasRegistrosComponent,
     RecursosEducativosComponent,
-    ActualizarRegistroComponent,
     ReservaCitaComponent,
     ListaCitasComponent,
     ListaMascotasComponent,
