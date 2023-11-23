@@ -6,13 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 //----Componentes
 // ADMIN
 import { MascotaFormularioComponent } from './Componentes/Administrador/mascota-formulario/mascota-formulario.component';
 import { AgregarRegistroComponent } from './Componentes/Administrador/agregar-registro/agregar-registro.component';
 import { ListasRegistrosComponent } from './Componentes/Administrador/listas-registros/listas-registros.component';
-import { ActualizarRegistroComponent } from './Componentes/Administrador/actualizar-registro/actualizar-registro.component';
 import { ListaCitasComponent } from './Componentes/Administrador/lista-citas/lista-citas.component';
 import { ListaMascotasComponent } from './Componentes/Administrador/lista-mascotas/lista-mascotas.component';
 import { FormRevisionComponent } from './Componentes/Administrador/form-revision/form-revision.component';
@@ -22,8 +20,16 @@ import { ListaTratamientosComponent } from './Componentes/Administrador/lista-tr
 import { CirugiaFormularioComponent } from './Componentes/Administrador/cirugia-formulario/cirugia-formulario.component';
 import { ListaCirugiasComponent } from './Componentes/Administrador/lista-cirugias/lista-cirugias.component';
 
+// modals
+import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/modal-update-doctor/modal-update-doctor.component';
+import { ModalUpdateCirugiaComponent } from "./Componentes/Administrador/modals/modal-update-cirugia/modal-update-cirugia.component";
+import { ModalUpdateTratamientosComponent } from "./Componentes/Administrador/modals/modal-update-tratamientos/modal-update-tratamientos.component";
+import { ModalUpdateCitasComponent } from "./Componentes/Administrador/modals/modal-update-citas/modal-update-citas.component";
+
 // USER
 import { NavBarComponent } from './Componentes/Usuario/NavBar/NavBar.component';
+import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
+import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
 import { RecursosEducativosComponent } from './Componentes/Usuario/recursosEducativos/recursosEducativos.component';
 import { ReservaCitaComponent } from './Componentes/Usuario/reserva-cita/reserva-cita.component';
 import { DetallesMascotaComponent } from './Componentes/Usuario/detalles-mascota/detalles-mascota.component';
@@ -34,7 +40,6 @@ import { FooterComponent } from './Componentes/Usuario/Footer/Footer.component';
 //----Modulos
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 //----Material
 import { MatDialogModule } from '@angular/material/dialog';
@@ -49,21 +54,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { InicioComponent } from './Componentes/Usuario/inicio/inicio.component';
-import { NosotrosComponent } from './Componentes/Usuario/nosotros/nosotros.component';
-import { ModalUpdateDoctorComponent } from './Componentes/Administrador/modals/modal-update-doctor/modal-update-doctor.component';
-import {
-  ModalUpdateCirugiaComponent
-} from "./Componentes/Administrador/modals/modal-update-cirugia/modal-update-cirugia.component";
-import {
-  ModalUpdateTratamientosComponent
-} from "./Componentes/Administrador/modals/modal-update-tratamientos/modal-update-tratamientos.component";
-import {
-  ModalUpdateCitasComponent
-} from "./Componentes/Administrador/modals/modal-update-citas/modal-update-citas.component";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatPaginatorModule} from "@angular/material/paginator";
-
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -74,7 +67,6 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     AgregarRegistroComponent,
     ListasRegistrosComponent,
     RecursosEducativosComponent,
-    ActualizarRegistroComponent,
     ReservaCitaComponent,
     ListaCitasComponent,
     ListaMascotasComponent,
@@ -118,7 +110,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatGridListModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [],
 
